@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BeastLabX – FAQ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BeastLabX FAQ">
+
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0F0F12 url('bg.png') center center / cover fixed no-repeat;
+color:#e5e5e5;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+border-bottom:2px solid #1FA11F;
+background:rgba(15,15,18,0.92);
+backdrop-filter:blur(4px);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:20px;
+font-weight:bold;
+color:#ffffff;
+}
+
+.logo img{
+height:40px;
+width:auto;
+display:block;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+gap:24px;
+}
+
+nav a{
+text-decoration:none;
+color:#ffffff;
+font-size:16px;
+}
+
+nav a.active{
+color:#1FA11F;
+}
+
+.hero{
+position:relative;
+padding:90px 20px 70px 20px;
+text-align:center;
+background:rgba(10,10,12,0.60);
+overflow:hidden;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 28%, rgba(0,0,0,0) 60%),
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.012) 0px,
+rgba(255,255,255,0.012) 1px,
+rgba(0,0,0,0) 3px,
+rgba(0,0,0,0) 14px
+);
+opacity:0.35;
+pointer-events:none;
+}
+
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:900px;
+margin:0 auto;
+}
+
+.hero h1{
+margin:0;
+font-size:64px;
+line-height:1;
+color:#ffffff;
+}
+
+.section-divider{
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.faq-coming{
+padding:90px 24px 110px 24px;
+text-align:center;
+background:rgba(15,15,18,0.72);
+}
+
+.faq-box{
+max-width:780px;
+margin:0 auto;
+padding:44px 34px;
+background:rgba(22,22,26,0.92);
+border:1px solid rgba(31,161,31,0.32);
+border-radius:18px;
+box-shadow:0 0 40px rgba(31,161,31,0.10);
+}
+
+.faq-box h2{
+margin:0 0 18px 0;
+font-size:48px;
+line-height:1.1;
+color:#ffffff;
+}
+
+.faq-box p{
+margin:10px 0;
+font-size:20px;
+line-height:1.7;
+color:#BDBDBD;
+}
+
+.home-button{
+display:inline-block;
+margin-top:26px;
+padding:16px 34px;
+border:2px solid #72F572;
+border-radius:16px;
+text-decoration:none;
+font-size:20px;
+color:#ffffff;
+box-shadow:0 0 26px rgba(31,161,31,0.22);
+background:rgba(0,0,0,0.18);
+}
+
+footer{
+padding:34px 20px 40px 20px;
+text-align:center;
+border-top:1px solid #2A2A2A;
+background:rgba(15,15,18,0.92);
+}
+
+footer p{
+margin:0;
+font-size:14px;
+color:#8E8E93;
+}
+
+@media (max-width: 760px){
+header{
+padding:18px 20px;
+flex-direction:column;
+align-items:flex-start;
+gap:14px;
+}
+
+nav{
+gap:18px;
+}
+
+.hero{
+padding:70px 20px 58px 20px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.faq-coming{
+padding:72px 20px 90px 20px;
+}
+
+.faq-box{
+padding:34px 22px;
+}
+
+.faq-box h2{
+font-size:34px;
+}
+
+.faq-box p{
+font-size:16px;
+}
+
+.home-button{
+width:100%;
+box-sizing:border-box;
+font-size:18px;
+text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="logo.png" alt="BeastLabX">
+<span>BeastLabX</span>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="apps.html">Apps</a>
+<a href="features.html">Features</a>
+<a href="faq.html" class="active">FAQ</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+<h1>FAQ</h1>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="faq-coming">
+<div class="faq-box">
+<h2>FAQ</h2>
+<p>This section is coming soon.</p>
+<p>BeastLabX is being built one step at a time.</p>
+<a class="home-button" href="index.html">Back to Home</a>
+</div>
+</section>
+
+<footer>
+<p>© BeastLabX</p>
+</footer>
+
+</body>
+</html>
