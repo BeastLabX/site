@@ -7,12 +7,15 @@
 <meta name="description" content="BeastLabX – Serious training log for lifters. Track workouts, structured programs and HIIT sessions.">
 
 <style>
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0F0F12;
+background:#0F0F12 url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
 }
+
+/* NAVBAR */
 
 header{
 display:flex;
@@ -20,7 +23,7 @@ justify-content:space-between;
 align-items:center;
 padding:20px 60px;
 border-bottom:2px solid #1FA11F;
-background:rgba(15,15,18,0.96);
+background:rgba(15,15,18,0.92);
 backdrop-filter:blur(4px);
 position:sticky;
 top:0;
@@ -54,6 +57,8 @@ color:#ffffff;
 font-size:16px;
 }
 
+/* HERO */
+
 .hero{
 position:relative;
 display:flex;
@@ -61,29 +66,9 @@ align-items:center;
 justify-content:space-between;
 gap:40px;
 padding:120px 80px;
-background:
-radial-gradient(circle at 72% 36%, rgba(31,161,31,0.18) 0%, rgba(31,161,31,0.06) 18%, rgba(0,0,0,0) 42%),
-radial-gradient(circle at 40% 18%, rgba(255,90,0,0.08) 0%, rgba(255,90,0,0.03) 18%, rgba(0,0,0,0) 40%),
-linear-gradient(180deg,#111114 0%, #0B0B0D 100%);
+background:rgba(10,10,12,0.60);
 overflow:hidden;
 min-height:620px;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:
-repeating-linear-gradient(
-90deg,
-rgba(255,255,255,0.012) 0px,
-rgba(255,255,255,0.012) 1px,
-rgba(0,0,0,0) 3px,
-rgba(0,0,0,0) 14px
-),
-radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 24%, rgba(0,0,0,0) 60%);
-opacity:0.45;
-pointer-events:none;
 }
 
 .hero-glow{
@@ -95,7 +80,6 @@ height:420px;
 background:radial-gradient(circle, rgba(31,161,31,0.24) 0%, rgba(31,161,31,0.12) 32%, rgba(31,161,31,0.02) 55%, transparent 72%);
 filter:blur(44px);
 z-index:0;
-pointer-events:none;
 }
 
 .hero-app-logo{
@@ -147,18 +131,16 @@ position:relative;
 z-index:2;
 width:320px;
 max-width:32vw;
-display:flex;
-align-items:center;
-justify-content:center;
 }
 
 .hero-phone img{
 width:100%;
 height:auto;
-display:block;
 border-radius:30px;
 box-shadow:0 28px 70px rgba(0,0,0,0.55);
 }
+
+/* DIVIDER */
 
 .section-divider{
 height:2px;
@@ -166,11 +148,12 @@ background:#1FA11F;
 box-shadow:0 0 18px rgba(31,161,31,0.45);
 }
 
+/* POSITIONING */
+
 .positioning{
 padding:90px 20px 100px 20px;
 text-align:center;
-background:
-linear-gradient(180deg, #0F0F12 0%, #101014 100%);
+background:rgba(15,15,18,0.70);
 }
 
 .positioning-inner{
@@ -180,9 +163,7 @@ margin:0 auto;
 
 .positioning h2{
 font-size:48px;
-line-height:1.12;
-margin:0 0 28px 0;
-color:#ffffff;
+margin-bottom:28px;
 }
 
 .positioning-line{
@@ -198,12 +179,13 @@ box-shadow:0 0 14px rgba(31,161,31,0.35);
 font-size:18px;
 line-height:1.8;
 color:#D0D0D0;
-margin:0 0 14px 0;
 }
+
+/* FEATURES */
 
 .features{
 padding:95px 24px 110px 24px;
-background:#0F0F12;
+background:rgba(15,15,18,0.70);
 }
 
 .features-inner{
@@ -214,8 +196,7 @@ margin:0 auto;
 .features-title{
 text-align:center;
 font-size:42px;
-margin:0 0 56px 0;
-color:#ffffff;
+margin-bottom:56px;
 }
 
 .feature-grid{
@@ -229,25 +210,23 @@ background:#1C1C1C;
 border:1px solid #2A2A2A;
 border-radius:16px;
 padding:26px 24px;
-box-shadow:0 12px 30px rgba(0,0,0,0.22);
 }
 
 .feature-card h3{
-margin:0 0 12px 0;
-font-size:22px;
-color:#ffffff;
+margin-bottom:12px;
 }
 
 .feature-card p{
-margin:0;
 font-size:15px;
 line-height:1.7;
 color:#BDBDBD;
 }
 
+/* SHARE */
+
 .share{
 padding:95px 24px;
-background:linear-gradient(180deg,#101014 0%,#0D0D10 100%);
+background:rgba(15,15,18,0.70);
 }
 
 .share-inner{
@@ -265,12 +244,10 @@ max-width:520px;
 
 .share-text h2{
 font-size:42px;
-margin:0 0 18px 0;
-color:#ffffff;
+margin-bottom:18px;
 }
 
 .share-text p{
-margin:0 0 14px 0;
 font-size:18px;
 line-height:1.7;
 color:#BDBDBD;
@@ -278,14 +255,11 @@ color:#BDBDBD;
 
 .share-card{
 width:420px;
-max-width:100%;
 background:#131316;
 border:1px solid #2A2A2A;
 border-radius:22px;
 padding:28px;
-box-shadow:0 18px 45px rgba(0,0,0,0.28);
 position:relative;
-overflow:hidden;
 }
 
 .share-card::after{
@@ -298,55 +272,27 @@ height:4px;
 background:#1FA11F;
 }
 
-.share-brand{
-font-size:14px;
-letter-spacing:1.5px;
-color:#BDBDBD;
-margin-bottom:22px;
-text-transform:uppercase;
-}
-
 .share-total{
 font-size:58px;
 font-weight:bold;
-line-height:1;
-margin:6px 0 20px 0;
-color:#ffffff;
+margin:10px 0;
 }
 
-.share-lines{
-font-size:18px;
-line-height:1.8;
-color:#E6E6E6;
-}
+/* ECOSYSTEM */
 
 .ecosystem{
-padding:95px 24px 105px 24px;
-background:#0F0F12;
+padding:95px 24px;
+background:rgba(15,15,18,0.70);
 }
 
 .ecosystem-inner{
 max-width:1180px;
-margin:0 auto;
+margin:auto;
 }
 
 .ecosystem-top{
 text-align:center;
-max-width:900px;
-margin:0 auto 52px auto;
-}
-
-.ecosystem-top h2{
-font-size:42px;
-margin:0 0 18px 0;
-color:#ffffff;
-}
-
-.ecosystem-top p{
-font-size:18px;
-line-height:1.7;
-color:#BDBDBD;
-margin:0;
+margin-bottom:52px;
 }
 
 .ecosystem-grid{
@@ -360,26 +306,14 @@ background:#1C1C1C;
 border:1px solid #2A2A2A;
 border-radius:16px;
 padding:28px 24px;
-box-shadow:0 12px 30px rgba(0,0,0,0.22);
 }
 
-.ecosystem-card h3{
-margin:0 0 12px 0;
-font-size:24px;
-color:#ffffff;
-}
-
-.ecosystem-card p{
-margin:0;
-font-size:16px;
-line-height:1.7;
-color:#BDBDBD;
-}
+/* COMING */
 
 .coming{
-padding:100px 24px 110px 24px;
+padding:100px 24px;
 text-align:center;
-background:linear-gradient(180deg,#101014 0%, #0F0F12 100%);
+background:rgba(15,15,18,0.70);
 }
 
 .coming-box{
@@ -388,137 +322,35 @@ padding:36px 42px;
 border:1px solid rgba(31,161,31,0.35);
 border-radius:16px;
 background:rgba(28,28,28,0.90);
-box-shadow:0 0 38px rgba(31,161,31,0.12);
-max-width:680px;
 }
 
 .coming h2{
 font-size:40px;
-margin:0 0 16px 0;
-color:#ffffff;
 }
 
-.coming p{
-font-size:18px;
-line-height:1.7;
-color:#BDBDBD;
-margin:8px 0;
-}
+/* FOOTER */
 
 footer{
 padding:34px 20px 40px 20px;
 text-align:center;
 border-top:1px solid #2A2A2A;
-background:#0F0F12;
+background:rgba(15,15,18,0.92);
 }
 
 footer p{
-margin:0;
 font-size:14px;
 color:#8E8E93;
 }
 
-@media (max-width: 1100px){
-.hero{
-padding:90px 32px;
-gap:28px;
-}
-.hero-text h1{
-font-size:46px;
-}
-.hero-phone{
-width:285px;
-max-width:36vw;
-}
-.feature-grid,
-.ecosystem-grid{
-grid-template-columns:repeat(2,minmax(0,1fr));
-}
-.share-inner{
-flex-direction:column;
-align-items:flex-start;
-}
-.share-card{
-width:100%;
-max-width:520px;
-}
-}
-
-@media (max-width: 760px){
-header{
-padding:18px 20px;
-flex-direction:column;
-align-items:flex-start;
-gap:14px;
-}
-nav{
-gap:18px;
-}
-.hero{
-padding:72px 20px;
-flex-direction:column;
-align-items:flex-start;
-min-height:auto;
-}
-.hero-app-logo{
-left:20px;
-top:44px;
-width:280px;
-max-width:72vw;
-}
-.hero-glow{
-right:auto;
-left:120px;
-top:180px;
-width:260px;
-height:260px;
-}
-.hero-text h1{
-font-size:36px;
-}
-.hero-text p,
-.positioning p,
-.share-text p,
-.ecosystem-top p,
-.coming p{
-font-size:16px;
-}
-.hero-phone{
-width:260px;
-max-width:100%;
-align-self:center;
-}
-.positioning{
-padding:72px 20px 80px 20px;
-}
-.positioning h2,
-.features-title,
-.share-text h2,
-.ecosystem-top h2,
-.coming h2{
-font-size:30px;
-}
-.positioning-line{
-max-width:82%;
-}
-.feature-grid,
-.ecosystem-grid{
-grid-template-columns:1fr;
-}
-.hero-note{
-display:block;
-width:fit-content;
-max-width:100%;
-}
-}
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">
-<img src="logo.png" alt="BeastLabX">
+<img src="logo.png">
 <span>BeastLabX</span>
 </div>
 
@@ -528,43 +360,60 @@ max-width:100%;
 <a href="features.html">Features</a>
 <a href="faq.html">FAQ</a>
 </nav>
+
 </header>
 
 <section class="hero">
+
 <div class="hero-glow"></div>
-<img class="hero-app-logo" src="app-logo.png" alt="BeastLabX App Logo">
+
+<img class="hero-app-logo" src="app-logo.png">
 
 <div class="hero-text">
+
 <h1>Serious training log for lifters.</h1>
+
 <p>
 Track workouts, run structured programs, log HIIT sessions,
 and stay focused on progression without unnecessary distractions.
 </p>
+
 <div class="hero-note">The BeastLabX app is currently in development.</div>
+
 </div>
 
 <div class="hero-phone">
-<img src="phone.png" alt="BeastLabX App Screenshot">
+<img src="phone.png">
 </div>
+
 </section>
 
 <div class="section-divider"></div>
 
 <section class="positioning">
+
 <div class="positioning-inner">
+
 <h2>Built for lifters who want structure.</h2>
+
 <div class="positioning-line"></div>
+
 <p>Most fitness apps try to do everything.</p>
 <p>They become bloated, slow, and full of distractions.</p>
 <p>BeastLabX focuses on the fundamentals of training: consistency, progression, and structure.</p>
+
 </div>
+
 </section>
 
 <section class="features">
+
 <div class="features-inner">
+
 <h2 class="features-title">Core Features</h2>
 
 <div class="feature-grid">
+
 <div class="feature-card">
 <h3>Structured Programs</h3>
 <p>Follow clear strength training programs designed for progression.</p>
@@ -594,67 +443,30 @@ and stay focused on progression without unnecessary distractions.
 <h3>Share Results</h3>
 <p>Generate clean workout result cards and share your progress.</p>
 </div>
-</div>
-</div>
-</section>
 
-<section class="share">
-<div class="share-inner">
-<div class="share-text">
-<h2>Share your results</h2>
-<p>After every workout you can generate a clean summary card showing your training results.</p>
-<p>Share your progress without clutter or unnecessary graphics.</p>
+</div>
 </div>
 
-<div class="share-card">
-<div class="share-brand">BEASTLABX</div>
-<div class="share-lines">
-Bench Press: 140 kg<br>
-Squat: 180 kg<br>
-Deadlift: 220 kg
-</div>
-<div class="share-total">540 kg</div>
-<div class="share-lines">Total lifted</div>
-</div>
-</div>
-</section>
-
-<section class="ecosystem">
-<div class="ecosystem-inner">
-<div class="ecosystem-top">
-<h2>The BeastLabX ecosystem</h2>
-<p>BeastLabX is designed as a growing set of tools for serious training.</p>
-</div>
-
-<div class="ecosystem-grid">
-<div class="ecosystem-card">
-<h3>BeastLabX App</h3>
-<p>Training log and workout tracker for structured strength training.</p>
-</div>
-
-<div class="ecosystem-card">
-<h3>BeastBlueprint</h3>
-<p>Program generation and planning tool for building training plans.</p>
-</div>
-
-<div class="ecosystem-card">
-<h3>More tools coming</h3>
-<p>Future tools will expand the BeastLabX ecosystem.</p>
-</div>
-</div>
-</div>
 </section>
 
 <section class="coming">
+
 <div class="coming-box">
+
 <h2>Coming Soon</h2>
+
 <p>The BeastLabX app is currently in development.</p>
+
 <p>Launch planned soon.</p>
+
 </div>
+
 </section>
 
 <footer>
+
 <p>© BeastLabX</p>
+
 </footer>
 
 </body>
