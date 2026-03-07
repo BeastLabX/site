@@ -7,6 +7,7 @@
 <meta name="description" content="BeastLabX – Serious training log for lifters. Track workouts, structured programs and HIIT sessions.">
 
 <style>
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -36,8 +37,6 @@ color:#ffffff;
 
 .logo img{
 height:40px;
-width:auto;
-display:block;
 }
 
 nav a{
@@ -59,6 +58,21 @@ overflow:hidden;
 min-height:620px;
 }
 
+/* Green glow behind hero */
+
+.hero-glow{
+position:absolute;
+right:260px;
+top:140px;
+width:420px;
+height:420px;
+background:radial-gradient(circle, rgba(31,161,31,0.35) 0%, rgba(31,161,31,0.15) 35%, transparent 70%);
+filter:blur(60px);
+z-index:0;
+}
+
+/* App logo watermark */
+
 .hero-app-logo{
 position:absolute;
 left:60px;
@@ -69,6 +83,8 @@ opacity:0.45;
 pointer-events:none;
 z-index:1;
 }
+
+/* Text area */
 
 .hero-text{
 position:relative;
@@ -93,7 +109,6 @@ margin:0;
 .buttons{
 margin-top:30px;
 display:flex;
-flex-wrap:wrap;
 gap:12px;
 }
 
@@ -101,44 +116,43 @@ gap:12px;
 padding:14px 26px;
 border-radius:6px;
 text-decoration:none;
-display:inline-block;
 font-size:16px;
 }
 
 .primary{
 background:#1FA11F;
-color:#ffffff;
+color:white;
 }
 
 .secondary{
 border:1px solid #2A2A2A;
-color:#ffffff;
-background:transparent;
+color:white;
 }
+
+/* Phone screenshot */
 
 .hero-phone{
 position:relative;
 z-index:2;
 width:320px;
 max-width:32vw;
-display:flex;
-align-items:center;
-justify-content:center;
 }
 
 .hero-phone img{
 width:100%;
-height:auto;
-display:block;
-border-radius:32px;
-box-shadow:0 20px 60px rgba(0,0,0,0.45);
+border-radius:28px;
+box-shadow:0 30px 80px rgba(0,0,0,0.6);
 }
+
+/* Divider */
 
 .section-divider{
 height:2px;
 background:#1FA11F;
 box-shadow:0 0 18px rgba(31,161,31,0.45);
 }
+
+/* Positioning section */
 
 .positioning{
 padding:90px 20px 100px 20px;
@@ -154,8 +168,7 @@ margin:0 auto;
 .positioning h2{
 font-size:48px;
 line-height:1.12;
-margin:0 0 28px 0;
-color:#ffffff;
+margin-bottom:28px;
 }
 
 .positioning-line{
@@ -171,8 +184,10 @@ box-shadow:0 0 14px rgba(31,161,31,0.35);
 font-size:18px;
 line-height:1.8;
 color:#D0D0D0;
-margin:0 0 14px 0;
+margin-bottom:14px;
 }
+
+/* CTA */
 
 .cta{
 text-align:center;
@@ -182,126 +197,43 @@ background:#0F0F12;
 
 .cta h2{
 font-size:36px;
-margin:0 0 20px 0;
-color:#ffffff;
+margin-bottom:20px;
 }
 
 .cta p{
-margin:0;
 font-size:18px;
-line-height:1.6;
 color:#BDBDBD;
 }
 
-@media (max-width: 980px){
-header{
-padding:18px 24px;
-flex-direction:column;
-align-items:flex-start;
-gap:14px;
-}
-
-nav a{
-margin-left:0;
-margin-right:18px;
-}
-
-.hero{
-padding:80px 24px;
-flex-direction:column;
-align-items:flex-start;
-gap:40px;
-min-height:auto;
-}
-
-.hero-app-logo{
-left:24px;
-top:40px;
-width:300px;
-max-width:70vw;
-}
-
-.hero-text h1{
-font-size:40px;
-}
-
-.hero-phone{
-width:280px;
-max-width:100%;
-align-self:center;
-}
-
-.positioning{
-padding:70px 24px 80px 24px;
-}
-
-.positioning h2{
-font-size:36px;
-}
-
-.positioning-line{
-max-width:80%;
-}
-}
-
-@media (max-width: 640px){
-.logo{
-font-size:18px;
-}
-
-.logo img{
-height:34px;
-}
-
-.hero-text h1{
-font-size:34px;
-}
-
-.hero-text p{
-font-size:16px;
-}
-
-.btn{
-width:100%;
-text-align:center;
-box-sizing:border-box;
-}
-
-.hero-phone{
-width:250px;
-}
-
-.positioning h2{
-font-size:30px;
-}
-
-.positioning p{
-font-size:16px;
-}
-}
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">
-<img src="logo.png" alt="BeastLabX">
+<img src="logo.png">
 <span>BeastLabX</span>
 </div>
 
 <nav>
 <a href="index.html">Home</a>
-<a href="apps.html">Apps</a>
-<a href="features.html">Features</a>
-<a href="faq.html">FAQ</a>
+<a href="#">Apps</a>
+<a href="#">Features</a>
+<a href="#">FAQ</a>
 </nav>
+
 </header>
 
 <section class="hero">
-<img class="hero-app-logo" src="app-logo.png" alt="BeastLabX App Logo">
+
+<div class="hero-glow"></div>
+
+<img class="hero-app-logo" src="app-logo.png">
 
 <div class="hero-text">
+
 <h1>Serious training log for lifters.</h1>
 
 <p>
@@ -310,32 +242,49 @@ and stay focused on progression without unnecessary distractions.
 </p>
 
 <div class="buttons">
+
 <a class="btn primary" href="#">Download on Google Play</a>
+
 <a class="btn secondary" href="#">Explore Features</a>
+
 </div>
+
 </div>
 
 <div class="hero-phone">
-<img src="phone.png" alt="BeastLabX App Screenshot">
+
+<img src="phone.png">
+
 </div>
+
 </section>
 
 <div class="section-divider"></div>
 
 <section class="positioning">
+
 <div class="positioning-inner">
+
 <h2>Built for lifters who want structure.</h2>
+
 <div class="positioning-line"></div>
 
 <p>Most fitness apps try to do everything.</p>
+
 <p>They become bloated, slow, and full of distractions.</p>
+
 <p>BeastLabX focuses on the fundamentals of training: consistency, progression, and structure.</p>
+
 </div>
+
 </section>
 
 <section class="cta">
+
 <h2>Start training with structure.</h2>
+
 <p>Download BeastLabX and start tracking your training for free.</p>
+
 </section>
 
 </body>
