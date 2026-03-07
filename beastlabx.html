@@ -7,7 +7,6 @@
 <meta name="description" content="BeastLabX App — Serious training log for lifters">
 
 <style>
-
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -34,15 +33,19 @@ align-items:center;
 gap:12px;
 font-size:20px;
 font-weight:bold;
+color:#ffffff;
 }
 
 .logo img{
 height:40px;
+width:auto;
+display:block;
 }
 
 nav{
 display:flex;
 gap:24px;
+flex-wrap:wrap;
 }
 
 nav a{
@@ -61,27 +64,73 @@ text-align:center;
 background:rgba(10,10,12,0.60);
 }
 
-.hero img{
+.hero img.app-icon{
 width:120px;
+height:auto;
 margin-bottom:20px;
+display:inline-block;
 }
 
 .hero h1{
 margin:0 0 20px 0;
 font-size:64px;
+line-height:1;
+color:#ffffff;
 }
 
 .hero p{
 font-size:20px;
 color:#BDBDBD;
-max-width:700px;
-margin:auto;
+max-width:760px;
+margin:0 auto;
+line-height:1.7;
 }
 
 .section-divider{
 height:2px;
 background:#1FA11F;
 box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.screenshot-section{
+padding:80px 24px 90px 24px;
+background:rgba(15,15,18,0.72);
+text-align:center;
+}
+
+.screenshot-inner{
+max-width:1000px;
+margin:0 auto;
+}
+
+.screenshot-inner h2{
+margin:0 0 18px 0;
+font-size:42px;
+color:#ffffff;
+}
+
+.screenshot-inner p{
+margin:0 0 36px 0;
+font-size:18px;
+line-height:1.7;
+color:#BDBDBD;
+}
+
+.phone-frame{
+display:inline-block;
+padding:14px;
+border-radius:34px;
+background:rgba(18,18,22,0.92);
+border:1px solid rgba(255,255,255,0.10);
+box-shadow:0 22px 55px rgba(0,0,0,0.35);
+}
+
+.phone-frame img{
+display:block;
+width:340px;
+max-width:100%;
+height:auto;
+border-radius:24px;
 }
 
 .features{
@@ -91,6 +140,7 @@ margin:auto;
 display:flex;
 flex-direction:column;
 gap:28px;
+background:rgba(15,15,18,0.72);
 }
 
 .feature{
@@ -103,6 +153,7 @@ padding:30px;
 .feature h2{
 margin:0 0 10px 0;
 font-size:26px;
+color:#ffffff;
 }
 
 .feature p{
@@ -115,17 +166,19 @@ color:#C8C8C8;
 .cta{
 padding:90px 20px;
 text-align:center;
+background:rgba(15,15,18,0.72);
 }
 
 .cta h2{
 font-size:40px;
-margin-bottom:12px;
+margin:0 0 12px 0;
+color:#ffffff;
 }
 
 .cta p{
 font-size:18px;
 color:#BDBDBD;
-margin-bottom:30px;
+margin:0 0 30px 0;
 }
 
 .cta-button{
@@ -151,15 +204,97 @@ font-size:14px;
 color:#8E8E93;
 }
 
+@media (max-width: 980px){
+header{
+padding:18px 24px;
+flex-direction:column;
+align-items:flex-start;
+gap:14px;
+}
+}
+
+@media (max-width: 760px){
+.hero{
+padding:72px 20px 62px 20px;
+}
+
+.hero img.app-icon{
+width:96px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.screenshot-section{
+padding:64px 20px 72px 20px;
+}
+
+.screenshot-inner h2{
+font-size:30px;
+}
+
+.screenshot-inner p{
+font-size:16px;
+}
+
+.phone-frame{
+padding:10px;
+border-radius:26px;
+}
+
+.phone-frame img{
+width:280px;
+border-radius:18px;
+}
+
+.features{
+padding:72px 20px;
+gap:20px;
+}
+
+.feature{
+padding:22px;
+}
+
+.feature h2{
+font-size:22px;
+}
+
+.feature p{
+font-size:15px;
+}
+
+.cta{
+padding:72px 20px;
+}
+
+.cta h2{
+font-size:30px;
+}
+
+.cta p{
+font-size:16px;
+}
+
+.cta-button{
+width:100%;
+box-sizing:border-box;
+text-align:center;
+}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="logo">
-<img src="logo.png">
+<img src="logo.png" alt="BeastLabX">
 <span>BeastLabX</span>
 </div>
 
@@ -168,20 +303,30 @@ color:#8E8E93;
 <a href="apps.html" class="active">Apps</a>
 <a href="faq.html">FAQ</a>
 </nav>
-
 </header>
 
 <section class="hero">
-
-<img src="app-logo.png">
-
+<img class="app-icon" src="app-logo.png" alt="BeastLabX App">
 <h1>BeastLabX App</h1>
-
 <p>
 Serious training log for lifters.
-Track workouts, structured programs, and HIIT sessions without clutter.
+Track workouts, structured programs, and HIIT sessions without unnecessary clutter.
+</p>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="screenshot-section">
+<div class="screenshot-inner">
+<h2>See the app in action</h2>
+<p>
+Built around real training sessions, clear logging, and a focused layout designed for serious lifters.
 </p>
 
+<div class="phone-frame">
+<img src="phone.png" alt="BeastLabX App Screenshot">
+</div>
+</div>
 </section>
 
 <div class="section-divider"></div>
@@ -232,18 +377,12 @@ Generate clean workout result cards designed to highlight the achievement.
 
 </section>
 
+<div class="section-divider"></div>
+
 <section class="cta">
-
 <h2>BeastLabX App</h2>
-
-<p>
-The BeastLabX App is currently in development.
-</p>
-
-<a class="cta-button" href="apps.html">
-Back to Apps
-</a>
-
+<p>The BeastLabX App is currently in development.</p>
+<a class="cta-button" href="apps.html">Back to Apps</a>
 </section>
 
 <footer>
