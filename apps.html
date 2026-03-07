@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>BeastLabX – Apps</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BeastLabX Apps">
+<meta name="description" content="BeastLabX ecosystem and apps">
 
 <style>
 body{
@@ -86,15 +86,22 @@ pointer-events:none;
 .hero-inner{
 position:relative;
 z-index:1;
-max-width:900px;
+max-width:980px;
 margin:0 auto;
 }
 
 .hero h1{
-margin:0;
+margin:0 0 18px 0;
 font-size:64px;
 line-height:1;
 color:#ffffff;
+}
+
+.hero p{
+margin:0;
+font-size:20px;
+line-height:1.7;
+color:#BDBDBD;
 }
 
 .section-divider{
@@ -103,47 +110,96 @@ background:#1FA11F;
 box-shadow:0 0 18px rgba(31,161,31,0.45);
 }
 
-.apps-coming{
+.apps-section{
 padding:90px 24px 110px 24px;
-text-align:center;
 background:rgba(15,15,18,0.72);
 }
 
-.apps-box{
-max-width:780px;
+.apps-inner{
+max-width:1240px;
 margin:0 auto;
-padding:44px 34px;
-background:rgba(22,22,26,0.92);
-border:1px solid rgba(31,161,31,0.32);
-border-radius:18px;
-box-shadow:0 0 40px rgba(31,161,31,0.10);
 }
 
-.apps-box h2{
-margin:0 0 18px 0;
-font-size:48px;
-line-height:1.1;
+.app-grid{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:28px;
+}
+
+.app-card{
+background:rgba(22,22,26,0.94);
+border:1px solid rgba(255,255,255,0.10);
+border-radius:20px;
+padding:28px 24px 26px 24px;
+box-shadow:0 18px 45px rgba(0,0,0,0.24);
+display:flex;
+flex-direction:column;
+min-height:100%;
+}
+
+.app-top{
+display:flex;
+align-items:center;
+gap:18px;
+margin-bottom:24px;
+padding-bottom:18px;
+border-bottom:1px solid rgba(31,161,31,0.30);
+}
+
+.app-top img{
+width:96px;
+height:96px;
+object-fit:contain;
+border-radius:14px;
+flex-shrink:0;
+}
+
+.app-title{
+font-size:22px;
+font-weight:bold;
+color:#ffffff;
+line-height:1.2;
+}
+
+.app-card h3{
+margin:0 0 14px 0;
+font-size:20px;
+line-height:1.3;
 color:#ffffff;
 }
 
-.apps-box p{
-margin:10px 0;
-font-size:20px;
+.app-card p{
+margin:0 0 12px 0;
+font-size:17px;
 line-height:1.7;
-color:#BDBDBD;
+color:#C8C8C8;
 }
 
-.home-button{
+.app-spacer{
+flex:1;
+}
+
+.app-button{
 display:inline-block;
-margin-top:26px;
-padding:16px 34px;
-border:2px solid #72F572;
-border-radius:16px;
+margin-top:20px;
+padding:14px 24px;
+border-radius:12px;
 text-decoration:none;
-font-size:20px;
+font-size:18px;
+font-weight:bold;
+text-align:center;
+}
+
+.app-button.primary{
+background:#1FA11F;
 color:#ffffff;
-box-shadow:0 0 26px rgba(31,161,31,0.22);
-background:rgba(0,0,0,0.18);
+box-shadow:0 0 24px rgba(31,161,31,0.18);
+}
+
+.app-button.secondary{
+background:rgba(0,0,0,0.24);
+border:1px solid #2A2A2A;
+color:#ffffff;
 }
 
 footer{
@@ -159,9 +215,9 @@ font-size:14px;
 color:#8E8E93;
 }
 
-@media (max-width: 760px){
+@media (max-width: 980px){
 header{
-padding:18px 20px;
+padding:18px 24px;
 flex-direction:column;
 align-items:flex-start;
 gap:14px;
@@ -171,6 +227,16 @@ nav{
 gap:18px;
 }
 
+hero h1{
+font-size:48px;
+}
+
+.app-grid{
+grid-template-columns:1fr;
+}
+}
+
+@media (max-width: 760px){
 .hero{
 padding:70px 20px 58px 20px;
 }
@@ -179,27 +245,43 @@ padding:70px 20px 58px 20px;
 font-size:42px;
 }
 
-.apps-coming{
-padding:72px 20px 90px 20px;
-}
-
-.apps-box{
-padding:34px 22px;
-}
-
-.apps-box h2{
-font-size:34px;
-}
-
-.apps-box p{
+.hero p{
 font-size:16px;
 }
 
-.home-button{
+.apps-section{
+padding:72px 20px 90px 20px;
+}
+
+.app-card{
+padding:22px 18px 22px 18px;
+}
+
+.app-top{
+align-items:flex-start;
+}
+
+.app-top img{
+width:84px;
+height:84px;
+}
+
+.app-title{
+font-size:20px;
+}
+
+.app-card h3{
+font-size:18px;
+}
+
+.app-card p{
+font-size:15px;
+}
+
+.app-button{
 width:100%;
 box-sizing:border-box;
-font-size:18px;
-text-align:center;
+font-size:17px;
 }
 }
 </style>
@@ -224,17 +306,60 @@ text-align:center;
 <section class="hero">
 <div class="hero-inner">
 <h1>Apps</h1>
+<p>The BeastLabX ecosystem is built around focused tools for serious training.</p>
 </div>
 </section>
 
 <div class="section-divider"></div>
 
-<section class="apps-coming">
-<div class="apps-box">
-<h2>Apps</h2>
-<p>This section is coming soon.</p>
-<p>BeastLabX is being built one step at a time.</p>
-<a class="home-button" href="index.html">Back to Home</a>
+<section class="apps-section">
+<div class="apps-inner">
+
+<div class="app-grid">
+
+<div class="app-card">
+<div class="app-top">
+<img src="app-logo.png" alt="BeastLabX App">
+<div class="app-title">BeastLabX App</div>
+</div>
+
+<h3>Serious training log for lifters.</h3>
+<p>Track workouts, structured programs, and HIIT sessions in one focused training tool.</p>
+
+<div class="app-spacer"></div>
+
+<a class="app-button primary" href="index.html">Learn More</a>
+</div>
+
+<div class="app-card">
+<div class="app-top">
+<img src="beastblueprint.png" alt="BeastBlueprint">
+<div class="app-title">BeastBlueprint</div>
+</div>
+
+<h3>Custom workout planner.</h3>
+<p>Build and manage your own routines with a structured planning tool designed for serious training.</p>
+
+<div class="app-spacer"></div>
+
+<a class="app-button secondary" href="#">Coming Soon</a>
+</div>
+
+<div class="app-card">
+<div class="app-top">
+<img src="futuretools.png" alt="Future Tools">
+<div class="app-title">Future Tools</div>
+</div>
+
+<h3>More tools for lifters.</h3>
+<p>The BeastLabX ecosystem will grow with more focused products built for progression and long-term training.</p>
+
+<div class="app-spacer"></div>
+
+<a class="app-button secondary" href="#">Coming Soon</a>
+</div>
+
+</div>
 </div>
 </section>
 
