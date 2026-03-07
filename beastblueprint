@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BeastBlueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BeastBlueprint — Build structured training plans for the BeastLabX ecosystem">
+
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0F0F12 url('bg.png') center center / cover fixed no-repeat;
+color:#e5e5e5;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+border-bottom:2px solid #1FA11F;
+background:rgba(15,15,18,0.92);
+backdrop-filter:blur(4px);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:20px;
+font-weight:bold;
+color:#ffffff;
+}
+
+.logo img{
+height:40px;
+width:auto;
+display:block;
+}
+
+nav{
+display:flex;
+gap:24px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:#ffffff;
+font-size:16px;
+}
+
+nav a.active{
+color:#1FA11F;
+}
+
+.hero{
+padding:100px 20px 80px 20px;
+text-align:center;
+background:rgba(10,10,12,0.60);
+}
+
+.hero img.app-icon{
+width:120px;
+height:auto;
+margin-bottom:20px;
+display:inline-block;
+}
+
+.hero h1{
+margin:0 0 20px 0;
+font-size:64px;
+line-height:1;
+color:#ffffff;
+}
+
+.hero p{
+font-size:20px;
+color:#BDBDBD;
+max-width:760px;
+margin:0 auto;
+line-height:1.7;
+}
+
+.section-divider{
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.screenshot-section{
+padding:80px 24px 90px 24px;
+background:rgba(15,15,18,0.72);
+text-align:center;
+}
+
+.screenshot-inner{
+max-width:1000px;
+margin:0 auto;
+}
+
+.screenshot-inner h2{
+margin:0 0 18px 0;
+font-size:42px;
+color:#ffffff;
+}
+
+.screenshot-inner p{
+margin:0 0 36px 0;
+font-size:18px;
+line-height:1.7;
+color:#BDBDBD;
+}
+
+.phone-frame{
+display:inline-block;
+padding:14px;
+border-radius:34px;
+background:rgba(18,18,22,0.92);
+border:1px solid rgba(255,255,255,0.10);
+box-shadow:0 22px 55px rgba(0,0,0,0.35);
+}
+
+.phone-frame img{
+display:block;
+width:340px;
+max-width:100%;
+height:auto;
+border-radius:24px;
+}
+
+.features{
+padding:90px 24px;
+max-width:1100px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:28px;
+background:rgba(15,15,18,0.72);
+}
+
+.feature{
+background:rgba(22,22,26,0.94);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:18px;
+padding:30px;
+}
+
+.feature h2{
+margin:0 0 10px 0;
+font-size:26px;
+color:#ffffff;
+}
+
+.feature p{
+margin:0;
+font-size:17px;
+line-height:1.7;
+color:#C8C8C8;
+}
+
+.cta{
+padding:90px 20px;
+text-align:center;
+background:rgba(15,15,18,0.72);
+}
+
+.cta h2{
+font-size:40px;
+margin:0 0 12px 0;
+color:#ffffff;
+}
+
+.cta p{
+font-size:18px;
+color:#BDBDBD;
+margin:0 0 30px 0;
+}
+
+.cta-button{
+display:inline-block;
+padding:14px 26px;
+background:#1FA11F;
+color:#fff;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+footer{
+padding:34px 20px;
+text-align:center;
+border-top:1px solid #2A2A2A;
+background:rgba(15,15,18,0.92);
+}
+
+footer p{
+margin:0;
+font-size:14px;
+color:#8E8E93;
+}
+
+@media (max-width: 980px){
+header{
+padding:18px 24px;
+flex-direction:column;
+align-items:flex-start;
+gap:14px;
+}
+}
+
+@media (max-width: 760px){
+.hero{
+padding:72px 20px 62px 20px;
+}
+
+.hero img.app-icon{
+width:96px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.screenshot-section{
+padding:64px 20px 72px 20px;
+}
+
+.screenshot-inner h2{
+font-size:30px;
+}
+
+.screenshot-inner p{
+font-size:16px;
+}
+
+.phone-frame{
+padding:10px;
+border-radius:26px;
+}
+
+.phone-frame img{
+width:280px;
+border-radius:18px;
+}
+
+.features{
+padding:72px 20px;
+gap:20px;
+}
+
+.feature{
+padding:22px;
+}
+
+.feature h2{
+font-size:22px;
+}
+
+.feature p{
+font-size:15px;
+}
+
+.cta{
+padding:72px 20px;
+}
+
+.cta h2{
+font-size:30px;
+}
+
+.cta p{
+font-size:16px;
+}
+
+.cta-button{
+width:100%;
+box-sizing:border-box;
+text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="logo.png" alt="BeastLabX">
+<span>BeastLabX</span>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="apps.html" class="active">Apps</a>
+<a href="faq.html">FAQ</a>
+</nav>
+</header>
+
+<section class="hero">
+<img class="app-icon" src="blueprint-logo.png" alt="BeastBlueprint">
+<h1>BeastBlueprint</h1>
+<p>
+Build structured training plans with a focused step-by-step workflow designed for serious lifters inside the BeastLabX ecosystem.
+</p>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="screenshot-section">
+<div class="screenshot-inner">
+<h2>Build plans with purpose</h2>
+<p>
+BeastBlueprint is designed to help create clear, structured training programs before they move into the main tracking workflow.
+</p>
+
+<div class="phone-frame">
+<img src="blueprint-phone.png" alt="BeastBlueprint Screenshot">
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="features">
+
+<div class="feature">
+<h2>Step-by-Step Program Builder</h2>
+<p>
+Create training plans through a guided builder instead of managing everything on one cluttered screen.
+</p>
+</div>
+
+<div class="feature">
+<h2>Structured Training Days</h2>
+<p>
+Build programs across multiple training days with a layout made for real gym planning and weekly structure.
+</p>
+</div>
+
+<div class="feature">
+<h2>Exercise Selection</h2>
+<p>
+Choose exercises based on practical gym training so each day is built around clear purpose and movement selection.
+</p>
+</div>
+
+<div class="feature">
+<h2>Editable Sets and Targets</h2>
+<p>
+Adjust sets and target reps to shape each workout around the goal of the program.
+</p>
+</div>
+
+<div class="feature">
+<h2>Smart Generate Direction</h2>
+<p>
+Use rules-based generation to create a strong starting structure that can still be reviewed and adjusted.
+</p>
+</div>
+
+<div class="feature">
+<h2>Built for BeastLabX</h2>
+<p>
+BeastBlueprint is part of the BeastLabX ecosystem, helping lifters move from plan creation into serious training execution.
+</p>
+</div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<section class="cta">
+<h2>BeastBlueprint</h2>
+<p>BeastBlueprint is currently in development.</p>
+<a class="cta-button" href="apps.html">Back to Apps</a>
+</section>
+
+<footer>
+<p>© BeastLabX</p>
+</footer>
+
+</body>
+</html>
