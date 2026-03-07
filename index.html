@@ -65,7 +65,7 @@ left:60px;
 top:70px;
 width:420px;
 max-width:42vw;
-opacity:0.52;
+opacity:0.45;
 pointer-events:none;
 z-index:1;
 }
@@ -134,6 +134,46 @@ border-radius:32px;
 box-shadow:0 20px 60px rgba(0,0,0,0.45);
 }
 
+.section-divider{
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.positioning{
+padding:90px 20px 100px 20px;
+text-align:center;
+background:radial-gradient(circle at center,#121212 0%,#0b0b0b 55%,#050505 100%);
+}
+
+.positioning-inner{
+max-width:900px;
+margin:0 auto;
+}
+
+.positioning h2{
+font-size:48px;
+line-height:1.12;
+margin:0 0 28px 0;
+color:#ffffff;
+}
+
+.positioning-line{
+width:520px;
+max-width:70%;
+height:1px;
+margin:0 auto 38px auto;
+background:#1FA11F;
+box-shadow:0 0 14px rgba(31,161,31,0.35);
+}
+
+.positioning p{
+font-size:18px;
+line-height:1.8;
+color:#D0D0D0;
+margin:0 0 14px 0;
+}
+
 .cta{
 text-align:center;
 padding:100px 20px;
@@ -190,6 +230,18 @@ width:280px;
 max-width:100%;
 align-self:center;
 }
+
+.positioning{
+padding:70px 24px 80px 24px;
+}
+
+.positioning h2{
+font-size:36px;
+}
+
+.positioning-line{
+max-width:80%;
+}
 }
 
 @media (max-width: 640px){
@@ -217,6 +269,14 @@ box-sizing:border-box;
 
 .hero-phone{
 width:250px;
+}
+
+.positioning h2{
+font-size:30px;
+}
+
+.positioning p{
+font-size:16px;
 }
 }
 </style>
@@ -257,6 +317,19 @@ and stay focused on progression without unnecessary distractions.
 
 <div class="hero-phone">
 <img src="phone.png" alt="BeastLabX App Screenshot">
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="positioning">
+<div class="positioning-inner">
+<h2>Built for lifters who want structure.</h2>
+<div class="positioning-line"></div>
+
+<p>Most fitness apps try to do everything.</p>
+<p>They become bloated, slow, and full of distractions.</p>
+<p>BeastLabX focuses on the fundamentals of training: consistency, progression, and structure.</p>
 </div>
 </section>
 
