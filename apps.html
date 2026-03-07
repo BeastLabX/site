@@ -10,7 +10,7 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0F0F12;
+background:#0F0F12 url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
 }
 
@@ -20,7 +20,7 @@ justify-content:space-between;
 align-items:center;
 padding:20px 60px;
 border-bottom:2px solid #1FA11F;
-background:rgba(15,15,18,0.96);
+background:rgba(15,15,18,0.92);
 backdrop-filter:blur(4px);
 position:sticky;
 top:0;
@@ -62,16 +62,7 @@ color:#1FA11F;
 position:relative;
 padding:90px 20px 70px 20px;
 text-align:center;
-background:
-radial-gradient(circle at 50% 10%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 20%, rgba(0,0,0,0) 50%),
-repeating-linear-gradient(
-90deg,
-rgba(255,255,255,0.012) 0px,
-rgba(255,255,255,0.012) 1px,
-rgba(0,0,0,0) 3px,
-rgba(0,0,0,0) 14px
-),
-linear-gradient(180deg,#111114 0%, #0B0B0D 100%);
+background:rgba(10,10,12,0.60);
 overflow:hidden;
 }
 
@@ -79,8 +70,16 @@ overflow:hidden;
 content:"";
 position:absolute;
 inset:0;
-background:radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.015) 24%, rgba(0,0,0,0) 60%);
-opacity:0.45;
+background:
+radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 28%, rgba(0,0,0,0) 60%),
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.012) 0px,
+rgba(255,255,255,0.012) 1px,
+rgba(0,0,0,0) 3px,
+rgba(0,0,0,0) 14px
+);
+opacity:0.35;
 pointer-events:none;
 }
 
@@ -107,14 +106,14 @@ box-shadow:0 0 18px rgba(31,161,31,0.45);
 .apps-coming{
 padding:90px 24px 110px 24px;
 text-align:center;
-background:#0F0F12;
+background:rgba(15,15,18,0.72);
 }
 
 .apps-box{
 max-width:780px;
 margin:0 auto;
 padding:44px 34px;
-background:#16161A;
+background:rgba(22,22,26,0.92);
 border:1px solid rgba(31,161,31,0.32);
 border-radius:18px;
 box-shadow:0 0 40px rgba(31,161,31,0.10);
@@ -144,14 +143,14 @@ text-decoration:none;
 font-size:20px;
 color:#ffffff;
 box-shadow:0 0 26px rgba(31,161,31,0.22);
-background:rgba(0,0,0,0.15);
+background:rgba(0,0,0,0.18);
 }
 
 footer{
 padding:34px 20px 40px 20px;
 text-align:center;
 border-top:1px solid #2A2A2A;
-background:#0F0F12;
+background:rgba(15,15,18,0.92);
 }
 
 footer p{
