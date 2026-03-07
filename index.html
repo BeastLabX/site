@@ -52,10 +52,11 @@ position:relative;
 display:flex;
 align-items:center;
 justify-content:space-between;
+gap:40px;
 padding:120px 80px;
 background:radial-gradient(circle at center,#121212 0%,#0b0b0b 55%,#050505 100%);
 overflow:hidden;
-min-height:520px;
+min-height:620px;
 }
 
 .hero-app-logo{
@@ -64,7 +65,7 @@ left:60px;
 top:70px;
 width:420px;
 max-width:42vw;
-opacity:0.42;
+opacity:0.52;
 pointer-events:none;
 z-index:1;
 }
@@ -119,23 +120,18 @@ background:transparent;
 position:relative;
 z-index:2;
 width:320px;
-height:560px;
-border-radius:32px;
-background:#111111;
-border:1px solid #2A2A2A;
-box-shadow:0 20px 60px rgba(0,0,0,0.45);
+max-width:32vw;
 display:flex;
 align-items:center;
 justify-content:center;
-overflow:hidden;
 }
 
-.hero-phone-placeholder{
-color:#8E8E93;
-font-size:16px;
-text-align:center;
-padding:20px;
-line-height:1.5;
+.hero-phone img{
+width:100%;
+height:auto;
+display:block;
+border-radius:32px;
+box-shadow:0 20px 60px rgba(0,0,0,0.45);
 }
 
 .cta{
@@ -191,7 +187,7 @@ font-size:40px;
 
 .hero-phone{
 width:280px;
-height:500px;
+max-width:100%;
 align-self:center;
 }
 }
@@ -221,7 +217,6 @@ box-sizing:border-box;
 
 .hero-phone{
 width:250px;
-height:450px;
 }
 }
 </style>
@@ -261,11 +256,8 @@ and stay focused on progression without unnecessary distractions.
 </div>
 
 <div class="hero-phone">
-<div class="hero-phone-placeholder">
-Phone mockup goes here next
+<img src="phone.png" alt="BeastLabX App Screenshot">
 </div>
-</div>
-
 </section>
 
 <section class="cta">
@@ -275,4 +267,3 @@ Phone mockup goes here next
 
 </body>
 </html>
-
