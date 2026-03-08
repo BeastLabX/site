@@ -10,8 +10,6 @@
 
 /* =============================================================
    PAGE BASE
-   - Matches the polished BeastLabX site styling
-   - Keeps the same visual identity without redesigning the page
 ============================================================= */
 *{
 box-sizing:border-box;
@@ -32,8 +30,6 @@ color:#e5e5e5;
 
 /* =============================================================
    HEADER
-   - Same polished shared header used across the site
-   - Includes mobile hamburger menu
 ============================================================= */
 header{
 display:flex;
@@ -299,6 +295,9 @@ line-height:1.7;
 
 /* =============================================================
    SCREENSHOTS
+   - Premium polish improvement:
+   - unified section heading + tighter image presentation
+   - subtle image area background for cleaner product-page look
 ============================================================= */
 .screenshot-section{
 margin-top:28px;
@@ -326,11 +325,20 @@ border-color:rgba(31,161,31,0.22);
 box-shadow:0 18px 40px rgba(0,0,0,0.24);
 }
 
+.screenshot-image-wrap{
+padding:18px 18px 0 18px;
+background:
+linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+}
+
 .screenshot-card img{
 display:block;
 width:100%;
 height:auto;
 background:#111;
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.06);
+box-shadow:0 10px 24px rgba(0,0,0,0.28);
 }
 
 .screenshot-caption{
@@ -525,6 +533,10 @@ font-size:20px;
 font-size:24px;
 }
 
+.screenshot-image-wrap{
+padding:14px 14px 0 14px;
+}
+
 .screenshot-caption h3{
 font-size:18px;
 }
@@ -658,48 +670,51 @@ Creator of BeastLabX
 </div>
 </section>
 
-<section class="screenshot-section">
-<section class="section">
+<section class="section screenshot-section">
 <h2>Inside BeastLabX</h2>
 <p>
-This page is also where your app screenshots can live, so the story and the product
-sit together in one place.
+A closer look at the BeastLabX App in real use — focused screens built for structured training,
+logging, and progression.
 </p>
-<p>
-Replace the image file names below with your real screenshots when you are ready.
-</p>
-</section>
 
 <div class="screenshot-grid">
 <div class="screenshot-card">
-<img src="about-shot-1.png" alt="BeastLabX screenshot 1">
+<div class="screenshot-image-wrap">
+<img src="Exercise.png" alt="BeastLabX workout tracking screen">
+</div>
 <div class="screenshot-caption">
 <h3>Workout Tracking</h3>
-<p>Show the main workout screen here.</p>
+<p>Log sets, reps and weight with a layout built for real training sessions.</p>
 </div>
 </div>
 
 <div class="screenshot-card">
-<img src="about-shot-2.png" alt="BeastLabX screenshot 2">
+<div class="screenshot-image-wrap">
+<img src="programs.png" alt="BeastLabX programs screen">
+</div>
 <div class="screenshot-caption">
-<h3>Programs</h3>
-<p>Show your structured programs screen here.</p>
+<h3>Structured Programs</h3>
+<p>Follow clear weekly programs designed for progression and serious gym use.</p>
 </div>
 </div>
 
 <div class="screenshot-card">
-<img src="about-shot-3.png" alt="BeastLabX screenshot 3">
+<div class="screenshot-image-wrap">
+<img src="hiit.png" alt="BeastLabX HIIT timer screen">
+</div>
 <div class="screenshot-caption">
-<h3>HIIT</h3>
-<p>Show the HIIT screen here.</p>
+<h3>Built-In HIIT Timer</h3>
+<p>Run interval sessions with a focused active and rest timer that stays clean and easy to use.</p>
 </div>
 </div>
 
 <div class="screenshot-card">
-<img src="about-shot-4.png" alt="BeastLabX screenshot 4">
+<div class="screenshot-image-wrap">
+<img src="Stats.png" alt="BeastLabX training statistics screen">
+</div>
 <div class="screenshot-caption">
-<h3>History &amp; Progress</h3>
-<p>Show history, logs, or summary screens here.</p>
+<h3>Training Progress</h3>
+<p>Review workout history and useful progression stats without unnecessary clutter.</p>
 </div>
 </div>
 </div>
