@@ -8,6 +8,11 @@
 
 <style>
 
+/* =============================================================
+   PAGE BASE
+   - Keeps your existing dark industrial look
+   - No visual redesign, only responsive/mobile fixes
+============================================================= */
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -15,19 +20,22 @@ background:#0F0F12 url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
 }
 
-/* NAVBAR */
-
+/* =============================================================
+   NAVBAR
+   - Desktop header stays clean
+   - Mobile gets hamburger menu
+============================================================= */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:20px 30px;
 border-bottom:2px solid #1FA11F;
 background:rgba(15,15,18,0.92);
 backdrop-filter:blur(4px);
 position:sticky;
 top:0;
-z-index:100;
+z-index:1000;
 }
 
 .logo{
@@ -38,6 +46,7 @@ font-size:20px;
 font-weight:bold;
 color:#ffffff;
 text-decoration:none;
+min-width:0;
 }
 
 .logo img{
@@ -46,9 +55,14 @@ width:auto;
 display:block;
 }
 
+.logo span{
+white-space:nowrap;
+}
+
+/* Desktop nav */
 nav{
 display:flex;
-flex-wrap:wrap;
+align-items:center;
 gap:24px;
 }
 
@@ -58,8 +72,32 @@ color:#ffffff;
 font-size:16px;
 }
 
-/* HERO */
+nav a.active{
+color:#1FA11F;
+}
 
+/* Mobile menu button */
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+padding:6px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+display:block;
+width:24px;
+height:2px;
+background:#ffffff;
+margin:5px 0;
+border-radius:2px;
+transition:0.2s ease;
+}
+
+/* =============================================================
+   HERO
+============================================================= */
 .hero{
 position:relative;
 display:flex;
@@ -154,16 +192,18 @@ border-radius:30px;
 box-shadow:0 28px 70px rgba(0,0,0,0.55);
 }
 
-/* DIVIDER */
-
+/* =============================================================
+   DIVIDER
+============================================================= */
 .section-divider{
 height:2px;
 background:#1FA11F;
 box-shadow:0 0 18px rgba(31,161,31,0.45);
 }
 
-/* POSITIONING */
-
+/* =============================================================
+   POSITIONING
+============================================================= */
 .positioning{
 padding:90px 20px 100px 20px;
 text-align:center;
@@ -195,8 +235,9 @@ line-height:1.8;
 color:#D0D0D0;
 }
 
-/* ECOSYSTEM PREVIEW */
-
+/* =============================================================
+   ECOSYSTEM PREVIEW
+============================================================= */
 .ecosystem{
 padding:95px 24px 105px 24px;
 background:rgba(15,15,18,0.70);
@@ -291,8 +332,9 @@ border:1px solid #2A2A2A;
 color:#ffffff;
 }
 
-/* COMING */
-
+/* =============================================================
+   COMING
+============================================================= */
 .coming{
 padding:100px 24px;
 text-align:center;
@@ -311,8 +353,9 @@ background:rgba(28,28,28,0.90);
 font-size:40px;
 }
 
-/* FOOTER */
-
+/* =============================================================
+   FOOTER
+============================================================= */
 footer{
 padding:34px 20px 40px 20px;
 text-align:center;
@@ -325,6 +368,223 @@ font-size:14px;
 color:#8E8E93;
 }
 
+/* =============================================================
+   TABLET
+   - Tightens spacing before phone layout
+============================================================= */
+@media (max-width:1024px){
+
+.hero{
+padding:100px 40px;
+gap:30px;
+}
+
+.hero-text h1{
+font-size:48px;
+}
+
+.hero-phone{
+width:280px;
+max-width:36vw;
+}
+
+.hero-app-logo{
+left:30px;
+top:60px;
+width:320px;
+max-width:36vw;
+}
+
+.hero-glow{
+right:120px;
+top:120px;
+width:320px;
+height:320px;
+}
+
+.ecosystem-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* =============================================================
+   MOBILE
+   - Fixes the exact phone problem you showed
+   - Uses hamburger menu instead of broken wrapped nav
+============================================================= */
+@media (max-width:768px){
+
+body{
+background:#0F0F12 url('bg.png') center center / cover no-repeat fixed;
+}
+
+header{
+padding:16px 18px;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:18px;
+gap:10px;
+}
+
+.logo img{
+height:34px;
+}
+
+.menu-toggle{
+display:block;
+margin-left:auto;
+}
+
+nav{
+display:none;
+width:100%;
+flex-direction:column;
+align-items:center;
+gap:18px;
+padding:18px 0 8px 0;
+border-top:1px solid #2A2A2A;
+margin-top:10px;
+}
+
+nav.open{
+display:flex;
+}
+
+nav a{
+font-size:18px;
+}
+
+/* Hero stacks cleanly on phone */
+.hero{
+flex-direction:column;
+justify-content:center;
+text-align:center;
+padding:80px 20px 70px 20px;
+gap:28px;
+min-height:auto;
+}
+
+.hero-app-logo{
+position:absolute;
+left:50%;
+top:40px;
+transform:translateX(-50%);
+width:260px;
+max-width:72vw;
+opacity:0.22;
+}
+
+.hero-glow{
+right:auto;
+left:50%;
+top:70px;
+transform:translateX(-50%);
+width:260px;
+height:260px;
+}
+
+.hero-text{
+max-width:100%;
+}
+
+.hero-text h1{
+font-size:42px;
+line-height:1.08;
+}
+
+.hero-text p{
+font-size:17px;
+line-height:1.7;
+max-width:100%;
+}
+
+.hero-note{
+font-size:15px;
+padding:12px 16px;
+}
+
+.hero-button{
+font-size:16px;
+padding:13px 22px;
+}
+
+.hero-phone{
+width:240px;
+max-width:72vw;
+}
+
+.positioning{
+padding:70px 20px 80px 20px;
+}
+
+.positioning h2{
+font-size:36px;
+}
+
+.positioning p{
+font-size:17px;
+}
+
+.ecosystem{
+padding:75px 18px 85px 18px;
+}
+
+.ecosystem-top h2{
+font-size:34px;
+}
+
+.ecosystem-top p{
+font-size:17px;
+}
+
+.coming{
+padding:80px 18px;
+}
+
+.coming-box{
+padding:28px 22px;
+}
+
+.coming h2{
+font-size:32px;
+}
+
+}
+
+/* =============================================================
+   SMALL PHONES
+   - Extra protection for narrow screens
+============================================================= */
+@media (max-width:420px){
+
+.hero-text h1{
+font-size:34px;
+}
+
+.hero-text p{
+font-size:16px;
+}
+
+.hero-note{
+font-size:14px;
+}
+
+.hero-button{
+width:100%;
+max-width:220px;
+box-sizing:border-box;
+}
+
+.logo span{
+font-size:18px;
+}
+
+}
+
 </style>
 </head>
 
@@ -333,12 +593,21 @@ color:#8E8E93;
 <header>
 
 <a href="index.html" class="logo">
-<img src="logo.png">
+<img src="logo.png" alt="BeastLabX logo">
 <span>BeastLabX</span>
 </a>
 
-<nav>
-<a href="index.html">Home</a>
+<!-- MOBILE MENU BUTTON
+     - Appears only on phone/tablet
+     - Toggles the nav open/closed -->
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<nav id="siteNav">
+<a href="index.html" class="active">Home</a>
 <a href="apps.html">Apps</a>
 <a href="about.html">About</a>
 <a href="faq.html">FAQ</a>
@@ -347,13 +616,11 @@ color:#8E8E93;
 
 </header>
 
-<!-- rest of page unchanged -->
-
 <section class="hero">
 
 <div class="hero-glow"></div>
 
-<img class="hero-app-logo" src="app-logo.png">
+<img class="hero-app-logo" src="app-logo.png" alt="BeastLabX app logo">
 
 <div class="hero-text">
 
@@ -371,18 +638,36 @@ real workout execution, and long-term progression without unnecessary clutter.
 </div>
 
 <div class="hero-phone">
-<img src="phone.png">
+<img src="phone.png" alt="BeastLabX preview on phone">
 </div>
 
 </section>
 
-<!-- rest of page unchanged -->
-
 <footer>
-
 <p>© BeastLabX</p>
-
 </footer>
+
+<!-- =============================================================
+     MOBILE MENU SCRIPT
+     - Opens/closes hamburger menu
+     - Auto-closes if screen gets resized to desktop
+============================================================= -->
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
+
+menuToggle.addEventListener('click', function () {
+    const isOpen = siteNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+        siteNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
+});
+</script>
 
 </body>
 </html>
