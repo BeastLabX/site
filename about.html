@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About – BeastLabX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="About BeastLabX — Built for Serious Lifters. Learn why BeastLabX exists and who created it.">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0F0F12 url('bg.png') center center / cover fixed no-repeat;
+    color:#e5e5e5;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    border-bottom:2px solid #1FA11F;
+    background:rgba(15,15,18,0.92);
+    backdrop-filter:blur(4px);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:20px;
+    font-weight:bold;
+    color:#ffffff;
+    text-decoration:none;
+}
+
+.logo img{
+    height:48px;
+    width:auto;
+    display:block;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#d8d8d8;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#1FA11F;
+}
+
+main{
+    max-width:1180px;
+    margin:0 auto;
+    padding:70px 24px 80px;
+}
+
+.hero{
+    text-align:center;
+    padding:40px 20px 30px;
+}
+
+.hero h1{
+    margin:0 0 18px;
+    font-size:52px;
+    line-height:1.05;
+    color:#ffffff;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.hero p{
+    max-width:860px;
+    margin:0 auto;
+    font-size:20px;
+    line-height:1.7;
+    color:#cfcfcf;
+}
+
+.section{
+    margin-top:42px;
+    background:rgba(18,18,22,0.88);
+    border:1px solid rgba(255,255,255,0.08);
+    border-left:4px solid #1FA11F;
+    border-radius:18px;
+    padding:34px 30px;
+    box-shadow:0 10px 26px rgba(0,0,0,0.28);
+}
+
+.section h2{
+    margin:0 0 18px;
+    font-size:30px;
+    color:#ffffff;
+    text-transform:uppercase;
+    letter-spacing:0.8px;
+}
+
+.section p{
+    margin:0 0 16px;
+    font-size:18px;
+    line-height:1.8;
+    color:#d2d2d2;
+}
+
+.section p:last-child{
+    margin-bottom:0;
+}
+
+.manifesto{
+    text-align:center;
+}
+
+.manifesto-lines{
+    max-width:760px;
+    margin:0 auto;
+}
+
+.manifesto-lines p{
+    font-size:22px;
+    line-height:1.9;
+}
+
+.signature-block{
+    margin-top:24px;
+    padding:26px 20px;
+    border:1px solid rgba(31,161,31,0.35);
+    border-radius:16px;
+    background:rgba(10,10,12,0.75);
+    text-align:center;
+}
+
+.signature-block .line-one{
+    font-size:28px;
+    font-weight:bold;
+    color:#ffffff;
+    margin-bottom:10px;
+}
+
+.signature-block .line-two{
+    font-size:36px;
+    font-weight:bold;
+    color:#1FA11F;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.creator-signoff{
+    margin-top:24px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:#bfbfbf;
+    font-size:16px;
+    line-height:1.7;
+}
+
+.screenshot-section{
+    margin-top:42px;
+}
+
+.screenshot-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:24px;
+    margin-top:22px;
+}
+
+.screenshot-card{
+    background:rgba(18,18,22,0.9);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 26px rgba(0,0,0,0.28);
+}
+
+.screenshot-card img{
+    display:block;
+    width:100%;
+    height:auto;
+    background:#111;
+}
+
+.screenshot-caption{
+    padding:18px 18px 20px;
+}
+
+.screenshot-caption h3{
+    margin:0 0 10px;
+    font-size:20px;
+    color:#ffffff;
+}
+
+.screenshot-caption p{
+    margin:0;
+    font-size:16px;
+    line-height:1.7;
+    color:#c9c9c9;
+}
+
+footer{
+    margin-top:70px;
+    padding:30px 24px 40px;
+    text-align:center;
+    color:#a8a8a8;
+    border-top:1px solid rgba(255,255,255,0.08);
+    background:rgba(10,10,12,0.78);
+}
+
+footer a{
+    color:#1FA11F;
+    text-decoration:none;
+}
+
+@media (max-width:900px){
+    header{
+        flex-direction:column;
+        gap:18px;
+        padding:20px 24px;
+    }
+
+    nav{
+        justify-content:center;
+        gap:18px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section{
+        padding:28px 22px;
+    }
+
+    .section h2{
+        font-size:25px;
+    }
+
+    .section p,
+    .manifesto-lines p{
+        font-size:17px;
+    }
+
+    .signature-block .line-one{
+        font-size:24px;
+    }
+
+    .signature-block .line-two{
+        font-size:30px;
+    }
+
+    .screenshot-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (max-width:560px){
+    main{
+        padding:46px 16px 60px;
+    }
+
+    .hero{
+        padding:20px 8px 16px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section{
+        padding:22px 16px;
+        border-radius:14px;
+    }
+
+    .section h2{
+        font-size:22px;
+    }
+
+    .signature-block .line-one{
+        font-size:20px;
+    }
+
+    .signature-block .line-two{
+        font-size:24px;
+    }
+
+    .screenshot-caption h3{
+        font-size:18px;
+    }
+
+    .screenshot-caption p{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">
+        <img src="app-logo.png" alt="BeastLabX logo">
+        <span>BeastLabX</span>
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="apps.html">Apps</a>
+        <a href="beastlabx.html">BeastLabX App</a>
+        <a href="beastblueprint.html">BeastBlueprint</a>
+        <a href="about.html" class="active">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Built for Serious Lifters</h1>
+        <p>
+            BeastLabX was created for people who train with purpose, follow structured programs,
+            and care about real progress over time.
+        </p>
+    </section>
+
+    <section class="section manifesto">
+        <h2>Built for Serious Lifters</h2>
+
+        <div class="manifesto-lines">
+            <p>
+                BeastLabX was created for people who train with purpose.
+            </p>
+            <p>
+                Not for quick fixes.<br>
+                Not for trends.<br>
+                Not for social media workouts.
+            </p>
+            <p>
+                It’s for lifters who follow programs.<br>
+                Who track their numbers.<br>
+                Who understand that real progress takes years.
+            </p>
+        </div>
+
+        <div class="signature-block">
+            <div class="line-one">Because bodybuilding isn’t a race.</div>
+            <div class="line-two">It’s a marathon.</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Why BeastLabX Exists</h2>
+        <p>
+            Most fitness apps try to do everything at once — social feeds, endless features, and
+            complicated interfaces.
+        </p>
+        <p>
+            But serious lifters do not need more noise. They need a training log that helps them
+            follow structured programs, record workouts properly, and track real progress over time.
+        </p>
+        <p>
+            BeastLabX exists to be that tool: a serious training log built around discipline,
+            structure, and long-term progression.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>The Creator</h2>
+        <p>
+            BeastLabX was created by Niel Coetzee, a lifter and developer who wanted a serious
+            training log without unnecessary complexity.
+        </p>
+        <p>
+            After trying many fitness apps that focused on gimmicks instead of progression, he
+            decided to build the tracker he actually wanted to use himself.
+        </p>
+        <div class="creator-signoff">
+            — Niel Coetzee<br>
+            Creator of BeastLabX
+        </div>
+    </section>
+
+    <section class="screenshot-section">
+        <section class="section">
+            <h2>Inside BeastLabX</h2>
+            <p>
+                This page is also where your app screenshots can live, so the story and the product
+                sit together in one place.
+            </p>
+            <p>
+                Replace the image file names below with your real screenshots when you are ready.
+            </p>
+        </section>
+
+        <div class="screenshot-grid">
+            <div class="screenshot-card">
+                <img src="about-shot-1.png" alt="BeastLabX screenshot 1">
+                <div class="screenshot-caption">
+                    <h3>Workout Tracking</h3>
+                    <p>Show the main workout screen here.</p>
+                </div>
+            </div>
+
+            <div class="screenshot-card">
+                <img src="about-shot-2.png" alt="BeastLabX screenshot 2">
+                <div class="screenshot-caption">
+                    <h3>Programs</h3>
+                    <p>Show your structured programs screen here.</p>
+                </div>
+            </div>
+
+            <div class="screenshot-card">
+                <img src="about-shot-3.png" alt="BeastLabX screenshot 3">
+                <div class="screenshot-caption">
+                    <h3>HIIT</h3>
+                    <p>Show the HIIT screen here.</p>
+                </div>
+            </div>
+
+            <div class="screenshot-card">
+                <img src="about-shot-4.png" alt="BeastLabX screenshot 4">
+                <div class="screenshot-caption">
+                    <h3>History & Progress</h3>
+                    <p>Show history, logs, or summary screens here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>BeastLabX — Serious training log for lifters.</p>
+    <p><a href="contact.html">Contact</a></p>
+</footer>
+
+</body>
+</html>
