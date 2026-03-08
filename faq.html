@@ -8,26 +8,45 @@
 
 <style>
 
+/* =============================================================
+   PAGE BASE
+   - Matches the polished BeastLabX site styling
+   - Keeps the same visual identity without redesigning the page
+============================================================= */
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0F0F12 url('bg.png') center center / cover fixed no-repeat;
+background:
+linear-gradient(rgba(15,15,18,0.74), rgba(15,15,18,0.80)),
+url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
 }
 
-/* NAVBAR */
-
+/* =============================================================
+   HEADER
+   - Same polished shared header used across the site
+   - Includes mobile hamburger menu
+============================================================= */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:18px 30px;
 border-bottom:2px solid #1FA11F;
 background:rgba(15,15,18,0.92);
-backdrop-filter:blur(4px);
+backdrop-filter:blur(6px);
 position:sticky;
 top:0;
-z-index:100;
+z-index:1000;
+box-shadow:0 8px 28px rgba(0,0,0,0.20);
 }
 
 .logo{
@@ -38,6 +57,7 @@ font-size:20px;
 font-weight:bold;
 color:#ffffff;
 text-decoration:none;
+min-width:0;
 }
 
 .logo img{
@@ -46,94 +66,339 @@ width:auto;
 display:block;
 }
 
+.logo span{
+white-space:nowrap;
+letter-spacing:0.2px;
+}
+
 nav{
 display:flex;
-flex-wrap:wrap;
+align-items:center;
 gap:24px;
 }
 
 nav a{
+position:relative;
 text-decoration:none;
 color:#ffffff;
 font-size:16px;
+padding:6px 0;
+transition:color 0.2s ease, opacity 0.2s ease;
+}
+
+nav a:hover{
+color:#1FA11F;
 }
 
 nav a.active{
 color:#1FA11F;
 }
 
-/* HERO */
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-8px;
+width:100%;
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 10px rgba(31,161,31,0.45);
+}
 
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+padding:6px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+display:block;
+width:24px;
+height:2px;
+background:#ffffff;
+margin:5px 0;
+border-radius:2px;
+transition:0.2s ease;
+}
+
+/* =============================================================
+   HERO
+   - Same top-section style as the other polished pages
+============================================================= */
 .hero{
-padding:100px 20px 80px 20px;
+position:relative;
+padding:92px 20px 74px 20px;
 text-align:center;
-background:rgba(10,10,12,0.60);
+background:linear-gradient(to bottom, rgba(10,10,12,0.76), rgba(10,10,12,0.56));
+overflow:hidden;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 28%, rgba(0,0,0,0) 60%),
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.012) 0px,
+rgba(255,255,255,0.012) 1px,
+rgba(0,0,0,0) 3px,
+rgba(0,0,0,0) 14px
+);
+opacity:0.35;
+pointer-events:none;
+}
+
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:980px;
+margin:0 auto;
+}
+
+.hero-label{
+display:inline-block;
+margin-bottom:18px;
+padding:8px 14px;
+border:1px solid rgba(31,161,31,0.34);
+border-radius:999px;
+background:rgba(31,161,31,0.10);
+color:#CFEFCF;
+font-size:13px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
 }
 
 .hero h1{
-font-size:56px;
-margin:0 0 20px 0;
+font-size:60px;
+line-height:1.02;
+margin:0 0 18px 0;
+color:#ffffff;
 }
 
 .hero p{
-font-size:18px;
+font-size:19px;
 color:#BDBDBD;
-max-width:760px;
-margin:auto;
-line-height:1.7;
+max-width:780px;
+margin:0 auto;
+line-height:1.75;
 }
 
-/* DIVIDER */
-
+/* =============================================================
+   DIVIDER
+============================================================= */
 .section-divider{
 height:2px;
 background:#1FA11F;
 box-shadow:0 0 18px rgba(31,161,31,0.45);
 }
 
-/* FAQ */
-
+/* =============================================================
+   FAQ
+   - Polished card layout
+   - Better spacing and consistency with other pages
+============================================================= */
 .faq{
-padding:90px 24px;
-background:rgba(15,15,18,0.70);
+padding:90px 24px 100px 24px;
+background:rgba(15,15,18,0.72);
 }
 
 .faq-inner{
 max-width:900px;
 margin:auto;
+display:flex;
+flex-direction:column;
+gap:22px;
 }
 
 .faq-item{
-margin-bottom:32px;
-background:#1C1C1C;
-border:1px solid #2A2A2A;
-border-radius:16px;
-padding:24px;
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:18px;
+padding:26px 24px;
+box-shadow:0 14px 34px rgba(0,0,0,0.18);
+transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item:hover{
+transform:translateY(-2px);
+border-color:rgba(31,161,31,0.22);
+box-shadow:0 18px 40px rgba(0,0,0,0.22);
 }
 
 .faq-item h3{
 margin:0 0 12px 0;
+font-size:24px;
+line-height:1.3;
+color:#ffffff;
 }
 
 .faq-item p{
 margin:0;
 font-size:16px;
-line-height:1.7;
+line-height:1.75;
 color:#BDBDBD;
 }
 
-/* FOOTER */
-
+/* =============================================================
+   FOOTER
+============================================================= */
 footer{
-padding:34px 20px 40px 20px;
+padding:26px 20px 30px 20px;
 text-align:center;
 border-top:1px solid #2A2A2A;
 background:rgba(15,15,18,0.92);
 }
 
 footer p{
+margin:0;
 font-size:14px;
 color:#8E8E93;
+letter-spacing:0.2px;
+}
+
+/* =============================================================
+   TABLET
+============================================================= */
+@media (max-width:1024px){
+
+header{
+padding:16px 24px;
+}
+
+.hero{
+padding:76px 20px 62px 20px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+}
+
+/* =============================================================
+   MOBILE
+============================================================= */
+@media (max-width:768px){
+
+body{
+background:
+linear-gradient(rgba(15,15,18,0.78), rgba(15,15,18,0.82)),
+url('bg.png') center center / cover no-repeat fixed;
+}
+
+header{
+padding:16px 18px;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:18px;
+gap:10px;
+}
+
+.logo img{
+height:34px;
+}
+
+.menu-toggle{
+display:block;
+margin-left:auto;
+}
+
+nav{
+display:none;
+width:100%;
+flex-direction:column;
+align-items:center;
+gap:18px;
+padding:18px 0 8px 0;
+border-top:1px solid #2A2A2A;
+margin-top:10px;
+}
+
+nav.open{
+display:flex;
+}
+
+nav a{
+font-size:18px;
+}
+
+nav a.active::after{
+display:none;
+}
+
+.hero{
+padding:68px 20px 56px 20px;
+}
+
+.hero-label{
+font-size:12px;
+padding:7px 12px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.faq{
+padding:72px 20px 84px 20px;
+}
+
+.faq-inner{
+gap:18px;
+}
+
+.faq-item{
+padding:22px 18px;
+border-radius:16px;
+}
+
+.faq-item h3{
+font-size:20px;
+}
+
+.faq-item p{
+font-size:15px;
+}
+
+}
+
+/* =============================================================
+   SMALL PHONES
+============================================================= */
+@media (max-width:420px){
+
+.hero{
+padding:60px 16px 50px 16px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.logo span{
+font-size:18px;
+}
+
 }
 
 </style>
@@ -148,7 +413,13 @@ color:#8E8E93;
 <span>BeastLabX</span>
 </a>
 
-<nav>
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<nav id="siteNav">
 <a href="index.html">Home</a>
 <a href="apps.html">Apps</a>
 <a href="about.html">About</a>
@@ -160,11 +431,15 @@ color:#8E8E93;
 
 <section class="hero">
 
+<div class="hero-inner">
+<div class="hero-label">FAQ</div>
+
 <h1>Frequently Asked Questions</h1>
 
 <p>
 Answers to common questions about BeastLabX and the BeastLabX ecosystem.
 </p>
+</div>
 
 </section>
 
@@ -212,6 +487,23 @@ Yes. BeastLabX is being built as an ecosystem with additional tools like BeastBl
 <p>© BeastLabX</p>
 
 </footer>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
+
+menuToggle.addEventListener('click', function () {
+    const isOpen = siteNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+        siteNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
+});
+</script>
 
 </body>
 </html>
