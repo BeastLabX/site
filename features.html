@@ -7,24 +7,46 @@
 <meta name="description" content="BeastLabX App features">
 
 <style>
+
+/* =============================================================
+   PAGE BASE
+   - Matches the polished BeastLabX site styling
+   - Keeps the same visual identity without redesigning the page
+============================================================= */
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0F0F12 url('bg.png') center center / cover fixed no-repeat;
+background:
+linear-gradient(rgba(15,15,18,0.74), rgba(15,15,18,0.80)),
+url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
 }
 
+/* =============================================================
+   HEADER
+   - Same polished shared header used across the site
+   - Includes mobile hamburger menu
+============================================================= */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:18px 30px;
 border-bottom:2px solid #1FA11F;
 background:rgba(15,15,18,0.92);
-backdrop-filter:blur(4px);
+backdrop-filter:blur(6px);
 position:sticky;
 top:0;
-z-index:100;
+z-index:1000;
+box-shadow:0 8px 28px rgba(0,0,0,0.20);
 }
 
 .logo{
@@ -34,6 +56,8 @@ gap:12px;
 font-size:20px;
 font-weight:bold;
 color:#ffffff;
+text-decoration:none;
+min-width:0;
 }
 
 .logo img{
@@ -42,27 +66,72 @@ width:auto;
 display:block;
 }
 
+.logo span{
+white-space:nowrap;
+letter-spacing:0.2px;
+}
+
 nav{
 display:flex;
-flex-wrap:wrap;
+align-items:center;
 gap:24px;
 }
 
 nav a{
+position:relative;
 text-decoration:none;
 color:#ffffff;
 font-size:16px;
+padding:6px 0;
+transition:color 0.2s ease, opacity 0.2s ease;
+}
+
+nav a:hover{
+color:#1FA11F;
 }
 
 nav a.active{
 color:#1FA11F;
 }
 
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-8px;
+width:100%;
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 10px rgba(31,161,31,0.45);
+}
+
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+padding:6px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+display:block;
+width:24px;
+height:2px;
+background:#ffffff;
+margin:5px 0;
+border-radius:2px;
+transition:0.2s ease;
+}
+
+/* =============================================================
+   HERO
+   - Same top-section style as the other polished pages
+============================================================= */
 .hero{
 position:relative;
-padding:90px 20px 70px 20px;
+padding:92px 20px 74px 20px;
 text-align:center;
-background:rgba(10,10,12,0.60);
+background:linear-gradient(to bottom, rgba(10,10,12,0.76), rgba(10,10,12,0.56));
 overflow:hidden;
 }
 
@@ -90,26 +159,48 @@ max-width:980px;
 margin:0 auto;
 }
 
+.hero-label{
+display:inline-block;
+margin-bottom:18px;
+padding:8px 14px;
+border:1px solid rgba(31,161,31,0.34);
+border-radius:999px;
+background:rgba(31,161,31,0.10);
+color:#CFEFCF;
+font-size:13px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+}
+
 .hero h1{
 margin:0 0 18px 0;
-font-size:64px;
-line-height:1;
+font-size:60px;
+line-height:1.02;
 color:#ffffff;
 }
 
 .hero p{
-margin:0;
-font-size:20px;
-line-height:1.7;
+margin:0 auto;
+max-width:780px;
+font-size:19px;
+line-height:1.75;
 color:#BDBDBD;
 }
 
+/* =============================================================
+   DIVIDER
+============================================================= */
 .section-divider{
 height:2px;
 background:#1FA11F;
 box-shadow:0 0 18px rgba(31,161,31,0.45);
 }
 
+/* =============================================================
+   FEATURES SECTION
+   - Polished layout and card consistency
+============================================================= */
 .features-section{
 padding:90px 24px 110px 24px;
 background:rgba(15,15,18,0.72);
@@ -128,11 +219,18 @@ display:grid;
 grid-template-columns:220px 1fr;
 gap:28px;
 align-items:stretch;
-background:rgba(22,22,26,0.94);
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
 border:1px solid rgba(255,255,255,0.10);
 border-radius:20px;
 padding:26px;
 box-shadow:0 18px 45px rgba(0,0,0,0.24);
+transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-row:hover{
+transform:translateY(-2px);
+border-color:rgba(31,161,31,0.22);
+box-shadow:0 22px 50px rgba(0,0,0,0.28);
 }
 
 .feature-icon-box{
@@ -176,6 +274,9 @@ color:#C8C8C8;
 margin-bottom:0;
 }
 
+/* =============================================================
+   CTA
+============================================================= */
 .cta{
 padding:100px 24px 110px 24px;
 text-align:center;
@@ -222,6 +323,11 @@ text-decoration:none;
 font-size:18px;
 font-weight:bold;
 text-align:center;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cta-button:hover{
+transform:translateY(-1px);
 }
 
 .cta-button.primary{
@@ -230,14 +336,27 @@ color:#ffffff;
 box-shadow:0 0 24px rgba(31,161,31,0.18);
 }
 
+.cta-button.primary:hover{
+background:#229f22;
+box-shadow:0 0 28px rgba(31,161,31,0.24);
+}
+
 .cta-button.secondary{
 background:rgba(0,0,0,0.24);
 border:1px solid #2A2A2A;
 color:#ffffff;
 }
 
+.cta-button.secondary:hover{
+background:rgba(255,255,255,0.04);
+border-color:#3A3A3A;
+}
+
+/* =============================================================
+   FOOTER
+============================================================= */
 footer{
-padding:34px 20px 40px 20px;
+padding:26px 20px 30px 20px;
 text-align:center;
 border-top:1px solid #2A2A2A;
 background:rgba(15,15,18,0.92);
@@ -247,28 +366,97 @@ footer p{
 margin:0;
 font-size:14px;
 color:#8E8E93;
+letter-spacing:0.2px;
 }
 
-@media (max-width: 980px){
+/* =============================================================
+   TABLET
+============================================================= */
+@media (max-width:1024px){
+
 header{
-padding:18px 24px;
-flex-direction:column;
-align-items:flex-start;
-gap:14px;
+padding:16px 24px;
 }
 
-nav{
-gap:18px;
+.hero{
+padding:76px 20px 62px 20px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.hero p{
+font-size:17px;
 }
 
 .feature-row{
 grid-template-columns:1fr;
 }
+
 }
 
-@media (max-width: 760px){
+/* =============================================================
+   MOBILE
+============================================================= */
+@media (max-width:768px){
+
+body{
+background:
+linear-gradient(rgba(15,15,18,0.78), rgba(15,15,18,0.82)),
+url('bg.png') center center / cover no-repeat fixed;
+}
+
+header{
+padding:16px 18px;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:18px;
+gap:10px;
+}
+
+.logo img{
+height:34px;
+}
+
+.menu-toggle{
+display:block;
+margin-left:auto;
+}
+
+nav{
+display:none;
+width:100%;
+flex-direction:column;
+align-items:center;
+gap:18px;
+padding:18px 0 8px 0;
+border-top:1px solid #2A2A2A;
+margin-top:10px;
+}
+
+nav.open{
+display:flex;
+}
+
+nav a{
+font-size:18px;
+}
+
+nav a.active::after{
+display:none;
+}
+
 .hero{
-padding:70px 20px 58px 20px;
+padding:68px 20px 56px 20px;
+}
+
+.hero-label{
+font-size:12px;
+padding:7px 12px;
 }
 
 .hero h1{
@@ -286,6 +474,7 @@ padding:72px 20px 90px 20px;
 .feature-row{
 padding:20px;
 gap:20px;
+border-radius:18px;
 }
 
 .feature-icon-box{
@@ -316,24 +505,61 @@ font-size:32px;
 font-size:16px;
 }
 
+.cta-buttons{
+flex-direction:column;
+align-items:center;
+}
+
 .cta-button{
 width:100%;
+max-width:260px;
 box-sizing:border-box;
 font-size:17px;
 }
+
 }
+
+/* =============================================================
+   SMALL PHONES
+============================================================= */
+@media (max-width:420px){
+
+.hero{
+padding:60px 16px 50px 16px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.logo span{
+font-size:18px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">
+<a href="index.html" class="logo">
 <img src="logo.png" alt="BeastLabX">
 <span>BeastLabX</span>
-</div>
+</a>
 
-<nav>
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<nav id="siteNav">
 <a href="index.html">Home</a>
 <a href="apps.html">Apps</a>
 <a href="about.html">About</a>
@@ -345,6 +571,7 @@ font-size:17px;
 
 <section class="hero">
 <div class="hero-inner">
+<div class="hero-label">BeastLabX App</div>
 <h1>Features</h1>
 <p>The BeastLabX App is built around focused tools that support serious training without unnecessary clutter.</p>
 </div>
@@ -439,6 +666,23 @@ font-size:17px;
 <footer>
 <p>© BeastLabX</p>
 </footer>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
+
+menuToggle.addEventListener('click', function () {
+    const isOpen = siteNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+        siteNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
+});
+</script>
 
 </body>
 </html>
