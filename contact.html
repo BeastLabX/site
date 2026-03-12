@@ -307,6 +307,31 @@ border-top:1px solid #2A2A2A;
 background:rgba(15,15,18,0.92);
 }
 
+.footer-links{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:10px;
+}
+
+.footer-links a{
+color:#BDBDBD;
+text-decoration:none;
+font-size:14px;
+transition:color 0.2s ease;
+}
+
+.footer-links a:hover{
+color:#1FA11F;
+}
+
+.footer-separator{
+color:#5f5f66;
+font-size:14px;
+}
+
 footer p{
 margin:0;
 font-size:14px;
@@ -532,6 +557,11 @@ Use this page for general enquiries, support questions, and BeastLabX ecosystem 
 </section>
 
 <footer>
+<div class="footer-links">
+<a href="privacy.html">Privacy Policy</a>
+<span class="footer-separator">•</span>
+<a href="terms.html">Terms of Use</a>
+</div>
 <p>© BeastLabX</p>
 </footer>
 
