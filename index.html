@@ -9,9 +9,7 @@
 <style>
 
 /* =============================================================
-   PAGE BASE
-   - Keeps your existing dark industrial look
-   - Polishes spacing, header states, hero balance, and mobile flow
+PAGE BASE
 ============================================================= */
 *{
 box-sizing:border-box;
@@ -31,10 +29,7 @@ color:#e5e5e5;
 }
 
 /* =============================================================
-   HEADER
-   - Cleaner spacing
-   - Better active/hover states
-   - Mobile hamburger included
+HEADER
 ============================================================= */
 header{
 display:flex;
@@ -125,10 +120,7 @@ transition:0.2s ease;
 }
 
 /* =============================================================
-   HERO
-   - Cleaner balance
-   - Better text width
-   - Stronger desktop-to-mobile behavior
+HERO
 ============================================================= */
 .hero{
 position:relative;
@@ -136,10 +128,10 @@ display:flex;
 align-items:center;
 justify-content:center;
 gap:56px;
-padding:110px 40px 100px 40px;
+padding:95px 40px 85px 40px;
 background:rgba(10,10,12,0.42);
 overflow:hidden;
-min-height:calc(100vh - 82px);
+min-height:calc(100vh - 90px);
 }
 
 .hero-inner{
@@ -171,7 +163,7 @@ left:70px;
 top:58px;
 width:430px;
 max-width:38vw;
-opacity:0.16;
+opacity:0.12;
 pointer-events:none;
 z-index:1;
 user-select:none;
@@ -180,7 +172,7 @@ user-select:none;
 .hero-text{
 position:relative;
 z-index:2;
-max-width:600px;
+max-width:540px;
 }
 
 .hero-kicker{
@@ -201,15 +193,15 @@ font-size:58px;
 line-height:1.02;
 margin:0 0 22px 0;
 color:#ffffff;
-max-width:560px;
+max-width:540px;
 }
 
 .hero-text p{
 font-size:18px;
-line-height:1.78;
+line-height:1.65;
 color:#BDBDBD;
 margin:0;
-max-width:560px;
+max-width:540px;
 }
 
 .hero-note{
@@ -278,11 +270,10 @@ box-shadow:0 30px 80px rgba(0,0,0,0.58);
 }
 
 /* =============================================================
-   FOOTER
-   - Slight polish only
+FOOTER
 ============================================================= */
 footer{
-padding:26px 20px 30px 20px;
+padding:34px 20px 40px 20px;
 text-align:center;
 border-top:1px solid #2A2A2A;
 background:rgba(15,15,18,0.92);
@@ -296,7 +287,7 @@ letter-spacing:0.2px;
 }
 
 /* =============================================================
-   TABLET
+TABLET
 ============================================================= */
 @media (max-width:1024px){
 
@@ -340,7 +331,7 @@ height:320px;
 }
 
 /* =============================================================
-   MOBILE
+MOBILE
 ============================================================= */
 @media (max-width:768px){
 
@@ -412,7 +403,7 @@ top:34px;
 transform:translateX(-50%);
 width:250px;
 max-width:68vw;
-opacity:0.14;
+opacity:0.12;
 }
 
 .hero-glow{
@@ -441,7 +432,7 @@ max-width:100%;
 
 .hero-text p{
 font-size:17px;
-line-height:1.72;
+line-height:1.7;
 max-width:100%;
 }
 
@@ -467,7 +458,7 @@ max-width:72vw;
 }
 
 /* =============================================================
-   SMALL PHONES
+SMALL PHONES
 ============================================================= */
 @media (max-width:420px){
 
@@ -546,7 +537,7 @@ font-size:18px;
 
 <div class="hero-kicker">Built for serious lifters</div>
 
-<h1>Built for serious training.</h1>
+<h1>Tools built for serious training.</h1>
 
 <p>
 BeastLabX is an ecosystem of focused tools designed to support structured planning,
@@ -575,20 +566,22 @@ real workout execution, and long-term progression without unnecessary clutter.
 </footer>
 
 <script>
+
 const menuToggle = document.getElementById('menuToggle');
 const siteNav = document.getElementById('siteNav');
 
 menuToggle.addEventListener('click', function () {
-    const isOpen = siteNav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+const isOpen = siteNav.classList.toggle('open');
+menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
 window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) {
-        siteNav.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    }
+if (window.innerWidth > 768) {
+siteNav.classList.remove('open');
+menuToggle.setAttribute('aria-expanded', 'false');
+}
 });
+
 </script>
 
 </body>
