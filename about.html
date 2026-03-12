@@ -304,6 +304,31 @@ border-top:1px solid rgba(255,255,255,0.08);
 background:rgba(10,10,12,0.78);
 }
 
+.footer-links{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:10px;
+}
+
+.footer-links a{
+color:#1FA11F;
+text-decoration:none;
+font-size:14px;
+transition:color 0.2s ease;
+}
+
+.footer-links a:hover{
+text-decoration:underline;
+}
+
+.footer-separator{
+color:#5f5f66;
+font-size:14px;
+}
+
 footer p{
 margin:0 0 10px 0;
 font-size:14px;
@@ -597,6 +622,11 @@ Creator of BeastLabX
 </main>
 
 <footer>
+<div class="footer-links">
+<a href="privacy.html">Privacy Policy</a>
+<span class="footer-separator">•</span>
+<a href="terms.html">Terms of Use</a>
+</div>
 <p>BeastLabX — Serious training log for lifters.</p>
 <p><a href="contact.html">Contact</a></p>
 </footer>
