@@ -10,8 +10,6 @@
 
 /* =============================================================
    PAGE BASE
-   - Matches the polished BeastLabX site styling
-   - Keeps the same visual identity without redesigning the page
 ============================================================= */
 *{
 box-sizing:border-box;
@@ -32,8 +30,6 @@ color:#e5e5e5;
 
 /* =============================================================
    HEADER
-   - Same polished shared header used across the site
-   - Includes mobile hamburger menu
 ============================================================= */
 header{
 display:flex;
@@ -125,7 +121,6 @@ transition:0.2s ease;
 
 /* =============================================================
    HERO
-   - Stronger spacing and clearer product-page feel
 ============================================================= */
 .hero{
 position:relative;
@@ -133,23 +128,6 @@ padding:92px 20px 74px 20px;
 text-align:center;
 background:linear-gradient(to bottom, rgba(10,10,12,0.76), rgba(10,10,12,0.56));
 overflow:hidden;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:
-radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 28%, rgba(0,0,0,0) 60%),
-repeating-linear-gradient(
-90deg,
-rgba(255,255,255,0.012) 0px,
-rgba(255,255,255,0.012) 1px,
-rgba(0,0,0,0) 3px,
-rgba(0,0,0,0) 14px
-);
-opacity:0.35;
-pointer-events:none;
 }
 
 .hero-inner{
@@ -205,239 +183,38 @@ box-shadow:0 0 18px rgba(31,161,31,0.45);
 }
 
 /* =============================================================
-   SCREENSHOT SECTION
-   - Cleaner presentation for the device preview
-============================================================= */
-.screenshot-section{
-padding:84px 24px 92px 24px;
-background:rgba(15,15,18,0.72);
-text-align:center;
-}
-
-.screenshot-inner{
-max-width:1000px;
-margin:0 auto;
-}
-
-.screenshot-inner h2{
-margin:0 0 18px 0;
-font-size:40px;
-color:#ffffff;
-}
-
-.screenshot-inner p{
-margin:0 auto 36px auto;
-max-width:760px;
-font-size:18px;
-line-height:1.75;
-color:#BDBDBD;
-}
-
-.phone-frame{
-display:inline-block;
-padding:14px;
-border-radius:34px;
-background:rgba(18,18,22,0.92);
-border:1px solid rgba(255,255,255,0.10);
-box-shadow:0 22px 55px rgba(0,0,0,0.35);
-}
-
-.phone-frame img{
-display:block;
-width:340px;
-max-width:100%;
-height:auto;
-border-radius:24px;
-}
-
-/* =============================================================
-   FEATURES
-   - Better width control and card polish
-============================================================= */
-.features-section{
-padding:90px 24px;
-background:rgba(15,15,18,0.72);
-}
-
-.features-inner{
-max-width:1100px;
-margin:0 auto;
-display:flex;
-flex-direction:column;
-gap:24px;
-}
-
-.features-heading{
-max-width:820px;
-margin:0 auto 10px auto;
-text-align:center;
-}
-
-.features-heading h2{
-margin:0 0 14px 0;
-font-size:38px;
-color:#ffffff;
-}
-
-.features-heading p{
-margin:0;
-font-size:18px;
-line-height:1.75;
-color:#BDBDBD;
-}
-
-.feature-grid{
-display:grid;
-grid-template-columns:repeat(2, minmax(0, 1fr));
-gap:24px;
-}
-
-.feature{
-background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
-border:1px solid rgba(255,255,255,0.08);
-border-radius:18px;
-padding:28px 28px;
-box-shadow:0 14px 34px rgba(0,0,0,0.18);
-transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature:hover{
-transform:translateY(-2px);
-border-color:rgba(31,161,31,0.22);
-box-shadow:0 18px 40px rgba(0,0,0,0.22);
-}
-
-.feature h2{
-margin:0 0 10px 0;
-font-size:25px;
-color:#ffffff;
-}
-
-.feature p{
-margin:0;
-font-size:17px;
-line-height:1.75;
-color:#C8C8C8;
-}
-
-/* =============================================================
-   PLANNED DIRECTION
-============================================================= */
-.roadmap-section{
-padding:90px 24px;
-background:rgba(15,15,18,0.72);
-}
-
-.roadmap-inner{
-max-width:1100px;
-margin:0 auto;
-display:flex;
-flex-direction:column;
-gap:24px;
-}
-
-.roadmap-heading{
-max-width:860px;
-margin:0 auto 10px auto;
-text-align:center;
-}
-
-.roadmap-heading h2{
-margin:0 0 14px 0;
-font-size:38px;
-color:#ffffff;
-}
-
-.roadmap-heading p{
-margin:0;
-font-size:18px;
-line-height:1.75;
-color:#BDBDBD;
-}
-
-.roadmap-grid{
-display:grid;
-grid-template-columns:repeat(2, minmax(0, 1fr));
-gap:24px;
-}
-
-.roadmap-card{
-background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
-border:1px solid rgba(255,255,255,0.08);
-border-radius:18px;
-padding:28px 28px;
-box-shadow:0 14px 34px rgba(0,0,0,0.18);
-transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.roadmap-card:hover{
-transform:translateY(-2px);
-border-color:rgba(31,161,31,0.22);
-box-shadow:0 18px 40px rgba(0,0,0,0.22);
-}
-
-.roadmap-card h3{
-margin:0 0 10px 0;
-font-size:24px;
-color:#ffffff;
-}
-
-.roadmap-card p{
-margin:0;
-font-size:17px;
-line-height:1.75;
-color:#C8C8C8;
-}
-
-/* =============================================================
-   CTA
-============================================================= */
-.cta{
-padding:90px 20px;
-text-align:center;
-background:rgba(15,15,18,0.72);
-}
-
-.cta h2{
-font-size:40px;
-margin:0 0 12px 0;
-color:#ffffff;
-}
-
-.cta p{
-font-size:18px;
-color:#BDBDBD;
-margin:0 0 30px 0;
-line-height:1.7;
-}
-
-.cta-button{
-display:inline-block;
-padding:14px 26px;
-background:#1FA11F;
-color:#fff;
-text-decoration:none;
-border-radius:12px;
-font-weight:bold;
-font-size:16px;
-box-shadow:0 0 24px rgba(31,161,31,0.18);
-transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.cta-button:hover{
-transform:translateY(-1px);
-background:#229f22;
-box-shadow:0 0 28px rgba(31,161,31,0.24);
-}
-
-/* =============================================================
    FOOTER
 ============================================================= */
 footer{
-padding:26px 20px 30px 20px;
+padding:34px 20px 40px 20px;
 text-align:center;
 border-top:1px solid #2A2A2A;
 background:rgba(15,15,18,0.92);
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:10px;
+}
+
+.footer-links a{
+color:#BDBDBD;
+text-decoration:none;
+font-size:14px;
+transition:color 0.2s ease;
+}
+
+.footer-links a:hover{
+color:#1FA11F;
+}
+
+.footer-separator{
+color:#5f5f66;
+font-size:14px;
 }
 
 footer p{
@@ -448,81 +225,9 @@ letter-spacing:0.2px;
 }
 
 /* =============================================================
-   TABLET
-============================================================= */
-@media (max-width:1024px){
-
-header{
-padding:16px 24px;
-}
-
-.hero{
-padding:78px 20px 64px 20px;
-}
-
-.hero h1{
-font-size:46px;
-}
-
-.hero p{
-font-size:17px;
-}
-
-.screenshot-inner h2{
-font-size:32px;
-}
-
-.screenshot-inner p{
-font-size:16px;
-}
-
-.features-heading h2,
-.roadmap-heading h2{
-font-size:30px;
-}
-
-.features-heading p,
-.roadmap-heading p{
-font-size:16px;
-}
-
-.feature h2,
-.roadmap-card h3{
-font-size:22px;
-}
-
-.feature p,
-.roadmap-card p{
-font-size:16px;
-}
-
-}
-
-/* =============================================================
    MOBILE
 ============================================================= */
 @media (max-width:768px){
-
-body{
-background:
-linear-gradient(rgba(15,15,18,0.78), rgba(15,15,18,0.82)),
-url('bg.png') center center / cover no-repeat fixed;
-}
-
-header{
-padding:16px 18px;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.logo{
-font-size:18px;
-gap:10px;
-}
-
-.logo img{
-height:34px;
-}
 
 .menu-toggle{
 display:block;
@@ -544,135 +249,6 @@ nav.open{
 display:flex;
 }
 
-nav a{
-font-size:18px;
-}
-
-nav a.active::after{
-display:none;
-}
-
-.hero{
-padding:68px 20px 56px 20px;
-}
-
-.hero-label{
-font-size:12px;
-padding:7px 12px;
-}
-
-.hero img.app-icon{
-width:96px;
-margin-bottom:18px;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.screenshot-section{
-padding:64px 20px 72px 20px;
-}
-
-.screenshot-inner h2{
-font-size:30px;
-}
-
-.screenshot-inner p{
-font-size:16px;
-}
-
-.phone-frame{
-padding:10px;
-border-radius:26px;
-}
-
-.phone-frame img{
-width:280px;
-border-radius:18px;
-}
-
-.features-section,
-.roadmap-section{
-padding:72px 20px;
-}
-
-.features-inner,
-.roadmap-inner{
-gap:20px;
-}
-
-.feature-grid,
-.roadmap-grid{
-grid-template-columns:1fr;
-gap:20px;
-}
-
-.feature,
-.roadmap-card{
-padding:22px;
-}
-
-.feature h2,
-.roadmap-card h3{
-font-size:22px;
-}
-
-.feature p,
-.roadmap-card p{
-font-size:15px;
-}
-
-.cta{
-padding:72px 20px;
-}
-
-.cta h2{
-font-size:30px;
-}
-
-.cta p{
-font-size:16px;
-}
-
-.cta-button{
-width:100%;
-max-width:240px;
-box-sizing:border-box;
-text-align:center;
-}
-
-}
-
-/* =============================================================
-   SMALL PHONES
-============================================================= */
-@media (max-width:420px){
-
-.hero{
-padding:60px 16px 50px 16px;
-}
-
-.hero h1{
-font-size:34px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.logo span{
-font-size:18px;
-}
-
-.phone-frame img{
-width:250px;
-}
-
 }
 
 </style>
@@ -681,12 +257,13 @@ width:250px;
 <body>
 
 <header>
+
 <a href="index.html" class="logo">
 <img src="logo.png" alt="BeastLabX">
 <span>BeastLabX</span>
 </a>
 
-<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+<button class="menu-toggle" id="menuToggle">
 <span></span>
 <span></span>
 <span></span>
@@ -699,6 +276,7 @@ width:250px;
 <a href="faq.html">FAQ</a>
 <a href="contact.html">Contact</a>
 </nav>
+
 </header>
 
 <section class="hero">
@@ -715,125 +293,6 @@ Track workouts, structured programs, and HIIT sessions without unnecessary clutt
 
 <div class="section-divider"></div>
 
-<section class="screenshot-section">
-<div class="screenshot-inner">
-<h2>See the app in action</h2>
-<p>
-Built around real training sessions, clear logging, and a focused layout designed for serious lifters.
-</p>
-
-<div class="phone-frame">
-<img src="phone.png" alt="BeastLabX App Screenshot">
-</div>
-</div>
-</section>
-
-<div class="section-divider"></div>
-
-<section class="features-section">
-<div class="features-inner">
-
-<div class="features-heading">
-<h2>What BeastLabX App is built to do</h2>
-<p>
-BeastLabX App is designed to support structured execution, real workout logging, and long-term progression for serious lifters.
-</p>
-</div>
-
-<div class="feature-grid">
-<div class="feature">
-<h2>Structured Programs</h2>
-<p>
-Follow organized training programs built for consistency and progression instead of random workouts.
-</p>
-</div>
-
-<div class="feature">
-<h2>Workout Tracking</h2>
-<p>
-Log sets, reps, and weight quickly during training sessions with a layout designed for real lifting.
-</p>
-</div>
-
-<div class="feature">
-<h2>HIIT Mode</h2>
-<p>
-Run interval sessions using a clean active and rest timer designed specifically for HIIT workouts.
-</p>
-</div>
-
-<div class="feature">
-<h2>Exercise Library</h2>
-<p>
-Train with a large library of strength and bodybuilding exercises covering real gym training.
-</p>
-</div>
-
-<div class="feature">
-<h2>Progress Stats</h2>
-<p>
-Review training history and track performance over time to support long-term progression.
-</p>
-</div>
-
-<div class="feature">
-<h2>Share Results</h2>
-<p>
-Generate clean workout result cards designed to highlight the achievement.
-</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<div class="section-divider"></div>
-
-<section class="roadmap-section">
-<div class="roadmap-inner">
-
-<div class="roadmap-heading">
-<h2>Planned Direction</h2>
-<p>
-BeastLabX is being built with long-term progression in mind. Future development is expected to expand training insights, program tools, wearable support, and export options while keeping the app focused and practical.
-</p>
-</div>
-
-<div class="roadmap-grid">
-<div class="roadmap-card">
-<h3>Deeper Training Insights</h3>
-<p>
-Expanded statistics and clearer training summaries to make long-term progression easier to review.
-</p>
-</div>
-
-<div class="roadmap-card">
-<h3>Expanded Program Tools</h3>
-<p>
-More capable planning and program-building features designed to support structured training over time.
-</p>
-</div>
-
-<div class="roadmap-card">
-<h3>Better Wearable Support</h3>
-<p>
-Improved device compatibility and stronger integration support for users who train with wearable data.
-</p>
-</div>
-
-<div class="roadmap-card">
-<h3>Export and Print Options</h3>
-<p>
-Cleaner export tools for sharing results, printing programs, and keeping training records accessible.
-</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<div class="section-divider"></div>
-
 <section class="cta">
 <h2>BeastLabX App</h2>
 <p>The BeastLabX App is currently in development.</p>
@@ -841,7 +300,15 @@ Cleaner export tools for sharing results, printing programs, and keeping trainin
 </section>
 
 <footer>
+
+<div class="footer-links">
+<a href="privacy.html">Privacy Policy</a>
+<span class="footer-separator">•</span>
+<a href="terms.html">Terms of Use</a>
+</div>
+
 <p>© BeastLabX</p>
+
 </footer>
 
 <script>
@@ -849,15 +316,15 @@ const menuToggle = document.getElementById('menuToggle');
 const siteNav = document.getElementById('siteNav');
 
 menuToggle.addEventListener('click', function () {
-    const isOpen = siteNav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+const isOpen = siteNav.classList.toggle('open');
+menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
 window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) {
-        siteNav.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    }
+if (window.innerWidth > 768) {
+siteNav.classList.remove('open');
+menuToggle.setAttribute('aria-expanded', 'false');
+}
 });
 </script>
 
