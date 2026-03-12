@@ -10,8 +10,6 @@
 
 /* =============================================================
    PAGE BASE
-   - Matches the polished BeastLabX site styling
-   - Keeps the same visual identity without redesigning the page
 ============================================================= */
 *{
 box-sizing:border-box;
@@ -32,8 +30,6 @@ color:#e5e5e5;
 
 /* =============================================================
    HEADER
-   - Same polished shared header used across the site
-   - Includes mobile hamburger menu
 ============================================================= */
 header{
 display:flex;
@@ -125,7 +121,6 @@ transition:0.2s ease;
 
 /* =============================================================
    HERO
-   - Same top-section style as the other polished pages
 ============================================================= */
 .hero{
 position:relative;
@@ -199,8 +194,6 @@ box-shadow:0 0 18px rgba(31,161,31,0.45);
 
 /* =============================================================
    FAQ
-   - Polished card layout
-   - Better spacing and consistency with other pages
 ============================================================= */
 .faq{
 padding:90px 24px 100px 24px;
@@ -252,6 +245,31 @@ padding:26px 20px 30px 20px;
 text-align:center;
 border-top:1px solid #2A2A2A;
 background:rgba(15,15,18,0.92);
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:10px;
+}
+
+.footer-links a{
+color:#BDBDBD;
+text-decoration:none;
+font-size:14px;
+transition:color 0.2s ease;
+}
+
+.footer-links a:hover{
+color:#1FA11F;
+}
+
+.footer-separator{
+color:#5f5f66;
+font-size:14px;
 }
 
 footer p{
@@ -483,6 +501,12 @@ Yes. BeastLabX is being built as an ecosystem with additional tools like BeastBl
 </section>
 
 <footer>
+
+<div class="footer-links">
+<a href="privacy.html">Privacy Policy</a>
+<span class="footer-separator">•</span>
+<a href="terms.html">Terms of Use</a>
+</div>
 
 <p>© BeastLabX</p>
 
