@@ -126,48 +126,6 @@ color:#d0d0d0;
 }
 
 /* =============================================================
-FOOTER
-============================================================= */
-footer{
-padding:34px 20px 40px 20px;
-text-align:center;
-border-top:1px solid #2A2A2A;
-background:rgba(15,15,18,0.92);
-}
-
-.footer-links{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:10px;
-}
-
-.footer-links a{
-color:#BDBDBD;
-text-decoration:none;
-font-size:14px;
-transition:color 0.2s ease;
-}
-
-.footer-links a:hover{
-color:#1FA11F;
-}
-
-.footer-separator{
-color:#5f5f66;
-font-size:14px;
-}
-
-footer p{
-margin:0;
-font-size:14px;
-color:#8E8E93;
-letter-spacing:0.2px;
-}
-
-/* =============================================================
 MOBILE
 ============================================================= */
 @media (max-width:768px){
@@ -277,17 +235,15 @@ If you have any questions about this Privacy Policy, you may contact the develop
 
 </div>
 
-<footer>
+<div id="footer-placeholder"></div>
 
-<div class="footer-links">
-<a href="privacy.html">Privacy Policy</a>
-<span class="footer-separator">•</span>
-<a href="terms.html">Terms of Use</a>
-</div>
-
-<p>© BeastLabX</p>
-
-</footer>
+<script>
+fetch("footer.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("footer-placeholder").innerHTML = data;
+});
+</script>
 
 </body>
 </html>
