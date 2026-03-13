@@ -353,23 +353,6 @@ border-color:#3A3A3A;
 }
 
 /* =============================================================
-   FOOTER
-============================================================= */
-footer{
-padding:26px 20px 30px 20px;
-text-align:center;
-border-top:1px solid #2A2A2A;
-background:rgba(15,15,18,0.92);
-}
-
-footer p{
-margin:0;
-font-size:14px;
-color:#8E8E93;
-letter-spacing:0.2px;
-}
-
-/* =============================================================
    TABLET
 ============================================================= */
 @media (max-width:1024px){
@@ -663,9 +646,7 @@ font-size:18px;
 </div>
 </section>
 
-<footer>
-<p>© BeastLabX</p>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script>
 const menuToggle = document.getElementById('menuToggle');
@@ -681,6 +662,12 @@ window.addEventListener('resize', function () {
         siteNav.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
     }
+});
+
+fetch("footer.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("footer-placeholder").innerHTML = data;
 });
 </script>
 
