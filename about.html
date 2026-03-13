@@ -294,61 +294,6 @@ line-height:1.7;
 }
 
 /* =============================================================
-   FOOTER
-============================================================= */
-footer{
-padding:26px 20px 30px;
-text-align:center;
-color:#a8a8a8;
-border-top:1px solid rgba(255,255,255,0.08);
-background:rgba(10,10,12,0.78);
-}
-
-.footer-links{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:10px;
-}
-
-.footer-links a{
-color:#1FA11F;
-text-decoration:none;
-font-size:14px;
-transition:color 0.2s ease;
-}
-
-.footer-links a:hover{
-text-decoration:underline;
-}
-
-.footer-separator{
-color:#5f5f66;
-font-size:14px;
-}
-
-footer p{
-margin:0 0 10px 0;
-font-size:14px;
-line-height:1.7;
-}
-
-footer p:last-child{
-margin-bottom:0;
-}
-
-footer a{
-color:#1FA11F;
-text-decoration:none;
-}
-
-footer a:hover{
-text-decoration:underline;
-}
-
-/* =============================================================
    TABLET
 ============================================================= */
 @media (max-width:1024px){
@@ -621,15 +566,7 @@ Creator of BeastLabX
 </section>
 </main>
 
-<footer>
-<div class="footer-links">
-<a href="privacy.html">Privacy Policy</a>
-<span class="footer-separator">•</span>
-<a href="terms.html">Terms of Use</a>
-</div>
-<p>BeastLabX — Serious training log for lifters.</p>
-<p><a href="contact.html">Contact</a></p>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script>
 const menuToggle = document.getElementById('menuToggle');
@@ -646,15 +583,13 @@ window.addEventListener('resize', function () {
         menuToggle.setAttribute('aria-expanded', 'false');
     }
 });
-</script>
-<div id="footer-placeholder"></div>
 
-<script>
 fetch("footer.html")
 .then(response => response.text())
 .then(data => {
 document.getElementById("footer-placeholder").innerHTML = data;
 });
 </script>
+
 </body>
 </html>
