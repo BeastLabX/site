@@ -422,48 +422,6 @@ border-color:#3A3A3A;
 }
 
 /* =============================================================
-   FOOTER
-============================================================= */
-footer{
-padding:26px 20px 30px 20px;
-text-align:center;
-border-top:1px solid #2A2A2A;
-background:rgba(15,15,18,0.92);
-}
-
-.footer-links{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:10px;
-}
-
-.footer-links a{
-color:#BDBDBD;
-text-decoration:none;
-font-size:14px;
-transition:color 0.2s ease;
-}
-
-.footer-links a:hover{
-color:#1FA11F;
-}
-
-.footer-separator{
-color:#5f5f66;
-font-size:14px;
-}
-
-footer p{
-margin:0;
-font-size:14px;
-color:#8E8E93;
-letter-spacing:0.2px;
-}
-
-/* =============================================================
    TABLET
 ============================================================= */
 @media (max-width:1024px){
@@ -784,14 +742,7 @@ The BeastLabX ecosystem will expand with more dedicated products built around pr
 </div>
 </section>
 
-<footer>
-<div class="footer-links">
-<a href="privacy.html">Privacy Policy</a>
-<span class="footer-separator">•</span>
-<a href="terms.html">Terms of Use</a>
-</div>
-<p>© BeastLabX</p>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script>
 const menuToggle = document.getElementById('menuToggle');
@@ -807,6 +758,12 @@ window.addEventListener('resize', function () {
         siteNav.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
     }
+});
+
+fetch("footer.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("footer-placeholder").innerHTML = data;
 });
 </script>
 
