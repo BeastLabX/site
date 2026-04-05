@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>BeastLabX App</title>
+<title>BeastLabX App – Serious training log for lifters</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BeastLabX App — Serious training log for lifters">
+<meta name="description" content="BeastLabX App – Serious training log for lifters. Track workouts, structured programs, HIIT sessions, history, stats, and exercise library in one focused app.">
 
 <style>
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+
+/* =============================================================
+PAGE BASE
+============================================================= */
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -18,59 +28,749 @@ url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
 }
 
-/* HEADER */
+/* =============================================================
+HEADER
+============================================================= */
 header{
-display:flex;justify-content:space-between;align-items:center;
-padding:18px 30px;border-bottom:2px solid #1FA11F;
-background:rgba(15,15,18,0.92);position:sticky;top:0;z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 30px;
+border-bottom:2px solid #1FA11F;
+background:rgba(15,15,18,0.92);
+backdrop-filter:blur(6px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 8px 28px rgba(0,0,0,0.20);
 }
-.logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;}
-.logo img{height:40px;}
-nav{display:flex;gap:24px;}
-nav a{color:#fff;text-decoration:none;}
-nav a.active{color:#1FA11F;}
 
-/* HERO */
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:20px;
+font-weight:bold;
+color:#ffffff;
+text-decoration:none;
+min-width:0;
+}
+
+.logo img{
+height:40px;
+width:auto;
+display:block;
+}
+
+.logo span{
+white-space:nowrap;
+letter-spacing:0.2px;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:24px;
+}
+
+nav a{
+position:relative;
+text-decoration:none;
+color:#ffffff;
+font-size:16px;
+padding:6px 0;
+transition:color 0.2s ease, opacity 0.2s ease;
+}
+
+nav a:hover{
+color:#1FA11F;
+}
+
+nav a.active{
+color:#1FA11F;
+}
+
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-8px;
+width:100%;
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 10px rgba(31,161,31,0.45);
+}
+
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+padding:6px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+display:block;
+width:24px;
+height:2px;
+background:#ffffff;
+margin:5px 0;
+border-radius:2px;
+transition:0.2s ease;
+}
+
+/* =============================================================
+HERO
+============================================================= */
 .hero{
-text-align:center;padding:90px 20px;background:linear-gradient(to bottom, rgba(10,10,12,0.76), rgba(10,10,12,0.56));
-}
-.hero img{width:110px;margin-bottom:20px;}
-.hero h1{font-size:52px;margin:0 0 14px;}
-.hero p{color:#BDBDBD;max-width:700px;margin:auto;}
-
-/* BUTTON */
-.btn{
-display:inline-block;margin-top:20px;padding:14px 26px;
-background:#1FA11F;color:#fff;text-decoration:none;border-radius:10px;font-weight:bold;
+position:relative;
+overflow:hidden;
+padding:98px 24px 84px 24px;
+background:
+linear-gradient(to bottom, rgba(10,10,12,0.78), rgba(10,10,12,0.54));
 }
 
-/* SECTION */
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 50% 18%, rgba(31,161,31,0.16) 0%, rgba(31,161,31,0.08) 18%, rgba(31,161,31,0.02) 38%, transparent 58%);
+pointer-events:none;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.010) 0px,
+rgba(255,255,255,0.010) 1px,
+rgba(0,0,0,0) 4px,
+rgba(0,0,0,0) 16px
+);
+opacity:0.20;
+pointer-events:none;
+}
+
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:1240px;
+margin:0 auto;
+display:grid;
+grid-template-columns:minmax(0, 560px) minmax(0, 460px);
+gap:48px;
+align-items:center;
+}
+
+.hero-copy{
+max-width:560px;
+}
+
+.hero-label{
+display:inline-block;
+margin-bottom:18px;
+padding:9px 14px;
+border:1px solid rgba(31,161,31,0.34);
+border-radius:999px;
+background:rgba(31,161,31,0.10);
+color:#D6F6D6;
+font-size:13px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+}
+
+.hero h1{
+margin:0 0 18px 0;
+font-size:64px;
+line-height:0.98;
+color:#ffffff;
+}
+
+.hero p{
+margin:0;
+font-size:20px;
+line-height:1.75;
+color:#BDBDBD;
+max-width:540px;
+}
+
+.hero-actions{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.hero-button{
+display:inline-block;
+padding:15px 26px;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
+text-decoration:none;
+text-align:center;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-button:hover{
+transform:translateY(-1px);
+}
+
+.hero-button.primary{
+background:#1FA11F;
+color:#ffffff;
+box-shadow:0 0 24px rgba(31,161,31,0.22);
+}
+
+.hero-button.primary:hover{
+background:#229f22;
+box-shadow:0 0 30px rgba(31,161,31,0.28);
+}
+
+.hero-button.secondary{
+background:rgba(0,0,0,0.24);
+border:1px solid #2A2A2A;
+color:#ffffff;
+}
+
+.hero-button.secondary:hover{
+background:rgba(255,255,255,0.04);
+border-color:#3A3A3A;
+}
+
+.hero-points{
+margin-top:28px;
+display:grid;
+grid-template-columns:repeat(2, minmax(0,1fr));
+gap:12px 18px;
+max-width:520px;
+}
+
+.hero-point{
+padding-left:18px;
+position:relative;
+font-size:15px;
+line-height:1.65;
+color:#C8C8C8;
+}
+
+.hero-point::before{
+content:"";
+position:absolute;
+left:0;
+top:9px;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#1FA11F;
+box-shadow:0 0 12px rgba(31,161,31,0.45);
+}
+
+.hero-visual{
+display:flex;
+justify-content:center;
+}
+
+.hero-device{
+position:relative;
+width:100%;
+max-width:430px;
+padding:16px;
+border-radius:34px;
+background:linear-gradient(to bottom, rgba(27,27,31,0.96), rgba(16,16,19,0.96));
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 28px 80px rgba(0,0,0,0.44);
+}
+
+.hero-device::before{
+content:"";
+position:absolute;
+left:18px;
+right:18px;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 16px rgba(31,161,31,0.45);
+border-radius:3px;
+}
+
+.hero-device img{
+display:block;
+width:100%;
+height:auto;
+border-radius:24px;
+box-shadow:0 18px 40px rgba(0,0,0,0.32);
+}
+
+/* =============================================================
+SHARED SECTIONS
+============================================================= */
+.section-divider{
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
 .section{
-max-width:1100px;margin:auto;padding:70px 20px;text-align:center;
-}
-.section h2{font-size:34px;margin-bottom:10px;}
-.section p{color:#BDBDBD;margin-bottom:30px;}
-
-/* FEATURES */
-.features{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
-}
-.feature{
-background:#1C1C1C;border:1px solid #2A2A2A;padding:20px;border-radius:14px;
+padding:90px 24px;
+background:rgba(15,15,18,0.72);
 }
 
-/* SCREENSHOTS */
-.screens{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:20px;
-}
-.screens img{
-width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.5);
+.section.alt{
+background:rgba(12,12,15,0.80);
 }
 
-/* MOBILE */
-@media(max-width:768px){
-.hero h1{font-size:38px;}
+.section-inner{
+max-width:1240px;
+margin:0 auto;
 }
+
+.section-heading{
+max-width:860px;
+margin:0 auto 42px auto;
+text-align:center;
+}
+
+.section-label{
+display:inline-block;
+margin-bottom:16px;
+padding:8px 13px;
+border-radius:999px;
+border:1px solid rgba(31,161,31,0.28);
+background:rgba(31,161,31,0.08);
+color:#D6F6D6;
+font-size:12px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+}
+
+.section-heading h2{
+margin:0 0 14px 0;
+font-size:42px;
+line-height:1.14;
+color:#ffffff;
+}
+
+.section-heading p{
+margin:0;
+font-size:18px;
+line-height:1.75;
+color:#BDBDBD;
+}
+
+/* =============================================================
+FEATURES
+============================================================= */
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0,1fr));
+gap:24px;
+}
+
+.feature-card{
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:22px;
+padding:28px 24px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover{
+transform:translateY(-2px);
+border-color:rgba(31,161,31,0.24);
+box-shadow:0 22px 50px rgba(0,0,0,0.24);
+}
+
+.feature-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.feature-card h3{
+margin:0 0 12px 0;
+font-size:25px;
+line-height:1.2;
+color:#ffffff;
+}
+
+.feature-card p{
+margin:0 0 18px 0;
+font-size:16px;
+line-height:1.75;
+color:#C8C8C8;
+}
+
+.feature-list{
+margin:0;
+padding:0;
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.feature-list li{
+position:relative;
+padding-left:18px;
+font-size:15px;
+line-height:1.65;
+color:#BDBDBD;
+}
+
+.feature-list li::before{
+content:"";
+position:absolute;
+left:0;
+top:9px;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#1FA11F;
+box-shadow:0 0 12px rgba(31,161,31,0.45);
+}
+
+/* =============================================================
+SCREENSHOTS
+============================================================= */
+.screenshot-grid{
+display:grid;
+grid-template-columns:repeat(3, minmax(0,1fr));
+gap:24px;
+}
+
+.screenshot-card{
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+padding:18px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.screenshot-card:hover{
+transform:translateY(-2px);
+border-color:rgba(31,161,31,0.22);
+box-shadow:0 22px 50px rgba(0,0,0,0.24);
+}
+
+.screenshot-card img{
+display:block;
+width:100%;
+height:auto;
+border-radius:18px;
+box-shadow:0 18px 40px rgba(0,0,0,0.36);
+}
+
+.screenshot-card .caption{
+margin-top:14px;
+font-size:15px;
+line-height:1.6;
+color:#C8C8C8;
+text-align:center;
+}
+
+/* =============================================================
+ORIGIN / CTA
+============================================================= */
+.story-card,
+.cta-card{
+max-width:1080px;
+margin:0 auto;
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+padding:36px 30px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+}
+
+.story-card::before,
+.cta-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.story-card p{
+margin:0;
+font-size:20px;
+line-height:1.95;
+color:#D2D2D2;
+text-align:center;
+}
+
+.cta-card{
+text-align:center;
+}
+
+.cta-card h2{
+margin:0 0 14px 0;
+font-size:42px;
+line-height:1.16;
+color:#ffffff;
+}
+
+.cta-card p{
+margin:0 auto 26px auto;
+max-width:760px;
+font-size:18px;
+line-height:1.8;
+color:#BDBDBD;
+}
+
+.cta-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+}
+
+/* =============================================================
+TABLET
+============================================================= */
+@media (max-width:1024px){
+
+header{
+padding:16px 24px;
+}
+
+.hero{
+padding:84px 22px 76px 22px;
+}
+
+.hero-inner{
+grid-template-columns:1fr;
+gap:34px;
+}
+
+.hero-copy{
+max-width:100%;
+text-align:center;
+margin:0 auto;
+}
+
+.hero p{
+margin:0 auto;
+}
+
+.hero-actions{
+justify-content:center;
+}
+
+.hero-points{
+margin-left:auto;
+margin-right:auto;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.section-heading h2{
+font-size:34px;
+}
+
+.feature-grid{
+grid-template-columns:1fr;
+}
+
+.screenshot-grid{
+grid-template-columns:repeat(2, minmax(0,1fr));
+}
+
+}
+
+/* =============================================================
+MOBILE
+============================================================= */
+@media (max-width:768px){
+
+body{
+background:
+linear-gradient(rgba(15,15,18,0.78), rgba(15,15,18,0.82)),
+url('bg.png') center center / cover no-repeat fixed;
+}
+
+header{
+padding:16px 18px;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:18px;
+gap:10px;
+}
+
+.logo img{
+height:34px;
+}
+
+.menu-toggle{
+display:block;
+margin-left:auto;
+}
+
+nav{
+display:none;
+width:100%;
+flex-direction:column;
+align-items:center;
+gap:18px;
+padding:18px 0 8px 0;
+border-top:1px solid #2A2A2A;
+margin-top:10px;
+}
+
+nav.open{
+display:flex;
+}
+
+nav a{
+font-size:18px;
+}
+
+nav a.active::after{
+display:none;
+}
+
+.hero{
+padding:70px 20px 60px 20px;
+}
+
+.hero-label{
+font-size:12px;
+padding:7px 12px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.hero-points{
+grid-template-columns:1fr;
+gap:10px;
+}
+
+.hero-device{
+max-width:320px;
+padding:12px;
+border-radius:28px;
+}
+
+.section{
+padding:72px 20px;
+}
+
+.section-heading{
+margin-bottom:30px;
+}
+
+.section-heading h2{
+font-size:30px;
+}
+
+.section-heading p{
+font-size:16px;
+}
+
+.feature-card{
+padding:24px 18px;
+border-radius:18px;
+}
+
+.feature-card h3{
+font-size:22px;
+}
+
+.feature-card p,
+.feature-list li{
+font-size:15px;
+}
+
+.screenshot-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.screenshot-card{
+padding:14px;
+border-radius:18px;
+}
+
+.story-card,
+.cta-card{
+padding:26px 18px;
+border-radius:18px;
+}
+
+.story-card p{
+font-size:17px;
+line-height:1.85;
+}
+
+.cta-card h2{
+font-size:30px;
+}
+
+.cta-card p{
+font-size:16px;
+}
+
+}
+
+/* =============================================================
+SMALL PHONES
+============================================================= */
+@media (max-width:420px){
+
+.hero{
+padding:62px 16px 54px 16px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-button{
+width:100%;
+}
+
+.logo span{
+font-size:18px;
+}
+
+}
+
 </style>
 </head>
 
@@ -78,9 +778,17 @@ width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.5);
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png"><span>BeastLabX</span>
+<img src="logo.png" alt="BeastLabX">
+<span>BeastLabX</span>
 </a>
-<nav>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<nav id="siteNav">
 <a href="index.html">Home</a>
 <a href="apps.html" class="active">Apps</a>
 <a href="about.html">About</a>
@@ -90,59 +798,220 @@ width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.5);
 </header>
 
 <section class="hero">
-<img src="app-logo.png">
-<h1>Serious training log for lifters</h1>
-<p>Track workouts, follow structured programs, and run HIIT sessions with zero fluff.</p>
-<a class="btn" href="https://play.google.com/store/apps/details?id=com.beastlabx.app&pcampaignid=web_share">
-Download on Google Play
-</a>
+<div class="hero-inner">
+
+<div class="hero-copy">
+<div class="hero-label">Now live on Google Play</div>
+<h1>Serious training log for lifters.</h1>
+<p>
+BeastLabX is built for lifters who want structured training, clean workout tracking,
+and real progression without unnecessary fluff. Track workouts, follow programs,
+run HIIT sessions, and review your training history in one focused app.
+</p>
+
+<div class="hero-actions">
+<a class="hero-button primary" href="https://play.google.com/store/apps/details?id=com.beastlabx.app&pcampaignid=web_share">Download on Google Play</a>
+<a class="hero-button secondary" href="#screenshots">View Screens</a>
+</div>
+
+<div class="hero-points">
+<div class="hero-point">Structured workout logging</div>
+<div class="hero-point">Program-based training flow</div>
+<div class="hero-point">Built-in HIIT mode</div>
+<div class="hero-point">History, stats, and exercise library</div>
+</div>
+</div>
+
+<div class="hero-visual">
+<div class="hero-device">
+<img src="blx-hero-workout.jpg" alt="BeastLabX workout screen">
+</div>
+</div>
+
+</div>
 </section>
+
+<div class="section-divider"></div>
 
 <section class="section">
-<h2>Why BeastLabX</h2>
-<p>Built for lifters who train with purpose and track real progress.</p>
+<div class="section-inner">
 
-<div class="features">
-<div class="feature">
-<h3>Structured Programs</h3>
-<p>Follow real training programs designed for progression.</p>
+<div class="section-heading">
+<div class="section-label">Why BeastLabX</div>
+<h2>Focused on training, not distractions</h2>
+<p>
+BeastLabX is designed around serious gym use. It keeps the experience clean, structured,
+and practical so your attention stays on training instead of clutter.
+</p>
 </div>
 
-<div class="feature">
-<h3>Workout Tracking</h3>
-<p>Log sets, reps, and weight with speed and precision.</p>
+<div class="feature-grid">
+
+<div class="feature-card">
+<h3>Run your workouts properly</h3>
+<p>
+Follow your program, log sets and weights, and keep the training session moving with a clean,
+purpose-built workout screen.
+</p>
+<ul class="feature-list">
+<li>Quick workout execution flow</li>
+<li>Clear set and rep tracking</li>
+<li>Built for real gym use</li>
+</ul>
 </div>
 
-<div class="feature">
-<h3>HIIT Timer</h3>
-<p>Run interval sessions with built-in timing and flow.</p>
+<div class="feature-card">
+<h3>Train with structure</h3>
+<p>
+Use programs built around weeks, days, and exercise flow instead of random note-taking or messy logs.
+</p>
+<ul class="feature-list">
+<li>Program-based training</li>
+<li>Template-driven setup</li>
+<li>Built for long-term progression</li>
+</ul>
 </div>
 
-<div class="feature">
-<h3>No Distractions</h3>
-<p>No social feed. No clutter. Just training.</p>
+<div class="feature-card">
+<h3>HIIT when you need it</h3>
+<p>
+Switch from lifting to interval work without leaving the app. BeastLabX includes a dedicated HIIT mode built for focused sessions.
+</p>
+<ul class="feature-list">
+<li>Simple interval workflow</li>
+<li>Clean timer-based execution</li>
+<li>Matches the rest of the app style</li>
+</ul>
+</div>
+
+<div class="feature-card">
+<h3>Review what you’ve done</h3>
+<p>
+See your history, check stats, and use the exercise library without turning the app into a bloated all-in-one platform.
+</p>
+<ul class="feature-list">
+<li>History and log review</li>
+<li>Stats overview</li>
+<li>Searchable exercise library</li>
+</ul>
+</div>
+
 </div>
 </div>
 </section>
+
+<div class="section-divider"></div>
+
+<section class="section alt" id="screenshots">
+<div class="section-inner">
+
+<div class="section-heading">
+<div class="section-label">App Preview</div>
+<h2>Built with a premium dark training style</h2>
+<p>
+Use your real BeastLabX screens here. Rename your screenshots to match these filenames,
+drop them into the repo, and the layout will work immediately.
+</p>
+</div>
+
+<div class="screenshot-grid">
+
+<div class="screenshot-card">
+<img src="blx-hero-workout.jpg" alt="Workout screen">
+<div class="caption">Workout screen built for fast execution and clear set tracking.</div>
+</div>
+
+<div class="screenshot-card">
+<img src="blx-workout-live.jpg" alt="Workout in progress">
+<div class="caption">Live workout flow that keeps attention on the session.</div>
+</div>
+
+<div class="screenshot-card">
+<img src="blx-programs.jpg" alt="Programs screen">
+<div class="caption">Programs section for structured training and long-term planning.</div>
+</div>
+
+<div class="screenshot-card">
+<img src="blx-stats.jpg" alt="Stats screen">
+<div class="caption">Stats view to review training time, sessions, and progress.</div>
+</div>
+
+<div class="screenshot-card">
+<img src="blx-exercise-library.jpg" alt="Exercise library">
+<div class="caption">Exercise library with a clean search and filter flow.</div>
+</div>
+
+<div class="screenshot-card">
+<img src="blx-history.jpg" alt="History and logs">
+<div class="caption">History and logs so previous sessions stay easy to review.</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
 
 <section class="section">
-<h2>App Preview</h2>
-<p>Clean, focused interface built for real training.</p>
+<div class="section-inner">
 
-<div class="screens">
-<img src="screen1.png">
-<img src="screen2.png">
-<img src="screen3.png">
+<div class="section-heading">
+<div class="section-label">Built for a reason</div>
+<h2>The tracker I wanted to use myself</h2>
+</div>
+
+<div class="story-card">
+<p>
+I built BeastLabX because I was tired of overcomplicated fitness apps. It’s the tracker I wanted to use myself. Inspired by my father to become the best version of me — because bodybuilding isn’t a race, it’s a marathon. That’s exactly what BeastLabX is built for.
+</p>
+</div>
+
 </div>
 </section>
 
-<section class="section">
-<h2>Start Training</h2>
-<p>Download BeastLabX and train with structure.</p>
-<a class="btn" href="https://play.google.com/store/apps/details?id=com.beastlabx.app&pcampaignid=web_share">
-Download Now
-</a>
+<div class="section-divider"></div>
+
+<section class="section alt">
+<div class="section-inner">
+<div class="cta-card">
+<h2>Download BeastLabX and train with structure</h2>
+<p>
+If you want a serious training log built for lifters instead of another generic fitness app,
+BeastLabX is live now on Google Play.
+</p>
+
+<div class="cta-actions">
+<a class="hero-button primary" href="https://play.google.com/store/apps/details?id=com.beastlabx.app&pcampaignid=web_share">Download on Google Play</a>
+<a class="hero-button secondary" href="apps.html">Back to Apps</a>
+</div>
+</div>
+</div>
 </section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
+
+menuToggle.addEventListener('click', function () {
+const isOpen = siteNav.classList.toggle('open');
+menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+window.addEventListener('resize', function () {
+if (window.innerWidth > 768) {
+siteNav.classList.remove('open');
+menuToggle.setAttribute('aria-expanded', 'false');
+}
+});
+
+fetch("footer.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("footer-placeholder").innerHTML = data;
+});
+</script>
 
 </body>
 </html>
