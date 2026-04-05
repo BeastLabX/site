@@ -137,6 +137,7 @@ inset:0;
 background:
 radial-gradient(circle at 50% 18%, rgba(31,161,31,0.16) 0%, rgba(31,161,31,0.08) 18%, rgba(31,161,31,0.02) 38%, transparent 58%);
 pointer-events:none;
+animation:heroGlow 6s ease-in-out infinite;
 }
 
 .hero::after{
@@ -182,6 +183,7 @@ font-size:13px;
 font-weight:bold;
 letter-spacing:0.08em;
 text-transform:uppercase;
+box-shadow:0 0 18px rgba(31,161,31,0.10);
 }
 
 .hero h1{
@@ -189,6 +191,7 @@ margin:0 0 18px 0;
 font-size:64px;
 line-height:0.98;
 color:#ffffff;
+text-shadow:0 0 20px rgba(0,0,0,0.20);
 }
 
 .hero p{
@@ -229,7 +232,7 @@ box-shadow:0 0 24px rgba(31,161,31,0.22);
 
 .hero-button.primary:hover{
 background:#229f22;
-box-shadow:0 0 30px rgba(31,161,31,0.28);
+box-shadow:0 0 32px rgba(31,161,31,0.34);
 }
 
 .hero-button.secondary{
@@ -285,6 +288,12 @@ border-radius:34px;
 background:linear-gradient(to bottom, rgba(27,27,31,0.96), rgba(16,16,19,0.96));
 border:1px solid rgba(255,255,255,0.08);
 box-shadow:0 28px 80px rgba(0,0,0,0.44);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-device:hover{
+transform:translateY(-3px);
+box-shadow:0 32px 90px rgba(0,0,0,0.50), 0 0 28px rgba(31,161,31,0.12);
 }
 
 .hero-device::before{
@@ -319,13 +328,28 @@ box-shadow:0 0 18px rgba(31,161,31,0.45);
 .section{
 padding:90px 24px;
 background:rgba(15,15,18,0.72);
+position:relative;
+overflow:hidden;
 }
 
 .section.alt{
 background:rgba(12,12,15,0.80);
 }
 
+.section::before{
+content:"";
+position:absolute;
+top:-120px;
+left:50%;
+transform:translateX(-50%);
+width:720px;
+height:220px;
+background:radial-gradient(circle, rgba(31,161,31,0.08) 0%, rgba(31,161,31,0.02) 42%, transparent 72%);
+pointer-events:none;
+}
+
 .section-inner{
+position:relative;
 max-width:1240px;
 margin:0 auto;
 }
@@ -348,6 +372,7 @@ font-size:12px;
 font-weight:bold;
 letter-spacing:0.08em;
 text-transform:uppercase;
+box-shadow:0 0 16px rgba(31,161,31,0.08);
 }
 
 .section-heading h2{
@@ -381,13 +406,13 @@ padding:28px 24px;
 box-shadow:0 18px 45px rgba(0,0,0,0.20);
 position:relative;
 overflow:hidden;
-transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .feature-card:hover{
-transform:translateY(-2px);
+transform:translateY(-4px);
 border-color:rgba(31,161,31,0.24);
-box-shadow:0 22px 50px rgba(0,0,0,0.24);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
 }
 
 .feature-card::before{
@@ -459,13 +484,13 @@ border:1px solid rgba(255,255,255,0.08);
 border-radius:24px;
 padding:18px;
 box-shadow:0 18px 45px rgba(0,0,0,0.20);
-transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .screenshot-card:hover{
-transform:translateY(-2px);
+transform:translateY(-4px);
 border-color:rgba(31,161,31,0.22);
-box-shadow:0 22px 50px rgba(0,0,0,0.24);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
 }
 
 .screenshot-card img{
@@ -498,6 +523,14 @@ padding:36px 30px;
 box-shadow:0 18px 45px rgba(0,0,0,0.20);
 position:relative;
 overflow:hidden;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.story-card:hover,
+.cta-card:hover{
+transform:translateY(-3px);
+border-color:rgba(31,161,31,0.22);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
 }
 
 .story-card::before,
@@ -544,6 +577,36 @@ display:flex;
 justify-content:center;
 gap:14px;
 flex-wrap:wrap;
+}
+
+/* =============================================================
+SCROLL REVEAL
+============================================================= */
+.reveal{
+opacity:0;
+transform:translateY(34px);
+transition:opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.reveal-delay-1{transition-delay:0.08s;}
+.reveal-delay-2{transition-delay:0.16s;}
+.reveal-delay-3{transition-delay:0.24s;}
+.reveal-delay-4{transition-delay:0.32s;}
+.reveal-delay-5{transition-delay:0.40s;}
+.reveal-delay-6{transition-delay:0.48s;}
+
+/* =============================================================
+ANIMATION KEYFRAMES
+============================================================= */
+@keyframes heroGlow{
+0%{opacity:0.75;}
+50%{opacity:1;}
+100%{opacity:0.75;}
 }
 
 /* =============================================================
@@ -800,7 +863,7 @@ font-size:18px;
 <section class="hero">
 <div class="hero-inner">
 
-<div class="hero-copy">
+<div class="hero-copy reveal is-visible">
 <div class="hero-label">Now live on Google Play</div>
 <h1>Serious training log for lifters.</h1>
 <p>
@@ -822,7 +885,7 @@ run HIIT sessions, and review your training history in one focused app.
 </div>
 </div>
 
-<div class="hero-visual">
+<div class="hero-visual reveal is-visible">
 <div class="hero-device">
 <img src="phone.png" alt="BeastLabX workout screen">
 </div>
@@ -836,7 +899,7 @@ run HIIT sessions, and review your training history in one focused app.
 <section class="section">
 <div class="section-inner">
 
-<div class="section-heading">
+<div class="section-heading reveal">
 <div class="section-label">Why BeastLabX</div>
 <h2>Focused on training, not distractions</h2>
 <p>
@@ -847,7 +910,7 @@ and practical so your attention stays on training instead of clutter.
 
 <div class="feature-grid">
 
-<div class="feature-card">
+<div class="feature-card reveal reveal-delay-1">
 <h3>Run your workouts properly</h3>
 <p>
 Follow your program, log sets and weights, and keep the training session moving with a clean,
@@ -860,7 +923,7 @@ purpose-built workout screen.
 </ul>
 </div>
 
-<div class="feature-card">
+<div class="feature-card reveal reveal-delay-2">
 <h3>Train with structure</h3>
 <p>
 Use programs built around weeks, days, and exercise flow instead of random note-taking or messy logs.
@@ -872,7 +935,7 @@ Use programs built around weeks, days, and exercise flow instead of random note-
 </ul>
 </div>
 
-<div class="feature-card">
+<div class="feature-card reveal reveal-delay-3">
 <h3>HIIT when you need it</h3>
 <p>
 Switch from lifting to interval work without leaving the app. BeastLabX includes a dedicated HIIT mode built for focused sessions.
@@ -884,7 +947,7 @@ Switch from lifting to interval work without leaving the app. BeastLabX includes
 </ul>
 </div>
 
-<div class="feature-card">
+<div class="feature-card reveal reveal-delay-4">
 <h3>Review what you’ve done</h3>
 <p>
 See your history, check stats, and use the exercise library without turning the app into a bloated all-in-one platform.
@@ -905,44 +968,43 @@ See your history, check stats, and use the exercise library without turning the 
 <section class="section alt" id="screenshots">
 <div class="section-inner">
 
-<div class="section-heading">
+<div class="section-heading reveal">
 <div class="section-label">App Preview</div>
 <h2>Built with a premium dark training style</h2>
 <p>
-Use your real BeastLabX screens here. Rename your screenshots to match these filenames,
-drop them into the repo, and the layout will work immediately.
+These are your real BeastLabX screens placed into a cleaner landing page layout.
 </p>
 </div>
 
 <div class="screenshot-grid">
 
-<div class="screenshot-card">
+<div class="screenshot-card reveal reveal-delay-1">
 <img src="phone.png" alt="Workout screen">
 <div class="caption">Workout screen built for fast execution and clear set tracking.</div>
 </div>
 
-<div class="screenshot-card">
+<div class="screenshot-card reveal reveal-delay-2">
 <img src="hiit.png" alt="Workout in progress">
 <div class="caption">Live workout flow that keeps attention on the session.</div>
 </div>
 
-<div class="screenshot-card">
+<div class="screenshot-card reveal reveal-delay-3">
 <img src="programs.png" alt="Programs screen">
 <div class="caption">Programs section for structured training and long-term planning.</div>
 </div>
 
-<div class="screenshot-card">
+<div class="screenshot-card reveal reveal-delay-4">
 <img src="Stats.png" alt="Stats screen">
 <div class="caption">Stats view to review training time, sessions, and progress.</div>
 </div>
 
-<div class="screenshot-card">
+<div class="screenshot-card reveal reveal-delay-5">
 <img src="Exercise.png" alt="Exercise library">
 <div class="caption">Exercise library with a clean search and filter flow.</div>
 </div>
 
-<div class="screenshot-card">
-<img src="futuretools.png" alt="History and logs">
+<div class="screenshot-card reveal reveal-delay-6">
+
 <div class="caption">History and logs so previous sessions stay easy to review.</div>
 </div>
 
@@ -955,12 +1017,12 @@ drop them into the repo, and the layout will work immediately.
 <section class="section">
 <div class="section-inner">
 
-<div class="section-heading">
+<div class="section-heading reveal">
 <div class="section-label">Built for a reason</div>
 <h2>The tracker I wanted to use myself</h2>
 </div>
 
-<div class="story-card">
+<div class="story-card reveal">
 <p>
 I built BeastLabX because I was tired of overcomplicated fitness apps. It’s the tracker I wanted to use myself. Inspired by my father to become the best version of me — because bodybuilding isn’t a race, it’s a marathon. That’s exactly what BeastLabX is built for.
 </p>
@@ -973,7 +1035,7 @@ I built BeastLabX because I was tired of overcomplicated fitness apps. It’s th
 
 <section class="section alt">
 <div class="section-inner">
-<div class="cta-card">
+<div class="cta-card reveal">
 <h2>Download BeastLabX and train with structure</h2>
 <p>
 If you want a serious training log built for lifters instead of another generic fitness app,
@@ -1011,6 +1073,29 @@ fetch("footer.html")
 .then(data => {
 document.getElementById("footer-placeholder").innerHTML = data;
 });
+
+const revealItems = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+const revealObserver = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+revealObserver.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.14
+});
+
+revealItems.forEach((item) => {
+if (!item.classList.contains('is-visible')) {
+revealObserver.observe(item);
+}
+});
+} else {
+revealItems.forEach((item) => item.classList.add('is-visible'));
+}
 </script>
 
 </body>
