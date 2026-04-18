@@ -8,158 +8,641 @@
 
 <style>
 
-/* RESET */
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+/* =============================================================
+RESET
+============================================================= */
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:
-linear-gradient(rgba(10,10,12,0.85), rgba(10,10,12,0.92)),
+linear-gradient(rgba(8,8,10,0.88), rgba(8,8,10,0.93)),
 url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
 }
 
-/* HEADER */
+/* =============================================================
+HEADER
+============================================================= */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 30px;
 border-bottom:2px solid #1FA11F;
-background:rgba(12,12,14,0.95);
+background:rgba(12,12,14,0.94);
+backdrop-filter:blur(8px);
 position:sticky;
 top:0;
 z-index:1000;
-backdrop-filter: blur(6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
+gap:14px;
 font-size:20px;
 font-weight:bold;
 color:#ffffff;
 text-decoration:none;
 }
 
+.logo img{
+width:42px;
+height:42px;
+object-fit:cover;
+border-radius:6px;
+display:block;
+box-shadow:0 0 16px rgba(0,0,0,0.35);
+}
+
 nav{
 display:flex;
-gap:24px;
+gap:26px;
+align-items:center;
 }
 
 nav a{
+position:relative;
 text-decoration:none;
-color:#cccccc;
-transition:0.2s;
+color:#ffffff;
+font-size:16px;
+transition:color 0.2s ease;
 }
 
 nav a:hover{
 color:#1FA11F;
 }
 
-/* BANNER */
-.banner{
+nav a.active{
+color:#1FA11F;
+}
+
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-12px;
+height:2px;
 background:#1FA11F;
-color:#000;
-text-align:center;
-padding:10px;
-font-weight:bold;
+box-shadow:0 0 12px rgba(31,161,31,0.4);
 }
 
-/* HERO */
-.hero{
+/* =============================================================
+BANNER
+============================================================= */
+.banner{
 display:flex;
-align-items:center;
 justify-content:center;
-padding:110px 40px 100px 40px;
-min-height:calc(100vh - 90px);
-position:relative;
+align-items:center;
+gap:10px;
+padding:12px 18px;
+background:linear-gradient(90deg, #178717, #1FA11F);
+color:#071007;
+font-weight:bold;
+letter-spacing:0.3px;
+box-shadow:0 10px 24px rgba(31,161,31,0.18);
 }
 
-/* subtle glow */
+/* =============================================================
+HERO
+============================================================= */
+.hero{
+position:relative;
+padding:88px 40px 58px 40px;
+overflow:hidden;
+}
+
 .hero::before{
 content:"";
 position:absolute;
-width:600px;
-height:600px;
-background:radial-gradient(circle, rgba(31,161,31,0.15), transparent 70%);
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-z-index:0;
+left:10%;
+top:86px;
+width:470px;
+height:470px;
+background:radial-gradient(circle, rgba(31,161,31,0.16) 0%, rgba(31,161,31,0.08) 34%, rgba(31,161,31,0.02) 60%, transparent 74%);
+filter:blur(36px);
+pointer-events:none;
 }
 
 .hero-inner{
-max-width:900px;
-text-align:center;
 position:relative;
 z-index:1;
+max-width:1320px;
+margin:0 auto;
+display:grid;
+grid-template-columns:1.02fr 0.98fr;
+gap:46px;
+align-items:center;
 }
 
-/* TITLE */
+.hero-copy{
+max-width:650px;
+}
+
+.hero-kicker{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:10px 16px;
+border:1px solid rgba(31,161,31,0.32);
+border-radius:999px;
+background:rgba(20,20,24,0.78);
+color:#d2d2d2;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:1px;
+margin-bottom:24px;
+}
+
+.hero-kicker img{
+width:24px;
+height:24px;
+object-fit:cover;
+border-radius:4px;
+display:block;
+}
+
 .hero h1{
-font-size:64px;
-margin-bottom:20px;
-letter-spacing:-1px;
+margin:0 0 20px 0;
+font-size:70px;
+line-height:0.98;
+letter-spacing:-1.5px;
+color:#ffffff;
 }
 
-/* SUBTEXT */
 .hero p{
-font-size:18px;
-line-height:1.7;
-color:#BDBDBD;
+margin:0;
+font-size:20px;
+line-height:1.75;
+color:#bdbdbd;
 max-width:620px;
-margin:auto;
 }
 
-/* BUTTONS */
-.buttons{
-margin-top:45px;
+.hero-buttons{
 display:flex;
-justify-content:center;
-gap:18px;
+gap:16px;
 flex-wrap:wrap;
+margin-top:34px;
 }
 
-/* PRIMARY */
 .button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
 padding:16px 28px;
+border-radius:14px;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.button.primary{
 background:#1FA11F;
 color:#ffffff;
-text-decoration:none;
-border-radius:14px;
-font-weight:bold;
-transition:0.2s;
-box-shadow:0 0 20px rgba(31,161,31,0.25);
+box-shadow:0 0 26px rgba(31,161,31,0.24);
 }
 
-.button:hover{
+.button.primary:hover{
 transform:translateY(-2px);
-box-shadow:0 0 30px rgba(31,161,31,0.4);
+box-shadow:0 0 34px rgba(31,161,31,0.34);
 }
 
-/* SECONDARY */
 .button.secondary{
-background:rgba(20,20,24,0.8);
-border:1px solid #2A2A2A;
-box-shadow:none;
+background:rgba(20,20,24,0.85);
+color:#ffffff;
+border:1px solid #2a2a2a;
 }
 
 .button.secondary:hover{
 border-color:#1FA11F;
 color:#1FA11F;
+transform:translateY(-2px);
 }
 
-/* FOOTER */
+.hero-note{
+margin-top:22px;
+font-size:15px;
+color:#8f8f8f;
+}
+
+/* =============================================================
+SHOWCASE
+============================================================= */
+.showcase{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:620px;
+}
+
+.showcase-stack{
+position:relative;
+width:100%;
+max-width:630px;
+min-height:620px;
+}
+
+.glow{
+position:absolute;
+right:42px;
+top:24px;
+width:400px;
+height:400px;
+background:radial-gradient(circle, rgba(31,161,31,0.20) 0%, rgba(31,161,31,0.08) 40%, transparent 72%);
+filter:blur(34px);
+pointer-events:none;
+}
+
+.hero-card{
+position:absolute;
+background:linear-gradient(180deg, rgba(24,24,28,0.96), rgba(15,15,18,0.96));
+border:1px solid rgba(255,255,255,0.05);
+border-radius:28px;
+box-shadow:0 26px 70px rgba(0,0,0,0.48);
+overflow:hidden;
+}
+
+.hero-card.main{
+right:0;
+top:0;
+width:390px;
+}
+
+.hero-card.secondary{
+left:0;
+bottom:44px;
+width:300px;
+}
+
+.hero-card.third{
+right:54px;
+bottom:0;
+width:220px;
+}
+
+.card-top{
+padding:18px 20px;
+border-bottom:1px solid rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.02);
+}
+
+.card-label{
+font-size:13px;
+font-weight:bold;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#ffcc52;
+}
+
+.card-title{
+margin-top:6px;
+font-size:20px;
+font-weight:bold;
+color:#ffffff;
+}
+
+.card-image{
+display:block;
+width:100%;
+height:auto;
+}
+
+.card-image.small{
+height:290px;
+object-fit:cover;
+object-position:center top;
+}
+
+/* =============================================================
+FEATURED
+============================================================= */
+.featured{
+padding:18px 40px 44px 40px;
+}
+
+.featured-inner{
+max-width:1320px;
+margin:0 auto;
+background:linear-gradient(180deg, rgba(18,18,22,0.92), rgba(11,11,14,0.92));
+border:1px solid rgba(255,255,255,0.05);
+border-radius:30px;
+padding:30px;
+box-shadow:0 24px 60px rgba(0,0,0,0.34);
+}
+
+.featured-head{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:24px;
+margin-bottom:24px;
+}
+
+.featured-head h2{
+margin:0;
+font-size:36px;
+color:#ffffff;
+}
+
+.featured-head p{
+margin:10px 0 0 0;
+font-size:17px;
+color:#9f9f9f;
+line-height:1.65;
+max-width:760px;
+}
+
+.featured-badge{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:10px 14px;
+border-radius:999px;
+background:rgba(31,161,31,0.12);
+border:1px solid rgba(31,161,31,0.28);
+font-size:13px;
+font-weight:bold;
+color:#d8ffd8;
+white-space:nowrap;
+}
+
+.featured-badge img{
+width:22px;
+height:22px;
+border-radius:4px;
+object-fit:cover;
+}
+
+.shot-grid{
+display:grid;
+grid-template-columns:repeat(4, minmax(0, 1fr));
+gap:18px;
+}
+
+.shot{
+background:rgba(255,255,255,0.02);
+border:1px solid rgba(255,255,255,0.05);
+border-radius:24px;
+overflow:hidden;
+box-shadow:0 18px 40px rgba(0,0,0,0.24);
+}
+
+.shot img{
+display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* =============================================================
+APPS
+============================================================= */
+.apps{
+padding:8px 40px 70px 40px;
+}
+
+.apps-head{
+max-width:1320px;
+margin:0 auto 22px auto;
+}
+
+.apps-head h2{
+margin:0;
+font-size:34px;
+color:#ffffff;
+}
+
+.apps-head p{
+margin:12px 0 0 0;
+color:#9a9a9a;
+font-size:17px;
+line-height:1.6;
+}
+
+.apps-grid{
+max-width:1320px;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(4, minmax(0, 1fr));
+gap:24px;
+}
+
+.app-card{
+background:linear-gradient(180deg, rgba(22,22,26,0.95), rgba(13,13,16,0.95));
+border:1px solid rgba(255,255,255,0.05);
+border-radius:24px;
+padding:22px 20px;
+box-shadow:0 18px 46px rgba(0,0,0,0.34);
+transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.app-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.28);
+box-shadow:0 24px 56px rgba(0,0,0,0.46);
+}
+
+.app-card h3{
+margin:0 0 10px 0;
+font-size:24px;
+color:#ffffff;
+}
+
+.app-card p{
+margin:0 0 18px 0;
+color:#acacac;
+line-height:1.65;
+font-size:15px;
+min-height:72px;
+}
+
+.app-links{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.small-button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:12px 16px;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
+background:#1FA11F;
+color:#ffffff;
+}
+
+.small-button.secondary{
+background:rgba(255,255,255,0.04);
+border:1px solid #2a2a2a;
+color:#ffffff;
+}
+
+/* =============================================================
+FOOTER
+============================================================= */
 footer{
 text-align:center;
-padding:25px;
-margin-top:60px;
-color:#777;
-border-top:1px solid #1c1c1c;
+padding:26px 20px;
+color:#7e7e7e;
+border-top:1px solid rgba(255,255,255,0.05);
+background:rgba(10,10,12,0.76);
+}
+
+/* =============================================================
+TABLET
+============================================================= */
+@media (max-width:1180px){
+
+.hero-inner{
+grid-template-columns:1fr;
+gap:42px;
+}
+
+.hero-copy{
+max-width:100%;
+text-align:center;
+margin:0 auto;
+}
+
+.hero p{
+margin:0 auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.showcase{
+min-height:auto;
+}
+
+.showcase-stack{
+max-width:650px;
+min-height:640px;
+margin:0 auto;
+}
+
+.featured-head{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.shot-grid{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+
+.apps-grid{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+
+}
+
+/* =============================================================
+MOBILE
+============================================================= */
+@media (max-width:768px){
+
+header{
+padding:16px 18px;
+flex-direction:column;
+gap:14px;
+}
+
+nav{
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero{
+padding:70px 20px 40px 20px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.hero-buttons{
+gap:12px;
+}
+
+.button{
+width:100%;
+max-width:280px;
+}
+
+.showcase-stack{
+max-width:340px;
+min-height:690px;
+}
+
+.hero-card.main{
+right:auto;
+left:20px;
+width:300px;
+}
+
+.hero-card.secondary{
+left:0;
+bottom:118px;
+width:220px;
+}
+
+.hero-card.third{
+right:0;
+bottom:0;
+width:170px;
+}
+
+.card-image.small{
+height:220px;
+}
+
+.featured{
+padding:12px 20px 34px 20px;
+}
+
+.featured-inner{
+padding:22px;
+}
+
+.shot-grid{
+grid-template-columns:1fr;
+}
+
+.apps{
+padding:8px 20px 54px 20px;
+}
+
+.apps-grid{
+grid-template-columns:1fr;
+}
+
+.apps-head h2,
+.featured-head h2{
+font-size:28px;
+}
+
 }
 
 </style>
@@ -172,10 +655,13 @@ border-top:1px solid #1c1c1c;
 </div>
 
 <header>
-<a href="index.html" class="logo">BeastLabX</a>
+<a href="index.html" class="logo">
+<img src="logo.png" alt="BeastLabX logo">
+<span>BeastLabX</span>
+</a>
 
 <nav>
-<a href="index.html">Home</a>
+<a href="index.html" class="active">Home</a>
 <a href="apps.html">Apps</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
@@ -186,6 +672,12 @@ border-top:1px solid #1c1c1c;
 
 <div class="hero-inner">
 
+<div class="hero-copy">
+<div class="hero-kicker">
+<img src="logo.png" alt="BeastLabX icon">
+<span>Built for real-world apps</span>
+</div>
+
 <h1>BeastLabX</h1>
 
 <p>
@@ -194,11 +686,137 @@ From training systems to workshop tools, every product is built to be fast,
 focused, and effective.
 </p>
 
-<div class="buttons">
-<a class="button" href="beastlabx.html">BeastLabX App</a>
-<a class="button secondary" href="mechtoolbox.html">MechToolbox</a>
-<a class="button secondary" href="beastblueprint.html">BeastBlueprint</a>
-<a class="button secondary" href="beastutility.html">BeastUtility</a>
+<div class="hero-buttons">
+<a class="button primary" href="mechtoolbox.html">Explore MechToolbox</a>
+<a class="button secondary" href="beastlabx.html">View BeastLabX App</a>
+</div>
+
+<div class="hero-note">More apps live under the BeastLabX brand.</div>
+</div>
+
+<div class="showcase">
+<div class="showcase-stack">
+
+<div class="glow"></div>
+
+<div class="hero-card main">
+<div class="card-top">
+<div>
+<div class="card-label">Featured App</div>
+<div class="card-title">MechToolbox</div>
+</div>
+</div>
+<img class="card-image" src="home.png" alt="MechToolbox home screen">
+</div>
+
+<div class="hero-card secondary">
+<div class="card-top">
+<div>
+<div class="card-label">Diagnostics</div>
+<div class="card-title">Hydraulics</div>
+</div>
+</div>
+<img class="card-image" src="hydraulics.png" alt="MechToolbox hydraulics screen">
+</div>
+
+<div class="hero-card third">
+<img class="card-image small" src="torque.png" alt="MechToolbox torque screen">
+</div>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="featured">
+<div class="featured-inner">
+
+<div class="featured-head">
+<div>
+<h2>Featured release</h2>
+<p>
+MechToolbox is built for serious mechanics with practical tools, machine fault reference,
+job workflow, manuals, and workshop utilities in one focused app.
+</p>
+</div>
+
+<div class="featured-badge">
+<img src="icon.png" alt="MechToolbox icon">
+<span>Now available</span>
+</div>
+</div>
+
+<div class="shot-grid">
+<div class="shot">
+<img src="home.png" alt="MechToolbox home screen">
+</div>
+<div class="shot">
+<img src="converter.png" alt="MechToolbox converter screen">
+</div>
+<div class="shot">
+<img src="hydraulics.png" alt="MechToolbox hydraulics screen">
+</div>
+<div class="shot">
+<img src="torque.png" alt="MechToolbox torque screen">
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="apps">
+
+<div class="apps-head">
+<h2>Apps by BeastLabX</h2>
+<p>
+Focused software built for real use cases, from training systems to workshop tools.
+</p>
+</div>
+
+<div class="apps-grid">
+
+<div class="app-card">
+<h3>BeastLabX</h3>
+<p>
+Structured training, workout tracking, and focused progression tools for lifters.
+</p>
+<div class="app-links">
+<a class="small-button" href="beastlabx.html">Open app page</a>
+<a class="small-button secondary" href="#">Google Play</a>
+</div>
+</div>
+
+<div class="app-card">
+<h3>MechToolbox</h3>
+<p>
+Fault diagnostics, workshop tools, manuals, job tracking, and practical mechanic utilities.
+</p>
+<div class="app-links">
+<a class="small-button" href="mechtoolbox.html">Open app page</a>
+<a class="small-button secondary" href="mechtoolbox-privacy.html">Privacy</a>
+</div>
+</div>
+
+<div class="app-card">
+<h3>BeastBlueprint</h3>
+<p>
+Program-building tools focused on generating structured systems around the user.
+</p>
+<div class="app-links">
+<a class="small-button" href="beastblueprint.html">Open app page</a>
+</div>
+</div>
+
+<div class="app-card">
+<h3>BeastUtility</h3>
+<p>
+A growing utility slot for future tools and practical support apps under BeastLabX.
+</p>
+<div class="app-links">
+<a class="small-button" href="beastutility.html">Open app page</a>
+</div>
 </div>
 
 </div>
