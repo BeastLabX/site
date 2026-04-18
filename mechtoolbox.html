@@ -6,10 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+*{box-sizing:border-box;}
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0f0f12;
+background:
+linear-gradient(rgba(10,10,12,0.85), rgba(10,10,12,0.95)),
+url('bg.png') center/cover no-repeat fixed;
 color:#e5e5e5;
 }
 
@@ -18,96 +21,137 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 30px;
+padding:16px 30px;
+background:#0b0b0e;
 border-bottom:2px solid #1FA11F;
-background:#111;
 }
 
 .logo{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:#fff;
 font-weight:bold;
-font-size:20px;
+}
+
+.logo img{
+width:36px;
+height:36px;
+}
+
+nav{
+display:flex;
+gap:22px;
+}
+
+nav a{
+color:#ccc;
+text-decoration:none;
+}
+
+nav a.active{
+color:#1FA11F;
+border-bottom:2px solid #1FA11F;
+padding-bottom:4px;
 }
 
 /* HERO */
 .hero{
-text-align:center;
-padding:80px 20px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 60px;
+gap:40px;
 }
 
-.hero img{
-width:160px;
+.left{
+max-width:520px;
+}
+
+.badge{
+display:inline-block;
+padding:6px 14px;
+border:1px solid #1FA11F;
+border-radius:20px;
+color:#1FA11F;
+font-size:12px;
 margin-bottom:20px;
 }
 
-.hero h1{
-font-size:48px;
-margin-bottom:10px;
+h1{
+font-size:52px;
+margin:0 0 20px 0;
 }
 
-.hero p{
+p{
 color:#aaa;
-max-width:600px;
-margin:auto;
+line-height:1.6;
+}
+
+/* PHONE MOCK */
+.phone{
+background:#111;
+padding:14px;
+border-radius:30px;
+box-shadow:0 0 40px rgba(0,0,0,0.7);
+}
+
+.phone img{
+width:260px;
+border-radius:20px;
 }
 
 /* FEATURES */
 .features{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(4,1fr);
 gap:20px;
-padding:40px;
-max-width:1000px;
-margin:auto;
+padding:40px 60px;
 }
 
 .card{
-background:#1a1a1f;
+background:#151518;
 padding:20px;
 border-radius:16px;
 text-align:center;
-}
-
-.card img{
-width:60px;
-margin-bottom:10px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
 
 .card h3{
 margin-top:10px;
 }
 
-/* SCREENSHOTS */
-.screens{
-padding:40px;
-text-align:center;
-}
-
-.screens img{
-width:240px;
-margin:10px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(0,0,0,0.6);
-}
-
-/* BUTTON */
-.download{
-text-align:center;
-margin:40px;
+/* BUTTONS */
+.cta{
+margin-top:30px;
 }
 
 .button{
-padding:16px 28px;
+padding:14px 26px;
 background:#1FA11F;
-border-radius:12px;
+border-radius:10px;
 text-decoration:none;
 color:white;
 font-weight:bold;
+display:inline-block;
+}
+
+.links{
+margin-top:20px;
+}
+
+.links a{
+color:#1FA11F;
+margin-right:20px;
+text-decoration:none;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
 padding:20px;
+margin-top:40px;
 color:#777;
 }
 </style>
@@ -116,54 +160,71 @@ color:#777;
 <body>
 
 <header>
-<div class="logo">MechToolbox</div>
+<a href="index.html" class="logo">
+<img src="logo.png">
+BeastLabX
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="apps.html" class="active">Apps</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
-<img src="icon.png">
-<h1>MechToolbox</h1>
-<p>Diagnose faults, manage jobs, and fix machines faster.</p>
+
+<div class="left">
+<div class="badge">WORKSHOP TOOLS</div>
+
+<h1>Practical tools for serious mechanics.</h1>
+
+<p>
+Diagnose faults, manage jobs, and fix machines faster.
+Built for real workshop use — not theory.
+</p>
+
+<div class="cta">
+<a class="button" href="#">Download Coming Soon</a>
+</div>
+
+<div class="links">
+<a href="mechtoolbox-privacy.html">Privacy</a>
+<a href="mechtoolbox-terms.html">Terms</a>
+</div>
+
+</div>
+
+<div class="phone">
+<img src="home.png">
+</div>
+
 </section>
 
 <section class="features">
+
 <div class="card">
-<img src="icon.png">
 <h3>Converters</h3>
-<p>Fast unit conversions for workshop use</p>
+<p>Fast unit conversions</p>
 </div>
 
 <div class="card">
-<img src="icon.png">
 <h3>Torque Chart</h3>
-<p>Quick torque references</p>
+<p>Accurate torque values</p>
 </div>
 
 <div class="card">
-<img src="icon.png">
 <h3>Fault Finder</h3>
-<p>Real-world machine faults</p>
+<p>Real-world diagnostics</p>
 </div>
 
 <div class="card">
-<img src="icon.png">
 <h3>Job System</h3>
-<p>Track repairs and work done</p>
+<p>Track repairs</p>
 </div>
-</section>
-
-<section class="screens">
-<h2>App Screens</h2>
-
-<img src="converter.png">
-<img src="home.png">
-<img src="hydraulics.png">
-<img src="torque.png">
 
 </section>
-
-<div class="download">
-<a class="button" href="#">Download Coming Soon</a>
-</div>
 
 <footer>
 © BeastLabX
