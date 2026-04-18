@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MechToolbox</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0f0f12;
+color:#e5e5e5;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 30px;
+border-bottom:2px solid #1FA11F;
+background:#111;
+}
+
+.logo{
+font-weight:bold;
+font-size:20px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px 40px;
+}
+
+.hero img{
+width:140px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#aaa;
+max-width:600px;
+margin:auto;
+}
+
+/* FEATURES */
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:40px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:#1a1a1f;
+padding:20px;
+border-radius:16px;
+text-align:center;
+}
+
+.card h3{
+margin-top:10px;
+}
+
+/* SCREENSHOTS */
+.screens{
+padding:40px;
+text-align:center;
+}
+
+.screens img{
+width:220px;
+margin:10px;
+border-radius:20px;
+}
+
+/* BUTTON */
+.download{
+text-align:center;
+margin:40px;
+}
+
+.button{
+padding:16px 28px;
+background:#1FA11F;
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">MechToolbox</div>
+</header>
+
+<section class="hero">
+<img src="icon.png">
+<h1>MechToolbox</h1>
+<p>Diagnose faults, manage jobs, and fix machines faster.</p>
+</section>
+
+<section class="features">
+<div class="card">
+<h3>Converters</h3>
+<p>Fast unit conversions for workshop use</p>
+</div>
+
+<div class="card">
+<h3>Torque Chart</h3>
+<p>Quick torque references</p>
+</div>
+
+<div class="card">
+<h3>Fault Finder</h3>
+<p>Real-world machine faults</p>
+</div>
+
+<div class="card">
+<h3>Job System</h3>
+<p>Track repairs and work done</p>
+</div>
+</section>
+
+<section class="screens">
+<h2>App Screens</h2>
+<img src="screen1.png">
+<img src="screen2.png">
+<img src="screen3.png">
+</section>
+
+<div class="download">
+<a class="button" href="#">Download Coming Soon</a>
+</div>
+
+<footer>
+© BeastLabX
+</footer>
+
+</body>
+</html>
