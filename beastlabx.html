@@ -125,9 +125,9 @@ HERO
 .hero{
 position:relative;
 overflow:hidden;
-padding:98px 24px 84px 24px;
+padding:96px 24px 86px 24px;
 background:
-linear-gradient(to bottom, rgba(10,10,12,0.78), rgba(10,10,12,0.54));
+linear-gradient(to bottom, rgba(10,10,12,0.80), rgba(10,10,12,0.56));
 }
 
 .hero::before{
@@ -135,7 +135,7 @@ content:"";
 position:absolute;
 inset:0;
 background:
-radial-gradient(circle at 50% 18%, rgba(31,161,31,0.16) 0%, rgba(31,161,31,0.08) 18%, rgba(31,161,31,0.02) 38%, transparent 58%);
+radial-gradient(circle at 50% 18%, rgba(31,161,31,0.18) 0%, rgba(31,161,31,0.08) 18%, rgba(31,161,31,0.02) 40%, transparent 60%);
 pointer-events:none;
 animation:heroGlow 6s ease-in-out infinite;
 }
@@ -152,7 +152,7 @@ rgba(255,255,255,0.010) 1px,
 rgba(0,0,0,0) 4px,
 rgba(0,0,0,0) 16px
 );
-opacity:0.20;
+opacity:0.18;
 pointer-events:none;
 }
 
@@ -162,18 +162,33 @@ z-index:1;
 max-width:1240px;
 margin:0 auto;
 display:grid;
-grid-template-columns:minmax(0, 560px) minmax(0, 460px);
-gap:48px;
+grid-template-columns:minmax(0, 620px) minmax(0, 470px);
+gap:54px;
 align-items:center;
 }
 
 .hero-copy{
-max-width:560px;
+max-width:620px;
+}
+
+.hero-brand{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:18px;
+}
+
+.hero-brand img{
+width:74px;
+height:74px;
+object-fit:contain;
+display:block;
+filter:drop-shadow(0 0 12px rgba(31,161,31,0.12));
 }
 
 .hero-label{
 display:inline-block;
-margin-bottom:18px;
+margin-bottom:20px;
 padding:9px 14px;
 border:1px solid rgba(31,161,31,0.34);
 border-radius:999px;
@@ -188,25 +203,26 @@ box-shadow:0 0 18px rgba(31,161,31,0.10);
 
 .hero h1{
 margin:0 0 18px 0;
-font-size:64px;
-line-height:0.98;
+font-size:66px;
+line-height:0.96;
 color:#ffffff;
 text-shadow:0 0 20px rgba(0,0,0,0.20);
+max-width:600px;
 }
 
 .hero p{
 margin:0;
 font-size:20px;
-line-height:1.75;
+line-height:1.78;
 color:#BDBDBD;
-max-width:540px;
+max-width:560px;
 }
 
 .hero-actions{
 display:flex;
 gap:14px;
 flex-wrap:wrap;
-margin-top:28px;
+margin-top:30px;
 }
 
 .hero-button{
@@ -247,11 +263,11 @@ border-color:#3A3A3A;
 }
 
 .hero-points{
-margin-top:28px;
+margin-top:30px;
 display:grid;
 grid-template-columns:repeat(2, minmax(0,1fr));
 gap:12px 18px;
-max-width:520px;
+max-width:560px;
 }
 
 .hero-point{
@@ -282,10 +298,10 @@ justify-content:center;
 .hero-device{
 position:relative;
 width:100%;
-max-width:520px;
+max-width:500px;
 padding:16px;
 border-radius:34px;
-background:linear-gradient(to bottom, rgba(27,27,31,0.96), rgba(16,16,19,0.96));
+background:linear-gradient(to bottom, rgba(27,27,31,0.98), rgba(16,16,19,0.98));
 border:1px solid rgba(255,255,255,0.08);
 box-shadow:0 28px 80px rgba(0,0,0,0.44);
 transition:transform 0.3s ease, box-shadow 0.3s ease;
@@ -306,13 +322,6 @@ height:3px;
 background:#1FA11F;
 box-shadow:0 0 16px rgba(31,161,31,0.45);
 border-radius:3px;
-}
-
-
-@media (min-width:1025px){
-.hero-device{
-transform:scale(1.08);
-}
 }
 
 .hero-device img{
@@ -340,7 +349,7 @@ overflow:hidden;
 }
 
 .section.alt{
-background:rgba(12,12,15,0.80);
+background:rgba(12,12,15,0.82);
 }
 
 .section::before{
@@ -362,8 +371,8 @@ margin:0 auto;
 }
 
 .section-heading{
-max-width:860px;
-margin:0 auto 42px auto;
+max-width:900px;
+margin:0 auto 46px auto;
 text-align:center;
 }
 
@@ -394,6 +403,57 @@ margin:0;
 font-size:18px;
 line-height:1.75;
 color:#BDBDBD;
+}
+
+/* =============================================================
+STRENGTH STRIP
+============================================================= */
+.strength-strip{
+display:grid;
+grid-template-columns:repeat(4, minmax(0,1fr));
+gap:18px;
+}
+
+.strength-card{
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:22px;
+padding:24px 20px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.strength-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.24);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+}
+
+.strength-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.strength-card h3{
+margin:0 0 10px 0;
+font-size:22px;
+line-height:1.2;
+color:#ffffff;
+}
+
+.strength-card p{
+margin:0;
+font-size:15px;
+line-height:1.7;
+color:#C8C8C8;
 }
 
 /* =============================================================
@@ -661,6 +721,10 @@ font-size:50px;
 font-size:34px;
 }
 
+.strength-strip{
+grid-template-columns:repeat(2, minmax(0,1fr));
+}
+
 .feature-grid{
 grid-template-columns:1fr;
 }
@@ -729,6 +793,15 @@ display:none;
 padding:70px 20px 60px 20px;
 }
 
+.hero-brand{
+justify-content:center;
+}
+
+.hero-brand img{
+width:64px;
+height:64px;
+}
+
 .hero-label{
 font-size:12px;
 padding:7px 12px;
@@ -769,17 +842,23 @@ font-size:30px;
 font-size:16px;
 }
 
+.strength-strip{
+grid-template-columns:1fr;
+}
+
 .feature-card{
 padding:24px 18px;
 border-radius:18px;
 }
 
-.feature-card h3{
+.feature-card h3,
+.strength-card h3{
 font-size:22px;
 }
 
 .feature-card p,
-.feature-list li{
+.feature-list li,
+.strength-card p{
 font-size:15px;
 }
 
@@ -871,9 +950,11 @@ font-size:18px;
 <div class="hero-inner">
 
 <div class="hero-copy reveal is-visible">
-<img src="app-logo.png" style="width:90px;margin-bottom:18px;">
+<div class="hero-brand">
+<img src="app-logo.png" alt="BeastLabX app logo">
+</div>
 <div class="hero-label">Now live on Google Play</div>
-<h1>Serious training log for lifters.</h1>
+<h1>Serious training log for serious lifters.</h1>
 <p>
 BeastLabX is built for lifters who want structured training, clean workout tracking,
 and real progression without unnecessary fluff. Track workouts, follow programs,
@@ -904,15 +985,54 @@ run HIIT sessions, and review your training history in one focused app.
 
 <div class="section-divider"></div>
 
+<section class="section alt">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">Built for lifters</div>
+<h2>No fluff. No clutter. Just serious training flow.</h2>
+<p>
+BeastLabX is built around the way serious gym users actually train: log fast, stay focused,
+run the session properly, and come back stronger next time.
+</p>
+</div>
+
+<div class="strength-strip">
+<div class="strength-card reveal reveal-delay-1">
+<h3>Log fast</h3>
+<p>Get through the workout screen quickly without breaking training momentum.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-2">
+<h3>Train with structure</h3>
+<p>Use programs and training flow instead of random note-taking or messy logs.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-3">
+<h3>Review progress</h3>
+<p>Check history, stats, and past sessions without turning the app into a bloated mess.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-4">
+<h3>Stay focused</h3>
+<p>Everything is built to support serious bodybuilding and gym use, not distraction.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="section-divider"></div>
+
 <section class="section">
 <div class="section-inner">
 
 <div class="section-heading reveal">
-<div class="section-label">Why BeastLabX</div>
+<div class="section-label">Core features</div>
 <h2>Focused on training, not distractions</h2>
 <p>
-BeastLabX is designed around serious gym use. It keeps the experience clean, structured,
-and practical so your attention stays on training instead of clutter.
+BeastLabX keeps the experience clean, structured, and practical so your attention stays on
+training instead of clutter.
 </p>
 </div>
 
@@ -977,10 +1097,10 @@ See your history, check stats, and use the exercise library without turning the 
 <div class="section-inner">
 
 <div class="section-heading reveal">
-<div class="section-label">App Preview</div>
-<h2>Built with a premium dark training style</h2>
+<div class="section-label">App preview</div>
+<h2>Built with a dark, focused bodybuilding style</h2>
 <p>
-These are your real BeastLabX screens placed into a cleaner landing page layout.
+Real BeastLabX screens presented in a cleaner product page layout.
 </p>
 </div>
 
@@ -992,8 +1112,8 @@ These are your real BeastLabX screens placed into a cleaner landing page layout.
 </div>
 
 <div class="screenshot-card reveal reveal-delay-2">
-<img src="hiit.png" alt="Workout in progress">
-<div class="caption">Live workout flow that keeps attention on the session.</div>
+<img src="hiit.png" alt="HIIT screen">
+<div class="caption">Dedicated HIIT mode when you want interval work without leaving the app.</div>
 </div>
 
 <div class="screenshot-card reveal reveal-delay-3">
@@ -1012,8 +1132,8 @@ These are your real BeastLabX screens placed into a cleaner landing page layout.
 </div>
 
 <div class="screenshot-card reveal reveal-delay-6">
-
-<div class="caption">History and logs so previous sessions stay easy to review.</div>
+<img src="app-logo.png" alt="BeastLabX logo">
+<div class="caption">BeastLabX keeps serious training tools inside one focused app experience.</div>
 </div>
 
 </div>
