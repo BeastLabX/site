@@ -129,13 +129,11 @@ gap:34px;
 align-items:stretch;
 }
 
-/* ===== FIX APPLIED HERE ===== */
 .hero-copy{
 max-width:700px;
 display:flex;
 flex-direction:column;
-justify-content:flex-start;
-padding-top:40px;
+justify-content:center;
 }
 
 .hero-kicker{
@@ -194,17 +192,30 @@ border-radius:14px;
 text-decoration:none;
 font-weight:bold;
 font-size:16px;
+transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .button.primary{
 background:#1FA11F;
 color:#ffffff;
+box-shadow:0 0 26px rgba(31,161,31,0.24);
+}
+
+.button.primary:hover{
+transform:translateY(-2px);
+box-shadow:0 0 34px rgba(31,161,31,0.34);
 }
 
 .button.secondary{
 background:rgba(20,20,24,0.85);
 color:#ffffff;
 border:1px solid #2a2a2a;
+}
+
+.button.secondary:hover{
+border-color:#1FA11F;
+color:#1FA11F;
+transform:translateY(-2px);
 }
 
 .hero-note{
@@ -233,6 +244,56 @@ object-fit:cover;
 object-position:center top;
 }
 
+.hero-ad::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+height:40%;
+background:linear-gradient(to top, rgba(8,8,10,0.88), rgba(8,8,10,0.18), transparent);
+pointer-events:none;
+}
+
+.hero-ad-badge{
+position:absolute;
+top:18px;
+left:18px;
+z-index:2;
+display:inline-flex;
+align-items:center;
+padding:10px 14px;
+border-radius:999px;
+background:rgba(31,161,31,0.12);
+border:1px solid rgba(31,161,31,0.28);
+font-size:13px;
+font-weight:bold;
+color:#d8ffd8;
+backdrop-filter:blur(8px);
+}
+
+.hero-ad-copy{
+position:absolute;
+left:22px;
+right:22px;
+bottom:20px;
+z-index:2;
+}
+
+.hero-ad-copy h2{
+margin:0 0 8px 0;
+font-size:28px;
+color:#ffffff;
+}
+
+.hero-ad-copy p{
+margin:0;
+font-size:15px;
+line-height:1.6;
+color:#dfdfdf;
+max-width:520px;
+}
+
 /* =============================================================
 APPS
 ============================================================= */
@@ -251,6 +312,13 @@ font-size:34px;
 color:#ffffff;
 }
 
+.apps-head p{
+margin:12px 0 0 0;
+color:#9a9a9a;
+font-size:17px;
+line-height:1.6;
+}
+
 .apps-grid{
 max-width:1320px;
 margin:0 auto;
@@ -262,30 +330,198 @@ gap:22px;
 .app-card{
 display:block;
 text-decoration:none;
-background:#1c1c1c;
+background:linear-gradient(180deg, rgba(22,22,26,0.95), rgba(13,13,16,0.95));
+border:1px solid rgba(255,255,255,0.05);
 border-radius:26px;
-padding:22px;
+padding:22px 18px 18px 18px;
+box-shadow:0 18px 46px rgba(0,0,0,0.34);
+transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+min-height:280px;
+}
+
+a.app-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.28);
+box-shadow:0 24px 56px rgba(0,0,0,0.46);
+}
+
+.app-card.static{
+opacity:0.96;
 }
 
 .app-logo-wrap{
 width:72px;
 height:72px;
+border-radius:18px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.06);
 display:flex;
 align-items:center;
 justify-content:center;
 margin-bottom:20px;
+overflow:hidden;
 }
 
 .app-logo-wrap img{
 width:100%;
 height:100%;
 object-fit:contain;
+display:block;
+padding:8px;
+background:#0f0f12;
 }
 
+.app-logo-wrap img.mt{
+object-fit:cover;
+padding:0;
+background:transparent;
+}
+
+.app-card h3{
+margin:0 0 10px 0;
+font-size:24px;
+font-weight:bold;
+color:#ffffff;
+}
+
+.app-card p{
+margin:0;
+color:#acacac;
+line-height:1.6;
+font-size:15px;
+}
+
+.app-status{
+display:inline-flex;
+align-items:center;
+margin-top:18px;
+padding:10px 14px;
+border-radius:999px;
+font-size:13px;
+font-weight:bold;
+letter-spacing:0.3px;
+}
+
+.app-status.live{
+background:rgba(31,161,31,0.12);
+border:1px solid rgba(31,161,31,0.28);
+color:#d8ffd8;
+}
+
+.app-status.future{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+color:#d3d3d3;
+}
+
+/* =============================================================
+FOOTER
+============================================================= */
 footer{
 text-align:center;
-padding:26px;
+padding:26px 20px;
 color:#7e7e7e;
+border-top:1px solid rgba(255,255,255,0.05);
+background:rgba(10,10,12,0.76);
+}
+
+/* =============================================================
+TABLET
+============================================================= */
+@media (max-width:1280px){
+.apps-grid{
+grid-template-columns:repeat(3, minmax(0, 1fr));
+}
+}
+
+@media (max-width:1180px){
+.hero-inner{
+grid-template-columns:1fr;
+gap:42px;
+}
+
+.hero-copy{
+max-width:100%;
+text-align:center;
+margin:0 auto;
+align-items:center;
+}
+
+.hero p{
+margin:0 auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-ad{
+max-width:760px;
+margin:0 auto;
+min-height:520px;
+}
+
+.apps-grid{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+}
+
+/* =============================================================
+MOBILE
+============================================================= */
+@media (max-width:768px){
+header{
+padding:16px 18px;
+flex-direction:column;
+gap:14px;
+}
+
+nav{
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero{
+padding:70px 20px 40px 20px;
+}
+
+.hero h1{
+font-size:46px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.hero-buttons{
+gap:12px;
+}
+
+.button{
+width:100%;
+max-width:280px;
+}
+
+.hero-ad{
+min-height:440px;
+}
+
+.hero-ad-copy h2{
+font-size:22px;
+}
+
+.apps{
+padding:0 20px 54px 20px;
+}
+
+.apps-grid{
+grid-template-columns:1fr;
+}
+
+.apps-head h2{
+font-size:28px;
+}
 }
 
 </style>
@@ -295,17 +531,25 @@ color:#7e7e7e;
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png">
+<img src="logo.png" alt="BeastLabX logo">
 <span>BeastLabX</span>
 </a>
+
+<nav>
+<a href="index.html" class="active">Home</a>
+<a href="apps.html">Apps</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <section class="hero">
+
 <div class="hero-inner">
 
 <div class="hero-copy">
 <div class="hero-kicker">
-<img src="logo.png">
+<img src="logo.png" alt="BeastLabX icon">
 <span>Built for real-world apps</span>
 </div>
 
@@ -313,55 +557,101 @@ color:#7e7e7e;
 
 <p>
 We build practical, high-performance apps for real-world use.
+From structured training systems to workshop diagnostics and utility tools,
+our apps are designed to be focused, fast, and effective.
 </p>
 
 <div class="hero-buttons">
-<a class="button primary" href="#">Explore</a>
-<a class="button secondary" href="#">About</a>
+<a class="button primary" href="apps.html">Explore our apps</a>
+<a class="button secondary" href="about.html">About BeastLabX</a>
 </div>
 
-<div class="hero-note">Practical software. Real-world use.</div>
+<div class="hero-note">Practical software. Strong branding. Real-world use.</div>
 </div>
 
-<a class="hero-ad">
-<img src="bl-ad.png">
+<a class="hero-ad" href="beastlabx.html">
+<div class="hero-ad-badge">Featured app</div>
+<img src="bl-ad.png" alt="BeastLabX promotional image">
+<div class="hero-ad-copy">
+<h2>BeastLabX live on Google Play</h2>
+<p>
+Serious training log for serious lifters. Built for structured training, progression, and focused gym use.
+</p>
+</div>
 </a>
 
 </div>
+
 </section>
 
 <section class="apps">
+
+<div class="apps-head">
+<h2>Apps by BeastLabX</h2>
+<p>
+Explore the current BeastLabX lineup below. Tap any live app card to open its page.
+</p>
+</div>
+
 <div class="apps-grid">
 
-<div class="app-card">
+<a class="app-card" href="beastlabx.html">
 <div class="app-logo-wrap">
-<img src="bl-logo.png">
+<img src="bl-logo.png" alt="BeastLabX logo">
 </div>
 <h3>BeastLabX</h3>
-</div>
+<p>
+Structured training, workout tracking, and focused progression tools for lifters.
+</p>
+<div class="app-status live">Open app page</div>
+</a>
 
-<div class="app-card">
+<a class="app-card" href="mechtoolbox.html">
 <div class="app-logo-wrap">
-<img src="mt-logo.png">
+<img class="mt" src="mt-logo.png" alt="MechToolbox logo">
 </div>
 <h3>MechToolbox</h3>
-</div>
+<p>
+Fault diagnostics, workshop tools, manuals, job tracking, and mechanic utilities.
+</p>
+<div class="app-status live">Open app page</div>
+</a>
 
-<div class="app-card">
+<a class="app-card" href="beastutility.html">
 <div class="app-logo-wrap">
-<img src="bu-logo.png">
+<img src="bu-logo.png" alt="BeastUtility logo">
 </div>
 <h3>BeastUtility</h3>
-</div>
+<p>
+Simple gym utility tools built for speed, practicality, and daily use.
+</p>
+<div class="app-status live">Open app page</div>
+</a>
 
-<div class="app-card">
+<a class="app-card" href="beastblueprint.html">
 <div class="app-logo-wrap">
-<img src="bb-logo.png">
+<img src="bb-logo.png" alt="BeastBlueprint logo">
 </div>
 <h3>BeastBlueprint</h3>
+<p>
+Blueprint builds your program around you — not the other way around.
+</p>
+<div class="app-status live">Open app page</div>
+</a>
+
+<div class="app-card static">
+<div class="app-logo-wrap">
+<img src="futuretools.png" alt="Future tools logo">
+</div>
+<h3>Watch this space</h3>
+<p>
+More focused apps and practical tools are planned under the BeastLabX brand.
+</p>
+<div class="app-status future">Future apps</div>
 </div>
 
 </div>
+
 </section>
 
 <footer>
