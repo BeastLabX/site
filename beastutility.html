@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BeastUtility – Fast gym utility tools for everyday use</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="BeastUtility – Fast gym utility tools for everyday use. Use practical training tools like plate calculation, warm-up setup, RPE support, and set progression in one focused app.">
+
+<style>
+
+/* =============================================================
+PAGE BASE
+============================================================= */
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:
+linear-gradient(rgba(15,15,18,0.74), rgba(15,15,18,0.80)),
+url('bg.png') center center / cover fixed no-repeat;
+color:#e5e5e5;
+}
+
+/* =============================================================
+HEADER
+============================================================= */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 30px;
+border-bottom:2px solid #1FA11F;
+background:rgba(15,15,18,0.92);
+backdrop-filter:blur(6px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 8px 28px rgba(0,0,0,0.20);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:20px;
+font-weight:bold;
+color:#ffffff;
+text-decoration:none;
+min-width:0;
+}
+
+.logo img{
+height:40px;
+width:auto;
+display:block;
+}
+
+.logo span{
+white-space:nowrap;
+letter-spacing:0.2px;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:24px;
+}
+
+nav a{
+position:relative;
+text-decoration:none;
+color:#ffffff;
+font-size:16px;
+padding:6px 0;
+transition:color 0.2s ease, opacity 0.2s ease;
+}
+
+nav a:hover{
+color:#1FA11F;
+}
+
+nav a.active{
+color:#1FA11F;
+}
+
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-8px;
+width:100%;
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 10px rgba(31,161,31,0.45);
+}
+
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+padding:6px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+display:block;
+width:24px;
+height:2px;
+background:#ffffff;
+margin:5px 0;
+border-radius:2px;
+transition:0.2s ease;
+}
+
+/* =============================================================
+HERO
+============================================================= */
+.hero{
+position:relative;
+overflow:hidden;
+padding:96px 24px 86px 24px;
+background:
+linear-gradient(to bottom, rgba(10,10,12,0.80), rgba(10,10,12,0.56));
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 50% 18%, rgba(31,161,31,0.18) 0%, rgba(31,161,31,0.08) 18%, rgba(31,161,31,0.02) 40%, transparent 60%);
+pointer-events:none;
+animation:heroGlow 6s ease-in-out infinite;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.010) 0px,
+rgba(255,255,255,0.010) 1px,
+rgba(0,0,0,0) 4px,
+rgba(0,0,0,0) 16px
+);
+opacity:0.18;
+pointer-events:none;
+}
+
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:1240px;
+margin:0 auto;
+display:grid;
+grid-template-columns:minmax(0, 620px) minmax(0, 470px);
+gap:54px;
+align-items:center;
+}
+
+.hero-copy{
+max-width:620px;
+}
+
+.hero-brand{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:18px;
+}
+
+.hero-brand img{
+width:74px;
+height:74px;
+object-fit:contain;
+display:block;
+filter:drop-shadow(0 0 12px rgba(31,161,31,0.12));
+}
+
+.hero-label{
+display:inline-block;
+margin-bottom:20px;
+padding:9px 14px;
+border:1px solid rgba(31,161,31,0.34);
+border-radius:999px;
+background:rgba(31,161,31,0.10);
+color:#D6F6D6;
+font-size:13px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+box-shadow:0 0 18px rgba(31,161,31,0.10);
+}
+
+.hero h1{
+margin:0 0 18px 0;
+font-size:66px;
+line-height:0.96;
+color:#ffffff;
+text-shadow:0 0 20px rgba(0,0,0,0.20);
+max-width:600px;
+}
+
+.hero p{
+margin:0;
+font-size:20px;
+line-height:1.78;
+color:#BDBDBD;
+max-width:560px;
+}
+
+.hero-actions{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.hero-button{
+display:inline-block;
+padding:15px 26px;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
+text-decoration:none;
+text-align:center;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-button:hover{
+transform:translateY(-1px);
+}
+
+.hero-button.primary{
+background:#1FA11F;
+color:#ffffff;
+box-shadow:0 0 24px rgba(31,161,31,0.22);
+}
+
+.hero-button.primary:hover{
+background:#229f22;
+box-shadow:0 0 32px rgba(31,161,31,0.34);
+}
+
+.hero-button.secondary{
+background:rgba(0,0,0,0.24);
+border:1px solid #2A2A2A;
+color:#ffffff;
+}
+
+.hero-button.secondary:hover{
+background:rgba(255,255,255,0.04);
+border-color:#3A3A3A;
+}
+
+.hero-points{
+margin-top:30px;
+display:grid;
+grid-template-columns:repeat(2, minmax(0,1fr));
+gap:12px 18px;
+max-width:560px;
+}
+
+.hero-point{
+padding-left:18px;
+position:relative;
+font-size:15px;
+line-height:1.65;
+color:#C8C8C8;
+}
+
+.hero-point::before{
+content:"";
+position:absolute;
+left:0;
+top:9px;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#1FA11F;
+box-shadow:0 0 12px rgba(31,161,31,0.45);
+}
+
+.hero-visual{
+display:flex;
+justify-content:center;
+}
+
+.hero-device{
+position:relative;
+width:100%;
+max-width:500px;
+padding:16px;
+border-radius:34px;
+background:linear-gradient(to bottom, rgba(27,27,31,0.98), rgba(16,16,19,0.98));
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 28px 80px rgba(0,0,0,0.44);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-device:hover{
+transform:translateY(-3px);
+box-shadow:0 32px 90px rgba(0,0,0,0.50), 0 0 28px rgba(31,161,31,0.12);
+}
+
+.hero-device::before{
+content:"";
+position:absolute;
+left:18px;
+right:18px;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 16px rgba(31,161,31,0.45);
+border-radius:3px;
+}
+
+.hero-device img{
+display:block;
+width:100%;
+height:auto;
+border-radius:24px;
+box-shadow:0 18px 40px rgba(0,0,0,0.32);
+}
+
+/* =============================================================
+SHARED SECTIONS
+============================================================= */
+.section-divider{
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.section{
+padding:90px 24px;
+background:rgba(15,15,18,0.72);
+position:relative;
+overflow:hidden;
+}
+
+.section.alt{
+background:rgba(12,12,15,0.82);
+}
+
+.section::before{
+content:"";
+position:absolute;
+top:-120px;
+left:50%;
+transform:translateX(-50%);
+width:720px;
+height:220px;
+background:radial-gradient(circle, rgba(31,161,31,0.08) 0%, rgba(31,161,31,0.02) 42%, transparent 72%);
+pointer-events:none;
+}
+
+.section-inner{
+position:relative;
+max-width:1240px;
+margin:0 auto;
+}
+
+.section-heading{
+max-width:900px;
+margin:0 auto 46px auto;
+text-align:center;
+}
+
+.section-label{
+display:inline-block;
+margin-bottom:16px;
+padding:8px 13px;
+border-radius:999px;
+border:1px solid rgba(31,161,31,0.28);
+background:rgba(31,161,31,0.08);
+color:#D6F6D6;
+font-size:12px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+box-shadow:0 0 16px rgba(31,161,31,0.08);
+}
+
+.section-heading h2{
+margin:0 0 14px 0;
+font-size:42px;
+line-height:1.14;
+color:#ffffff;
+}
+
+.section-heading p{
+margin:0;
+font-size:18px;
+line-height:1.75;
+color:#BDBDBD;
+}
+
+/* =============================================================
+STRENGTH STRIP
+============================================================= */
+.strength-strip{
+display:grid;
+grid-template-columns:repeat(4, minmax(0,1fr));
+gap:18px;
+}
+
+.strength-card{
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:22px;
+padding:24px 20px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.strength-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.24);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+}
+
+.strength-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.strength-card h3{
+margin:0 0 10px 0;
+font-size:22px;
+line-height:1.2;
+color:#ffffff;
+}
+
+.strength-card p{
+margin:0;
+font-size:15px;
+line-height:1.7;
+color:#C8C8C8;
+}
+
+/* =============================================================
+FEATURES
+============================================================= */
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0,1fr));
+gap:24px;
+}
+
+.feature-card{
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:22px;
+padding:28px 24px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.24);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+}
+
+.feature-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.feature-card h3{
+margin:0 0 12px 0;
+font-size:25px;
+line-height:1.2;
+color:#ffffff;
+}
+
+.feature-card p{
+margin:0 0 18px 0;
+font-size:16px;
+line-height:1.75;
+color:#C8C8C8;
+}
+
+.feature-list{
+margin:0;
+padding:0;
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.feature-list li{
+position:relative;
+padding-left:18px;
+font-size:15px;
+line-height:1.65;
+color:#BDBDBD;
+}
+
+.feature-list li::before{
+content:"";
+position:absolute;
+left:0;
+top:9px;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#1FA11F;
+box-shadow:0 0 12px rgba(31,161,31,0.45);
+}
+
+/* =============================================================
+SCREENSHOTS
+============================================================= */
+.screenshot-grid{
+display:grid;
+grid-template-columns:repeat(3, minmax(0,1fr));
+gap:24px;
+}
+
+.screenshot-card{
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+padding:18px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.screenshot-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.22);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+}
+
+.screenshot-card img{
+display:block;
+width:100%;
+height:auto;
+border-radius:18px;
+box-shadow:0 18px 40px rgba(0,0,0,0.36);
+}
+
+.screenshot-card .caption{
+margin-top:14px;
+font-size:15px;
+line-height:1.6;
+color:#C8C8C8;
+text-align:center;
+}
+
+/* =============================================================
+ORIGIN / CTA
+============================================================= */
+.story-card,
+.cta-card{
+max-width:1080px;
+margin:0 auto;
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+padding:36px 30px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.story-card:hover,
+.cta-card:hover{
+transform:translateY(-3px);
+border-color:rgba(31,161,31,0.22);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+}
+
+.story-card::before,
+.cta-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.story-card p{
+margin:0;
+font-size:20px;
+line-height:1.95;
+color:#D2D2D2;
+text-align:center;
+}
+
+.cta-card{
+text-align:center;
+}
+
+.cta-card h2{
+margin:0 0 14px 0;
+font-size:42px;
+line-height:1.16;
+color:#ffffff;
+}
+
+.cta-card p{
+margin:0 auto 26px auto;
+max-width:760px;
+font-size:18px;
+line-height:1.8;
+color:#BDBDBD;
+}
+
+.cta-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+}
+
+/* =============================================================
+SCROLL REVEAL
+============================================================= */
+.reveal{
+opacity:0;
+transform:translateY(34px);
+transition:opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.reveal-delay-1{transition-delay:0.08s;}
+.reveal-delay-2{transition-delay:0.16s;}
+.reveal-delay-3{transition-delay:0.24s;}
+.reveal-delay-4{transition-delay:0.32s;}
+.reveal-delay-5{transition-delay:0.40s;}
+.reveal-delay-6{transition-delay:0.48s;}
+
+/* =============================================================
+ANIMATION KEYFRAMES
+============================================================= */
+@keyframes heroGlow{
+0%{opacity:0.75;}
+50%{opacity:1;}
+100%{opacity:0.75;}
+}
+
+/* =============================================================
+TABLET
+============================================================= */
+@media (max-width:1024px){
+
+header{
+padding:16px 24px;
+}
+
+.hero{
+padding:84px 22px 76px 22px;
+}
+
+.hero-inner{
+grid-template-columns:1fr;
+gap:34px;
+}
+
+.hero-copy{
+max-width:100%;
+text-align:center;
+margin:0 auto;
+}
+
+.hero-brand{
+justify-content:center;
+}
+
+.hero p{
+margin:0 auto;
+}
+
+.hero-actions{
+justify-content:center;
+}
+
+.hero-points{
+margin-left:auto;
+margin-right:auto;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.section-heading h2{
+font-size:34px;
+}
+
+.strength-strip{
+grid-template-columns:repeat(2, minmax(0,1fr));
+}
+
+.feature-grid{
+grid-template-columns:1fr;
+}
+
+.screenshot-grid{
+grid-template-columns:repeat(2, minmax(0,1fr));
+}
+
+}
+
+/* =============================================================
+MOBILE
+============================================================= */
+@media (max-width:768px){
+
+body{
+background:
+linear-gradient(rgba(15,15,18,0.78), rgba(15,15,18,0.82)),
+url('bg.png') center center / cover no-repeat fixed;
+}
+
+header{
+padding:16px 18px;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:18px;
+gap:10px;
+}
+
+.logo img{
+height:34px;
+}
+
+.menu-toggle{
+display:block;
+margin-left:auto;
+}
+
+nav{
+display:none;
+width:100%;
+flex-direction:column;
+align-items:center;
+gap:18px;
+padding:18px 0 8px 0;
+border-top:1px solid #2A2A2A;
+margin-top:10px;
+}
+
+nav.open{
+display:flex;
+}
+
+nav a{
+font-size:18px;
+}
+
+nav a.active::after{
+display:none;
+}
+
+.hero{
+padding:70px 20px 60px 20px;
+}
+
+.hero-brand img{
+width:64px;
+height:64px;
+}
+
+.hero-label{
+font-size:12px;
+padding:7px 12px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.hero-points{
+grid-template-columns:1fr;
+gap:10px;
+}
+
+.hero-device{
+max-width:320px;
+padding:12px;
+border-radius:28px;
+}
+
+.section{
+padding:72px 20px;
+}
+
+.section-heading{
+margin-bottom:30px;
+}
+
+.section-heading h2{
+font-size:30px;
+}
+
+.section-heading p{
+font-size:16px;
+}
+
+.strength-strip{
+grid-template-columns:1fr;
+}
+
+.feature-card{
+padding:24px 18px;
+border-radius:18px;
+}
+
+.feature-card h3,
+.strength-card h3{
+font-size:22px;
+}
+
+.feature-card p,
+.feature-list li,
+.strength-card p{
+font-size:15px;
+}
+
+.screenshot-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.screenshot-card{
+padding:14px;
+border-radius:18px;
+}
+
+.story-card,
+.cta-card{
+padding:26px 18px;
+border-radius:18px;
+}
+
+.story-card p{
+font-size:17px;
+line-height:1.85;
+}
+
+.cta-card h2{
+font-size:30px;
+}
+
+.cta-card p{
+font-size:16px;
+}
+
+}
+
+/* =============================================================
+SMALL PHONES
+============================================================= */
+@media (max-width:420px){
+
+.hero{
+padding:62px 16px 54px 16px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-button{
+width:100%;
+}
+
+.logo span{
+font-size:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html" class="logo">
+<img src="logo.png" alt="BeastLabX">
+<span>BeastLabX</span>
+</a>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<nav id="siteNav">
+<a href="index.html">Home</a>
+<a href="apps.html" class="active">Apps</a>
+<a href="about.html">About</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+
+<div class="hero-copy reveal is-visible">
+<div class="hero-brand">
+<img src="bu-logo.png" alt="BeastUtility app logo">
+</div>
+<div class="hero-label">Fast gym utility tools</div>
+<h1>Practical gym tools without the clutter.</h1>
+<p>
+BeastUtility is built for quick, useful training tools you can open and use in seconds.
+From plate calculation and warm-up setup to RPE support and set progression,
+it keeps everyday gym utilities in one clean and focused app.
+</p>
+
+<div class="hero-actions">
+<a class="hero-button primary" href="#">Download Coming Soon</a>
+<a class="hero-button secondary" href="#screenshots">View Screens</a>
+</div>
+
+<div class="hero-points">
+<div class="hero-point">Plate calculator support</div>
+<div class="hero-point">Warm-up setup tools</div>
+<div class="hero-point">RPE and set progression help</div>
+<div class="hero-point">Fast everyday gym utility use</div>
+</div>
+</div>
+
+<div class="hero-visual reveal is-visible">
+<div class="hero-device">
+<img src="bu-home.jpeg" alt="BeastUtility home screen">
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section alt">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">Built for speed</div>
+<h2>Quick tools for real gym sessions.</h2>
+<p>
+BeastUtility is designed for lifters who want useful calculations and training helpers
+without digging through bloated menus or distractions.
+</p>
+</div>
+
+<div class="strength-strip">
+<div class="strength-card reveal reveal-delay-1">
+<h3>Open fast</h3>
+<p>Get into the tool you need quickly without wasting time during a session.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-2">
+<h3>Stay practical</h3>
+<p>Use focused training utilities built around real gym needs instead of filler features.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-3">
+<h3>Train smarter</h3>
+<p>Use plates, warm-ups, RPE, and progression support to make better training decisions.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-4">
+<h3>Keep it simple</h3>
+<p>Everything is built to feel clean, fast, and useful when you need help right now.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">Core features</div>
+<h2>Utility-first gym tools in one place</h2>
+<p>
+BeastUtility keeps the experience simple and practical so you can get the answer you need,
+use the tool, and get back to training.
+</p>
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-card reveal reveal-delay-1">
+<h3>Plate calculation</h3>
+<p>
+Work out loading fast with a dedicated plate calculator built for practical gym use.
+</p>
+<ul class="feature-list">
+<li>Fast plate breakdown help</li>
+<li>Useful during real sessions</li>
+<li>Built for quick decisions</li>
+</ul>
+</div>
+
+<div class="feature-card reveal reveal-delay-2">
+<h3>Warm-up setup</h3>
+<p>
+Use a warm-up calculator to build into working sets more cleanly and consistently.
+</p>
+<ul class="feature-list">
+<li>Working-set lead-in support</li>
+<li>Cleaner session setup</li>
+<li>Useful before heavy lifts</li>
+</ul>
+</div>
+
+<div class="feature-card reveal reveal-delay-3">
+<h3>RPE and progression tools</h3>
+<p>
+Use simple tools that help with effort guidance and set progression without overcomplicating the process.
+</p>
+<ul class="feature-list">
+<li>RPE assistance</li>
+<li>Set progression support</li>
+<li>Fast training utility flow</li>
+</ul>
+</div>
+
+<div class="feature-card reveal reveal-delay-4">
+<h3>Built for everyday use</h3>
+<p>
+BeastUtility is not trying to be a full training platform. It stays focused on useful gym tools you can rely on often.
+</p>
+<ul class="feature-list">
+<li>Fast-open utility app</li>
+<li>Simple focused screens</li>
+<li>Made for repeat use</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section alt" id="screenshots">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">App preview</div>
+<h2>Focused utility screens built for the gym</h2>
+<p>
+BeastUtility uses the screenshots currently available and keeps the same clean BeastLabX page style.
+</p>
+</div>
+
+<div class="screenshot-grid">
+
+<div class="screenshot-card reveal reveal-delay-1">
+<img src="bu-home.jpeg" alt="BeastUtility home screen">
+<div class="caption">Home screen with fast access to BeastUtility’s core gym tools.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-2">
+<img src="bu-plate.jpeg" alt="Plate calculator screen">
+<div class="caption">Plate calculator for quick loading help during real training sessions.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-3">
+<img src="bu-warmup.jpeg" alt="Warm-up calculator screen">
+<div class="caption">Warm-up setup screen to help build cleanly into working weight.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-4">
+<img src="bu-rpe.jpeg" alt="RPE support screen">
+<div class="caption">RPE support tool for quick effort guidance without overthinking it.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-5">
+<img src="bu-set.jpeg" alt="Set progression screen">
+<div class="caption">Set progression support to keep training decisions simple and practical.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-6">
+<img src="bu-logo.png" alt="BeastUtility logo">
+<div class="caption">BeastUtility keeps fast gym utilities together in one focused app.</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">Built for a reason</div>
+<h2>Useful tools I wanted ready in the gym</h2>
+</div>
+
+<div class="story-card reveal">
+<p>
+BeastUtility is built around the kind of small but useful tools that actually help during training.
+The goal is simple: open the app, use the tool, get the answer fast, and carry on with the workout.
+</p>
+</div>
+
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section alt">
+<div class="section-inner">
+<div class="cta-card reveal">
+<h2>Follow BeastUtility as it moves toward release</h2>
+<p>
+BeastUtility is being built as a focused gym utility app for practical everyday training support.
+</p>
+
+<div class="cta-actions">
+<a class="hero-button primary" href="#">Download Coming Soon</a>
+<a class="hero-button secondary" href="apps.html">Back to Apps</a>
+</div>
+</div>
+</div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const siteNav = document.getElementById('siteNav');
+
+menuToggle.addEventListener('click', function () {
+const isOpen = siteNav.classList.toggle('open');
+menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+window.addEventListener('resize', function () {
+if (window.innerWidth > 768) {
+siteNav.classList.remove('open');
+menuToggle.setAttribute('aria-expanded', 'false');
+}
+});
+
+fetch("footer.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("footer-placeholder").innerHTML = data;
+});
+
+const revealItems = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+const revealObserver = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+revealObserver.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.14
+});
+
+revealItems.forEach((item) => {
+if (!item.classList.contains('is-visible')) {
+revealObserver.observe(item);
+}
+});
+} else {
+revealItems.forEach((item) => item.classList.add('is-visible'));
+}
+</script>
+
+</body>
+</html>
