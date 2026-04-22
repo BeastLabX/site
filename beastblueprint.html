@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>BeastBlueprint</title>
+<title>BeastBlueprint – Structured program building for serious lifters</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BeastBlueprint — Build structured training plans for the BeastLabX ecosystem">
+<meta name="description" content="BeastBlueprint – Structured program building for serious lifters. Build focused training plans around your goal, split, and training direction in the BeastLabX ecosystem.">
 
 <style>
 
 /* =============================================================
-   PAGE BASE
-   - Matches the polished BeastLabX site styling
-   - Keeps the same visual identity without redesigning the page
+PAGE BASE
 ============================================================= */
 *{
 box-sizing:border-box;
@@ -31,9 +29,7 @@ color:#e5e5e5;
 }
 
 /* =============================================================
-   HEADER
-   - Same polished shared header used across the site
-   - Includes mobile hamburger menu
+HEADER
 ============================================================= */
 header{
 display:flex;
@@ -124,15 +120,24 @@ transition:0.2s ease;
 }
 
 /* =============================================================
-   HERO
-   - Stronger spacing and clearer product-page feel
+HERO
 ============================================================= */
 .hero{
 position:relative;
-padding:92px 20px 74px 20px;
-text-align:center;
-background:linear-gradient(to bottom, rgba(10,10,12,0.76), rgba(10,10,12,0.56));
 overflow:hidden;
+padding:96px 24px 86px 24px;
+background:
+linear-gradient(to bottom, rgba(10,10,12,0.80), rgba(10,10,12,0.56));
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 50% 18%, rgba(31,161,31,0.18) 0%, rgba(31,161,31,0.08) 18%, rgba(31,161,31,0.02) 40%, transparent 60%);
+pointer-events:none;
+animation:heroGlow 6s ease-in-out infinite;
 }
 
 .hero::after{
@@ -140,63 +145,195 @@ content:"";
 position:absolute;
 inset:0;
 background:
-radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 28%, rgba(0,0,0,0) 60%),
 repeating-linear-gradient(
 90deg,
-rgba(255,255,255,0.012) 0px,
-rgba(255,255,255,0.012) 1px,
-rgba(0,0,0,0) 3px,
-rgba(0,0,0,0) 14px
+rgba(255,255,255,0.010) 0px,
+rgba(255,255,255,0.010) 1px,
+rgba(0,0,0,0) 4px,
+rgba(0,0,0,0) 16px
 );
-opacity:0.35;
+opacity:0.18;
 pointer-events:none;
 }
 
 .hero-inner{
 position:relative;
 z-index:1;
-max-width:980px;
+max-width:1240px;
 margin:0 auto;
+display:grid;
+grid-template-columns:minmax(0, 620px) minmax(0, 470px);
+gap:54px;
+align-items:center;
+}
+
+.hero-copy{
+max-width:620px;
+}
+
+.hero-brand{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:18px;
+}
+
+.hero-brand img{
+width:74px;
+height:74px;
+object-fit:contain;
+display:block;
+filter:drop-shadow(0 0 12px rgba(31,161,31,0.12));
 }
 
 .hero-label{
 display:inline-block;
-margin-bottom:18px;
-padding:8px 14px;
+margin-bottom:20px;
+padding:9px 14px;
 border:1px solid rgba(31,161,31,0.34);
 border-radius:999px;
 background:rgba(31,161,31,0.10);
-color:#CFEFCF;
+color:#D6F6D6;
 font-size:13px;
 font-weight:bold;
 letter-spacing:0.08em;
 text-transform:uppercase;
-}
-
-.hero img.app-icon{
-width:118px;
-height:auto;
-margin:0 0 22px 0;
-display:inline-block;
+box-shadow:0 0 18px rgba(31,161,31,0.10);
 }
 
 .hero h1{
 margin:0 0 18px 0;
-font-size:60px;
-line-height:1.02;
+font-size:66px;
+line-height:0.96;
 color:#ffffff;
+text-shadow:0 0 20px rgba(0,0,0,0.20);
+max-width:600px;
 }
 
 .hero p{
-font-size:19px;
+margin:0;
+font-size:20px;
+line-height:1.78;
 color:#BDBDBD;
-max-width:780px;
-margin:0 auto;
-line-height:1.75;
+max-width:560px;
+}
+
+.hero-actions{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.hero-button{
+display:inline-block;
+padding:15px 26px;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
+text-decoration:none;
+text-align:center;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-button:hover{
+transform:translateY(-1px);
+}
+
+.hero-button.primary{
+background:#1FA11F;
+color:#ffffff;
+box-shadow:0 0 24px rgba(31,161,31,0.22);
+}
+
+.hero-button.primary:hover{
+background:#229f22;
+box-shadow:0 0 32px rgba(31,161,31,0.34);
+}
+
+.hero-button.secondary{
+background:rgba(0,0,0,0.24);
+border:1px solid #2A2A2A;
+color:#ffffff;
+}
+
+.hero-button.secondary:hover{
+background:rgba(255,255,255,0.04);
+border-color:#3A3A3A;
+}
+
+.hero-points{
+margin-top:30px;
+display:grid;
+grid-template-columns:repeat(2, minmax(0,1fr));
+gap:12px 18px;
+max-width:560px;
+}
+
+.hero-point{
+padding-left:18px;
+position:relative;
+font-size:15px;
+line-height:1.65;
+color:#C8C8C8;
+}
+
+.hero-point::before{
+content:"";
+position:absolute;
+left:0;
+top:9px;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#1FA11F;
+box-shadow:0 0 12px rgba(31,161,31,0.45);
+}
+
+.hero-visual{
+display:flex;
+justify-content:center;
+}
+
+.hero-device{
+position:relative;
+width:100%;
+max-width:500px;
+padding:16px;
+border-radius:34px;
+background:linear-gradient(to bottom, rgba(27,27,31,0.98), rgba(16,16,19,0.98));
+border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 28px 80px rgba(0,0,0,0.44);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-device:hover{
+transform:translateY(-3px);
+box-shadow:0 32px 90px rgba(0,0,0,0.50), 0 0 28px rgba(31,161,31,0.12);
+}
+
+.hero-device::before{
+content:"";
+position:absolute;
+left:18px;
+right:18px;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 16px rgba(31,161,31,0.45);
+border-radius:3px;
+}
+
+.hero-device img{
+display:block;
+width:100%;
+height:auto;
+border-radius:24px;
+box-shadow:0 18px 40px rgba(0,0,0,0.32);
 }
 
 /* =============================================================
-   DIVIDER
+SHARED SECTIONS
 ============================================================= */
 .section-divider{
 height:2px;
@@ -204,159 +341,343 @@ background:#1FA11F;
 box-shadow:0 0 18px rgba(31,161,31,0.45);
 }
 
-/* =============================================================
-   SCREENSHOT SECTION
-   - Cleaner presentation for the device preview
-============================================================= */
-.screenshot-section{
-padding:84px 24px 92px 24px;
-background:rgba(15,15,18,0.72);
-text-align:center;
-}
-
-.screenshot-inner{
-max-width:1000px;
-margin:0 auto;
-}
-
-.screenshot-inner h2{
-margin:0 0 18px 0;
-font-size:40px;
-color:#ffffff;
-}
-
-.screenshot-inner p{
-margin:0 auto 36px auto;
-max-width:760px;
-font-size:18px;
-line-height:1.75;
-color:#BDBDBD;
-}
-
-.phone-frame{
-display:inline-block;
-padding:14px;
-border-radius:34px;
-background:rgba(18,18,22,0.92);
-border:1px solid rgba(255,255,255,0.10);
-box-shadow:0 22px 55px rgba(0,0,0,0.35);
-}
-
-.phone-frame img{
-display:block;
-width:340px;
-max-width:100%;
-height:auto;
-border-radius:24px;
-}
-
-/* =============================================================
-   FEATURES
-   - Better width control and card polish
-============================================================= */
-.features-section{
+.section{
 padding:90px 24px;
 background:rgba(15,15,18,0.72);
+position:relative;
+overflow:hidden;
 }
 
-.features-inner{
-max-width:1100px;
+.section.alt{
+background:rgba(12,12,15,0.82);
+}
+
+.section::before{
+content:"";
+position:absolute;
+top:-120px;
+left:50%;
+transform:translateX(-50%);
+width:720px;
+height:220px;
+background:radial-gradient(circle, rgba(31,161,31,0.08) 0%, rgba(31,161,31,0.02) 42%, transparent 72%);
+pointer-events:none;
+}
+
+.section-inner{
+position:relative;
+max-width:1240px;
 margin:0 auto;
-display:flex;
-flex-direction:column;
-gap:24px;
 }
 
-.features-heading{
-max-width:820px;
-margin:0 auto 10px auto;
+.section-heading{
+max-width:900px;
+margin:0 auto 46px auto;
 text-align:center;
 }
 
-.features-heading h2{
+.section-label{
+display:inline-block;
+margin-bottom:16px;
+padding:8px 13px;
+border-radius:999px;
+border:1px solid rgba(31,161,31,0.28);
+background:rgba(31,161,31,0.08);
+color:#D6F6D6;
+font-size:12px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+box-shadow:0 0 16px rgba(31,161,31,0.08);
+}
+
+.section-heading h2{
 margin:0 0 14px 0;
-font-size:38px;
+font-size:42px;
+line-height:1.14;
 color:#ffffff;
 }
 
-.features-heading p{
+.section-heading p{
 margin:0;
 font-size:18px;
 line-height:1.75;
 color:#BDBDBD;
 }
 
-.feature{
+/* =============================================================
+STRENGTH STRIP
+============================================================= */
+.strength-strip{
+display:grid;
+grid-template-columns:repeat(4, minmax(0,1fr));
+gap:18px;
+}
+
+.strength-card{
 background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
 border:1px solid rgba(255,255,255,0.08);
-border-radius:18px;
-padding:28px 28px;
-box-shadow:0 14px 34px rgba(0,0,0,0.18);
-transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+border-radius:22px;
+padding:24px 20px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.feature:hover{
-transform:translateY(-2px);
-border-color:rgba(31,161,31,0.22);
-box-shadow:0 18px 40px rgba(0,0,0,0.22);
+.strength-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.24);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
 }
 
-.feature h2{
+.strength-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.strength-card h3{
 margin:0 0 10px 0;
-font-size:25px;
+font-size:22px;
+line-height:1.2;
 color:#ffffff;
 }
 
-.feature p{
+.strength-card p{
 margin:0;
-font-size:17px;
-line-height:1.75;
+font-size:15px;
+line-height:1.7;
 color:#C8C8C8;
 }
 
 /* =============================================================
-   CTA
+FEATURES
 ============================================================= */
-.cta{
-padding:90px 20px;
-text-align:center;
-background:rgba(15,15,18,0.72);
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(2, minmax(0,1fr));
+gap:24px;
 }
 
-.cta h2{
-font-size:40px;
+.feature-card{
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:22px;
+padding:28px 24px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.24);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+}
+
+.feature-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.feature-card h3{
 margin:0 0 12px 0;
+font-size:25px;
+line-height:1.2;
 color:#ffffff;
 }
 
-.cta p{
-font-size:18px;
-color:#BDBDBD;
-margin:0 0 30px 0;
-line-height:1.7;
-}
-
-.cta-button{
-display:inline-block;
-padding:14px 26px;
-background:#1FA11F;
-color:#fff;
-text-decoration:none;
-border-radius:12px;
-font-weight:bold;
+.feature-card p{
+margin:0 0 18px 0;
 font-size:16px;
-box-shadow:0 0 24px rgba(31,161,31,0.18);
-transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+line-height:1.75;
+color:#C8C8C8;
 }
 
-.cta-button:hover{
-transform:translateY(-1px);
-background:#229f22;
-box-shadow:0 0 28px rgba(31,161,31,0.24);
+.feature-list{
+margin:0;
+padding:0;
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.feature-list li{
+position:relative;
+padding-left:18px;
+font-size:15px;
+line-height:1.65;
+color:#BDBDBD;
+}
+
+.feature-list li::before{
+content:"";
+position:absolute;
+left:0;
+top:9px;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#1FA11F;
+box-shadow:0 0 12px rgba(31,161,31,0.45);
 }
 
 /* =============================================================
-   TABLET
+SCREENSHOTS
+============================================================= */
+.screenshot-grid{
+display:grid;
+grid-template-columns:repeat(3, minmax(0,1fr));
+gap:24px;
+}
+
+.screenshot-card{
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+padding:18px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.screenshot-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.22);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+}
+
+.screenshot-card img{
+display:block;
+width:100%;
+height:auto;
+border-radius:18px;
+box-shadow:0 18px 40px rgba(0,0,0,0.36);
+}
+
+.screenshot-card .caption{
+margin-top:14px;
+font-size:15px;
+line-height:1.6;
+color:#C8C8C8;
+text-align:center;
+}
+
+/* =============================================================
+ORIGIN / CTA
+============================================================= */
+.story-card,
+.cta-card{
+max-width:1080px;
+margin:0 auto;
+background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+padding:36px 30px;
+box-shadow:0 18px 45px rgba(0,0,0,0.20);
+position:relative;
+overflow:hidden;
+transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.story-card:hover,
+.cta-card:hover{
+transform:translateY(-3px);
+border-color:rgba(31,161,31,0.22);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+}
+
+.story-card::before,
+.cta-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+
+.story-card p{
+margin:0;
+font-size:20px;
+line-height:1.95;
+color:#D2D2D2;
+text-align:center;
+}
+
+.cta-card{
+text-align:center;
+}
+
+.cta-card h2{
+margin:0 0 14px 0;
+font-size:42px;
+line-height:1.16;
+color:#ffffff;
+}
+
+.cta-card p{
+margin:0 auto 26px auto;
+max-width:760px;
+font-size:18px;
+line-height:1.8;
+color:#BDBDBD;
+}
+
+.cta-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+}
+
+/* =============================================================
+SCROLL REVEAL
+============================================================= */
+.reveal{
+opacity:0;
+transform:translateY(34px);
+transition:opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.reveal-delay-1{transition-delay:0.08s;}
+.reveal-delay-2{transition-delay:0.16s;}
+.reveal-delay-3{transition-delay:0.24s;}
+.reveal-delay-4{transition-delay:0.32s;}
+.reveal-delay-5{transition-delay:0.40s;}
+.reveal-delay-6{transition-delay:0.48s;}
+
+/* =============================================================
+ANIMATION KEYFRAMES
+============================================================= */
+@keyframes heroGlow{
+0%{opacity:0.75;}
+50%{opacity:1;}
+100%{opacity:0.75;}
+}
+
+/* =============================================================
+TABLET
 ============================================================= */
 @media (max-width:1024px){
 
@@ -365,37 +686,61 @@ padding:16px 24px;
 }
 
 .hero{
-padding:78px 20px 64px 20px;
+padding:84px 22px 76px 22px;
 }
 
-.hero h1{
-font-size:46px;
+.hero-inner{
+grid-template-columns:1fr;
+gap:34px;
+}
+
+.hero-copy{
+max-width:100%;
+text-align:center;
+margin:0 auto;
+}
+
+.hero-brand{
+justify-content:center;
 }
 
 .hero p{
-font-size:17px;
+margin:0 auto;
 }
 
-.screenshot-inner h2{
-font-size:32px;
+.hero-actions{
+justify-content:center;
 }
 
-.screenshot-inner p{
-font-size:16px;
+.hero-points{
+margin-left:auto;
+margin-right:auto;
 }
 
-.features-heading h2{
-font-size:30px;
+.hero h1{
+font-size:50px;
 }
 
-.features-heading p{
-font-size:16px;
+.section-heading h2{
+font-size:34px;
+}
+
+.strength-strip{
+grid-template-columns:repeat(2, minmax(0,1fr));
+}
+
+.feature-grid{
+grid-template-columns:1fr;
+}
+
+.screenshot-grid{
+grid-template-columns:repeat(2, minmax(0,1fr));
 }
 
 }
 
 /* =============================================================
-   MOBILE
+MOBILE
 ============================================================= */
 @media (max-width:768px){
 
@@ -449,7 +794,12 @@ display:none;
 }
 
 .hero{
-padding:68px 20px 56px 20px;
+padding:70px 20px 60px 20px;
+}
+
+.hero-brand img{
+width:64px;
+height:64px;
 }
 
 .hero-label{
@@ -457,89 +807,99 @@ font-size:12px;
 padding:7px 12px;
 }
 
-.hero img.app-icon{
-width:96px;
-margin-bottom:18px;
-}
-
 .hero h1{
-font-size:42px;
+font-size:40px;
 }
 
 .hero p{
-font-size:16px;
+font-size:17px;
 }
 
-.screenshot-section{
-padding:64px 20px 72px 20px;
+.hero-points{
+grid-template-columns:1fr;
+gap:10px;
 }
 
-.screenshot-inner h2{
+.hero-device{
+max-width:320px;
+padding:12px;
+border-radius:28px;
+}
+
+.section{
+padding:72px 20px;
+}
+
+.section-heading{
+margin-bottom:30px;
+}
+
+.section-heading h2{
 font-size:30px;
 }
 
-.screenshot-inner p{
+.section-heading p{
 font-size:16px;
 }
 
-.phone-frame{
-padding:10px;
-border-radius:26px;
+.strength-strip{
+grid-template-columns:1fr;
 }
 
-.phone-frame img{
-width:280px;
+.feature-card{
+padding:24px 18px;
 border-radius:18px;
 }
 
-.features-section{
-padding:72px 20px;
-}
-
-.features-inner{
-gap:20px;
-}
-
-.feature{
-padding:22px;
-}
-
-.feature h2{
+.feature-card h3,
+.strength-card h3{
 font-size:22px;
 }
 
-.feature p{
+.feature-card p,
+.feature-list li,
+.strength-card p{
 font-size:15px;
 }
 
-.cta{
-padding:72px 20px;
+.screenshot-grid{
+grid-template-columns:1fr;
+gap:20px;
 }
 
-.cta h2{
+.screenshot-card{
+padding:14px;
+border-radius:18px;
+}
+
+.story-card,
+.cta-card{
+padding:26px 18px;
+border-radius:18px;
+}
+
+.story-card p{
+font-size:17px;
+line-height:1.85;
+}
+
+.cta-card h2{
 font-size:30px;
 }
 
-.cta p{
+.cta-card p{
 font-size:16px;
-}
-
-.cta-button{
-width:100%;
-max-width:240px;
-box-sizing:border-box;
-text-align:center;
 }
 
 }
 
 /* =============================================================
-   SMALL PHONES
+SMALL PHONES
 ============================================================= */
 @media (max-width:420px){
 
 .hero{
-padding:60px 16px 50px 16px;
+padding:62px 16px 54px 16px;
 }
 
 .hero h1{
@@ -550,12 +910,12 @@ font-size:34px;
 font-size:16px;
 }
 
-.logo span{
-font-size:18px;
+.hero-button{
+width:100%;
 }
 
-.phone-frame img{
-width:250px;
+.logo span{
+font-size:18px;
 }
 
 }
@@ -588,82 +948,36 @@ width:250px;
 
 <section class="hero">
 <div class="hero-inner">
-<div class="hero-label">BeastLabX Ecosystem</div>
-<img class="app-icon" src="blueprint-logo.png" alt="BeastBlueprint">
-<h1>BeastBlueprint</h1>
-<p>
-Build structured training plans with a focused step-by-step workflow designed for serious lifters inside the BeastLabX ecosystem.
-</p>
+
+<div class="hero-copy reveal is-visible">
+<div class="hero-brand">
+<img src="bb-logo.png" alt="BeastBlueprint app logo">
 </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section class="screenshot-section">
-<div class="screenshot-inner">
-<h2>Build plans with purpose</h2>
+<div class="hero-label">Structured program builder</div>
+<h1>Build your program around you.</h1>
 <p>
-BeastBlueprint is designed to help create clear, structured training programs before they move into the main tracking workflow.
+BeastBlueprint is built to generate structured training plans around your goal, split,
+training level, and direction. It is designed for lifters who want a stronger starting point
+than generic templates and a cleaner route into serious training structure.
 </p>
 
-<div class="phone-frame">
-<img src="blueprint-phone.png" alt="BeastBlueprint Screenshot">
-</div>
-</div>
-</section>
-
-<div class="section-divider"></div>
-
-<section class="features-section">
-<div class="features-inner">
-
-<div class="features-heading">
-<h2>What BeastBlueprint is built to do</h2>
-<p>
-BeastBlueprint focuses on structured planning so lifters can create programs with clear intent before moving into execution.
-</p>
+<div class="hero-actions">
+<a class="hero-button primary" href="#">Download Coming Soon</a>
+<a class="hero-button secondary" href="#screenshots">View Screens</a>
 </div>
 
-<div class="feature">
-<h2>Step-by-Step Program Builder</h2>
-<p>
-Create training plans through a guided builder instead of managing everything on one cluttered screen.
-</p>
+<div class="hero-points">
+<div class="hero-point">Goal-based planning</div>
+<div class="hero-point">Structured split generation</div>
+<div class="hero-point">Clean program builder flow</div>
+<div class="hero-point">Built for serious lifters</div>
+</div>
 </div>
 
-<div class="feature">
-<h2>Structured Training Days</h2>
-<p>
-Build programs across multiple training days with a layout made for real gym planning and weekly structure.
-</p>
+<div class="hero-visual reveal is-visible">
+<div class="hero-device">
+<img src="bb-home.jpeg" alt="BeastBlueprint home screen">
 </div>
-
-<div class="feature">
-<h2>Exercise Selection</h2>
-<p>
-Choose exercises based on practical gym training so each day is built around clear purpose and movement selection.
-</p>
-</div>
-
-<div class="feature">
-<h2>Editable Sets and Targets</h2>
-<p>
-Adjust sets and target reps to shape each workout around the goal of the program.
-</p>
-</div>
-
-<div class="feature">
-<h2>Smart Generate Direction</h2>
-<p>
-Use rules-based generation to create a strong starting structure that can still be reviewed and adjusted.
-</p>
-</div>
-
-<div class="feature">
-<h2>Built for BeastLabX</h2>
-<p>
-BeastBlueprint is part of the BeastLabX ecosystem, helping lifters move from plan creation into serious training execution.
-</p>
 </div>
 
 </div>
@@ -671,10 +985,197 @@ BeastBlueprint is part of the BeastLabX ecosystem, helping lifters move from pla
 
 <div class="section-divider"></div>
 
-<section class="cta">
-<h2>BeastBlueprint</h2>
-<p>BeastBlueprint is currently in development.</p>
-<a class="cta-button" href="apps.html">Back to Apps</a>
+<section class="section alt">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">Built for planning</div>
+<h2>Structure first. Better training follows.</h2>
+<p>
+BeastBlueprint is focused on helping lifters build a proper program before training starts,
+so the weekly structure, exercise flow, and overall direction already make sense.
+</p>
+</div>
+
+<div class="strength-strip">
+<div class="strength-card reveal reveal-delay-1">
+<h3>Start with direction</h3>
+<p>Build around your goal and training setup instead of guessing a weekly structure.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-2">
+<h3>Use better splits</h3>
+<p>Create programs with a more deliberate training split and session flow.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-3">
+<h3>Generate faster</h3>
+<p>Use rules-based logic to create a stronger starting program without wasting time.</p>
+</div>
+
+<div class="strength-card reveal reveal-delay-4">
+<h3>Refine from there</h3>
+<p>Blueprint is built to give a strong structure that can still be reviewed and improved.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">Core features</div>
+<h2>Focused on real program building</h2>
+<p>
+BeastBlueprint is built around structured planning so the output feels more practical,
+usable, and aligned with real gym training.
+</p>
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-card reveal reveal-delay-1">
+<h3>Guided program generation</h3>
+<p>
+Build training plans through a focused generator instead of juggling one cluttered planning screen.
+</p>
+<ul class="feature-list">
+<li>Step-by-step builder direction</li>
+<li>Cleaner planning flow</li>
+<li>Built around structure</li>
+</ul>
+</div>
+
+<div class="feature-card reveal reveal-delay-2">
+<h3>Split and goal logic</h3>
+<p>
+Generate plans around your training goal and preferred split so the weekly setup makes more sense from the start.
+</p>
+<ul class="feature-list">
+<li>Goal-aware generation</li>
+<li>Split-based structure</li>
+<li>Better weekly planning</li>
+</ul>
+</div>
+
+<div class="feature-card reveal reveal-delay-3">
+<h3>Exercise and session flow</h3>
+<p>
+Build sessions around a clearer training day layout instead of random exercise stacking.
+</p>
+<ul class="feature-list">
+<li>Structured day flow</li>
+<li>More deliberate planning</li>
+<li>Cleaner session output</li>
+</ul>
+</div>
+
+<div class="feature-card reveal reveal-delay-4">
+<h3>Built for BeastLabX</h3>
+<p>
+BeastBlueprint is part of the same ecosystem, helping move from plan creation into focused training execution.
+</p>
+<ul class="feature-list">
+<li>Planning-first workflow</li>
+<li>Fits the wider ecosystem</li>
+<li>Made for serious training use</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section alt" id="screenshots">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">App preview</div>
+<h2>Structured planning screens in the same Beast style</h2>
+<p>
+BeastBlueprint uses the available screenshots and follows the same page style as BeastLabX.
+</p>
+</div>
+
+<div class="screenshot-grid">
+
+<div class="screenshot-card reveal reveal-delay-1">
+<img src="bb-home.jpeg" alt="BeastBlueprint home screen">
+<div class="caption">Home screen for starting and managing your program-building flow.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-2">
+<img src="bb-generate.jpeg" alt="Program generator screen">
+<div class="caption">Generator flow built to shape a plan around your training direction.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-3">
+<img src="bb-program.jpeg" alt="Program screen">
+<div class="caption">Program view showing a clearer structure for weekly training setup.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-4">
+<img src="bb-library.jpeg" alt="Exercise library screen">
+<div class="caption">Library screen used to support exercise selection and planning choices.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-5">
+<img src="bb-home.jpeg" alt="BeastBlueprint secondary screen">
+<div class="caption">BeastBlueprint keeps the planning experience focused instead of bloated.</div>
+</div>
+
+<div class="screenshot-card reveal reveal-delay-6">
+<img src="bb-logo.png" alt="BeastBlueprint logo">
+<div class="caption">Blueprint builds your program around you — not the other way around.</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section">
+<div class="section-inner">
+
+<div class="section-heading reveal">
+<div class="section-label">Built for a reason</div>
+<h2>A better starting point for serious training plans</h2>
+</div>
+
+<div class="story-card reveal">
+<p>
+BeastBlueprint is built for lifters who want structure before they start training.
+The goal is to create a better program foundation first, so execution becomes clearer,
+more consistent, and more aligned with the way real people actually train.
+</p>
+</div>
+
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="section alt">
+<div class="section-inner">
+<div class="cta-card reveal">
+<h2>Follow BeastBlueprint as it moves toward release</h2>
+<p>
+BeastBlueprint is being built as a focused program generator for serious lifters inside the BeastLabX ecosystem.
+</p>
+
+<div class="cta-actions">
+<a class="hero-button primary" href="#">Download Coming Soon</a>
+<a class="hero-button secondary" href="apps.html">Back to Apps</a>
+</div>
+</div>
+</div>
 </section>
 
 <div id="footer-placeholder"></div>
@@ -684,15 +1185,15 @@ const menuToggle = document.getElementById('menuToggle');
 const siteNav = document.getElementById('siteNav');
 
 menuToggle.addEventListener('click', function () {
-    const isOpen = siteNav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+const isOpen = siteNav.classList.toggle('open');
+menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
 window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) {
-        siteNav.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    }
+if (window.innerWidth > 768) {
+siteNav.classList.remove('open');
+menuToggle.setAttribute('aria-expanded', 'false');
+}
 });
 
 fetch("footer.html")
@@ -700,6 +1201,29 @@ fetch("footer.html")
 .then(data => {
 document.getElementById("footer-placeholder").innerHTML = data;
 });
+
+const revealItems = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+const revealObserver = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+revealObserver.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.14
+});
+
+revealItems.forEach((item) => {
+if (!item.classList.contains('is-visible')) {
+revealObserver.observe(item);
+}
+});
+} else {
+revealItems.forEach((item) => item.classList.add('is-visible'));
+}
 </script>
 
 </body>
