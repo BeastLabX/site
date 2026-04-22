@@ -42,11 +42,16 @@ color:#fff;
 text-decoration:none;
 }
 
-.logo img{height:40px;}
+.logo img{
+height:40px;
+width:auto;
+display:block;
+}
 
 nav{
 display:flex;
 gap:24px;
+align-items:center;
 }
 
 nav a{
@@ -60,7 +65,7 @@ color:#1FA11F;
 
 /* SECTION */
 .section{
-max-width:1200px;
+max-width:1280px;
 margin:auto;
 padding:80px 20px;
 text-align:center;
@@ -68,62 +73,142 @@ text-align:center;
 
 .section h1{
 font-size:42px;
-margin-bottom:10px;
+margin:0 0 10px 0;
 }
 
 .section p{
 color:#BDBDBD;
-margin-bottom:40px;
+margin:0 0 40px 0;
 }
 
 /* APP CARDS */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
 gap:30px;
 }
 
 .card{
 background:#1C1C1C;
 border:1px solid #2A2A2A;
-border-radius:16px;
+border-radius:18px;
 padding:24px;
 text-align:left;
-transition:0.2s;
+transition:border-color 0.2s ease, transform 0.2s ease;
+box-shadow:0 14px 32px rgba(0,0,0,0.22);
 }
 
 .card:hover{
 border-color:#1FA11F;
+transform:translateY(-3px);
 }
 
-.card img{
-width:60px;
-margin-bottom:16px;
+.card-icon{
+width:72px;
+height:72px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:18px;
+border-radius:16px;
+background:#121216;
+border:1px solid #2A2A2A;
+overflow:hidden;
+}
+
+.card-icon img{
+max-width:100%;
+max-height:100%;
+display:block;
+object-fit:contain;
+padding:8px;
 }
 
 .card h2{
 margin:0 0 10px 0;
+font-size:24px;
+color:#ffffff;
 }
 
-.card p{
+.card .desc{
 font-size:14px;
+line-height:1.6;
 color:#BDBDBD;
+margin:0 0 20px 0;
+min-height:68px;
+}
+
+.card-actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
 }
 
 .button{
-display:inline-block;
-margin-top:16px;
-padding:12px 20px;
-background:#1FA11F;
-color:#fff;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+min-width:130px;
+padding:12px 18px;
 text-decoration:none;
 border-radius:10px;
 font-weight:bold;
+font-size:14px;
+transition:0.2s ease;
+}
+
+.button.primary{
+background:#1FA11F;
+color:#fff;
+}
+
+.button.primary:hover{
+background:#229f22;
+}
+
+.button.secondary{
+background:transparent;
+color:#fff;
+border:1px solid #3A3A3A;
+}
+
+.button.secondary:hover{
+border-color:#1FA11F;
+color:#1FA11F;
+}
+
+.button.inactive{
+background:#2A2A2A;
+color:#8F8F8F;
+border:1px solid #3A3A3A;
+cursor:default;
+pointer-events:none;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.section h1{font-size:32px;}
+header{
+padding:16px 18px;
+flex-direction:column;
+gap:14px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.section{
+padding:60px 16px;
+}
+
+.section h1{
+font-size:32px;
+}
+
+.card .desc{
+min-height:auto;
+}
 }
 
 </style>
@@ -133,7 +218,7 @@ font-weight:bold;
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png">
+<img src="logo.png" alt="BeastLabX logo">
 <span>BeastLabX</span>
 </a>
 
@@ -152,24 +237,51 @@ font-weight:bold;
 <div class="grid">
 
 <div class="card">
-<img src="app-logo.png">
+<div class="card-icon">
+<img src="bl-logo.png" alt="BeastLabX logo">
+</div>
 <h2>BeastLabX</h2>
-<p>Serious training log for lifters. Track workouts, follow structured programs, and run HIIT sessions.</p>
-<a class="button" href="https://play.google.com/store/apps/details?id=com.beastlabx.app&pcampaignid=web_share">Download</a>
+<p class="desc">Serious training log for lifters with structured workouts, programs, HIIT, and progression tracking.</p>
+<div class="card-actions">
+<a class="button primary" href="https://play.google.com/store/apps/details?id=com.beastlabx.app&pcampaignid=web_share">Download</a>
+<a class="button secondary" href="beastlabx.html">App Page</a>
+</div>
 </div>
 
 <div class="card">
-<img src="blueprint.png">
+<div class="card-icon">
+<img src="bb-logo.png" alt="BeastBlueprint logo">
+</div>
 <h2>BeastBlueprint</h2>
-<p>Generate structured training programs based on your goal, split, and experience level.</p>
-<a class="button" href="#">Coming Soon</a>
+<p class="desc">Program generator built to create structured training plans around your goal, split, and training level.</p>
+<div class="card-actions">
+<span class="button inactive">Coming Soon</span>
+<a class="button secondary" href="beastblueprint.html">App Page</a>
+</div>
 </div>
 
 <div class="card">
-<img src="toolbox.png">
+<div class="card-icon">
+<img src="mt-logo.png" alt="MechToolbox logo">
+</div>
 <h2>MechToolbox</h2>
-<p>Workshop-ready reference and admin tool for machine inspections, faults, and job tracking.</p>
-<a class="button" href="#">Coming Soon</a>
+<p class="desc">Workshop-focused diagnostics, tools, manuals, and admin job flow built for real mechanic use.</p>
+<div class="card-actions">
+<span class="button inactive">Coming Soon</span>
+<a class="button secondary" href="mechtoolbox.html">App Page</a>
+</div>
+</div>
+
+<div class="card">
+<div class="card-icon">
+<img src="bu-logo.png" alt="BeastUtility logo">
+</div>
+<h2>BeastUtility</h2>
+<p class="desc">Fast gym utility tools for calculations, setup help, and practical everyday training support.</p>
+<div class="card-actions">
+<span class="button inactive">Coming Soon</span>
+<a class="button secondary" href="beastutility.html">App Page</a>
+</div>
 </div>
 
 </div>
