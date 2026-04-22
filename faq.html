@@ -4,484 +4,240 @@
 <meta charset="UTF-8">
 <title>BeastLabX – FAQ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="BeastLabX FAQ">
 
 <style>
-
-/* =============================================================
-   PAGE BASE
-============================================================= */
-*{
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;}
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:
-linear-gradient(rgba(15,15,18,0.74), rgba(15,15,18,0.80)),
-url('bg.png') center center / cover fixed no-repeat;
+linear-gradient(rgba(10,10,12,0.85), rgba(10,10,12,0.95)),
+url('bg.png') center/cover fixed no-repeat;
 color:#e5e5e5;
 }
 
-/* =============================================================
-   HEADER
-============================================================= */
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 30px;
+padding:16px 30px;
+background:#0b0b0e;
 border-bottom:2px solid #1FA11F;
-background:rgba(15,15,18,0.92);
-backdrop-filter:blur(6px);
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 8px 28px rgba(0,0,0,0.20);
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
-font-size:20px;
-font-weight:bold;
-color:#ffffff;
+gap:10px;
 text-decoration:none;
-min-width:0;
+color:#fff;
+font-weight:bold;
 }
 
 .logo img{
-height:40px;
-width:auto;
-display:block;
-}
-
-.logo span{
-white-space:nowrap;
-letter-spacing:0.2px;
+width:36px;
+height:36px;
 }
 
 nav{
 display:flex;
-align-items:center;
-gap:24px;
+gap:22px;
 }
 
 nav a{
-position:relative;
+color:#ccc;
 text-decoration:none;
-color:#ffffff;
-font-size:16px;
-padding:6px 0;
-transition:color 0.2s ease, opacity 0.2s ease;
-}
-
-nav a:hover{
-color:#1FA11F;
 }
 
 nav a.active{
 color:#1FA11F;
+border-bottom:2px solid #1FA11F;
+padding-bottom:4px;
 }
 
-nav a.active::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-8px;
-width:100%;
-height:2px;
-background:#1FA11F;
-box-shadow:0 0 10px rgba(31,161,31,0.45);
-}
-
-.menu-toggle{
-display:none;
-background:none;
-border:none;
-padding:6px;
-cursor:pointer;
-}
-
-.menu-toggle span{
-display:block;
-width:24px;
-height:2px;
-background:#ffffff;
-margin:5px 0;
-border-radius:2px;
-transition:0.2s ease;
-}
-
-/* =============================================================
-   HERO
-============================================================= */
+/* HERO */
 .hero{
-position:relative;
-padding:92px 20px 74px 20px;
-text-align:center;
-background:linear-gradient(to bottom, rgba(10,10,12,0.76), rgba(10,10,12,0.56));
-overflow:hidden;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:
-radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 28%, rgba(0,0,0,0) 60%),
-repeating-linear-gradient(
-90deg,
-rgba(255,255,255,0.012) 0px,
-rgba(255,255,255,0.012) 1px,
-rgba(0,0,0,0) 3px,
-rgba(0,0,0,0) 14px
-);
-opacity:0.35;
-pointer-events:none;
-}
-
-.hero-inner{
-position:relative;
-z-index:1;
-max-width:980px;
-margin:0 auto;
-}
-
-.hero-label{
-display:inline-block;
-margin-bottom:18px;
-padding:8px 14px;
-border:1px solid rgba(31,161,31,0.34);
-border-radius:999px;
-background:rgba(31,161,31,0.10);
-color:#CFEFCF;
-font-size:13px;
-font-weight:bold;
-letter-spacing:0.08em;
-text-transform:uppercase;
-}
-
-.hero h1{
-font-size:60px;
-line-height:1.02;
-margin:0 0 18px 0;
-color:#ffffff;
-}
-
-.hero p{
-font-size:19px;
-color:#BDBDBD;
-max-width:780px;
-margin:0 auto;
-line-height:1.75;
-}
-
-/* =============================================================
-   DIVIDER
-============================================================= */
-.section-divider{
-height:2px;
-background:#1FA11F;
-box-shadow:0 0 18px rgba(31,161,31,0.45);
-}
-
-/* =============================================================
-   FAQ
-============================================================= */
-.faq{
-padding:90px 24px 100px 24px;
-background:rgba(15,15,18,0.72);
-}
-
-.faq-inner{
-max-width:900px;
-margin:auto;
 display:flex;
-flex-direction:column;
-gap:22px;
-}
-
-.faq-item{
-background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
-border:1px solid rgba(255,255,255,0.08);
-border-radius:18px;
-padding:26px 24px;
-box-shadow:0 14px 34px rgba(0,0,0,0.18);
-transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.faq-item:hover{
-transform:translateY(-2px);
-border-color:rgba(31,161,31,0.22);
-box-shadow:0 18px 40px rgba(0,0,0,0.22);
-}
-
-.faq-item h3{
-margin:0 0 12px 0;
-font-size:24px;
-line-height:1.3;
-color:#ffffff;
-}
-
-.faq-item p{
-margin:0;
-font-size:16px;
-line-height:1.75;
-color:#BDBDBD;
-}
-
-/* =============================================================
-   TABLET
-============================================================= */
-@media (max-width:1024px){
-
-header{
-padding:16px 24px;
-}
-
-.hero{
-padding:76px 20px 62px 20px;
-}
-
-.hero h1{
-font-size:46px;
-}
-
-.hero p{
-font-size:17px;
-}
-
-}
-
-/* =============================================================
-   MOBILE
-============================================================= */
-@media (max-width:768px){
-
-body{
-background:
-linear-gradient(rgba(15,15,18,0.78), rgba(15,15,18,0.82)),
-url('bg.png') center center / cover no-repeat fixed;
-}
-
-header{
-padding:16px 18px;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.logo{
-font-size:18px;
-gap:10px;
-}
-
-.logo img{
-height:34px;
-}
-
-.menu-toggle{
-display:block;
-margin-left:auto;
-}
-
-nav{
-display:none;
-width:100%;
-flex-direction:column;
 align-items:center;
-gap:18px;
-padding:18px 0 8px 0;
-border-top:1px solid #2A2A2A;
-margin-top:10px;
+justify-content:space-between;
+padding:80px 60px;
+gap:40px;
 }
 
-nav.open{
-display:flex;
+.left{
+max-width:600px;
 }
 
-nav a{
-font-size:18px;
-}
-
-nav a.active::after{
-display:none;
-}
-
-.hero{
-padding:68px 20px 56px 20px;
-}
-
-.hero-label{
+.badge{
+display:inline-block;
+padding:6px 14px;
+border:1px solid #1FA11F;
+border-radius:20px;
+color:#1FA11F;
 font-size:12px;
-padding:7px 12px;
+margin-bottom:20px;
 }
 
-.hero h1{
-font-size:42px;
+h1{
+font-size:52px;
+margin:0 0 20px 0;
 }
 
-.hero p{
-font-size:16px;
+p{
+color:#aaa;
+line-height:1.6;
 }
 
-.faq{
-padding:72px 20px 84px 20px;
+.hero-img{
+background:#111;
+padding:14px;
+border-radius:30px;
+box-shadow:0 0 40px rgba(0,0,0,0.7);
 }
 
-.faq-inner{
-gap:18px;
+.hero-img img{
+width:260px;
+border-radius:20px;
 }
 
-.faq-item{
-padding:22px 18px;
+/* SECTION */
+.section{
+padding:60px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:#151518;
+padding:25px;
 border-radius:16px;
+margin-bottom:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
 
-.faq-item h3{
-font-size:20px;
+.card h2{
+margin-bottom:10px;
 }
 
-.faq-item p{
-font-size:15px;
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+color:#777;
 }
-
-}
-
-/* =============================================================
-   SMALL PHONES
-============================================================= */
-@media (max-width:420px){
-
-.hero{
-padding:60px 16px 50px 16px;
-}
-
-.hero h1{
-font-size:34px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.logo span{
-font-size:18px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <a href="index.html" class="logo">
-<img src="logo.png" alt="BeastLabX">
-<span>BeastLabX</span>
+<img src="logo.png">
+BeastLabX
 </a>
 
-<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
-<span></span>
-<span></span>
-<span></span>
-</button>
-
-<nav id="siteNav">
+<nav>
 <a href="index.html">Home</a>
 <a href="apps.html">Apps</a>
 <a href="about.html">About</a>
 <a href="faq.html" class="active">FAQ</a>
 <a href="contact.html">Contact</a>
 </nav>
-
 </header>
 
 <section class="hero">
-
-<div class="hero-inner">
-<div class="hero-label">FAQ</div>
-
-<h1>Frequently Asked Questions</h1>
-
+<div class="left">
+<div class="badge">FAQ</div>
+<h1>Answers across all BeastLabX apps.</h1>
 <p>
-Answers to common questions about BeastLabX and the BeastLabX ecosystem.
+Common questions about BeastLabX, including all apps in the ecosystem.
+</p>
+</div>
+
+<div class="hero-img">
+<img src="logo.png">
+</div>
+</section>
+
+<section class="section">
+
+<div class="card">
+<h2>What is BeastLabX?</h2>
+<p>
+BeastLabX builds practical, high-performance apps across fitness and real-world tools.
+</p>
+</div>
+
+<div class="card">
+<h2>What apps are available?</h2>
+<p>
+BeastLabX (training log), MechToolbox (mechanic tools), BeastUtility (gym tools), and BeastBlueprint (program builder).
+</p>
+</div>
+
+<div class="card">
+<h2>Which app should I use?</h2>
+<p>
+Use BeastLabX for training, MechToolbox for workshop work, BeastUtility for quick gym tools, and BeastBlueprint for program creation.
+</p>
+</div>
+
+<div class="card">
+<h2>Where can I download the apps?</h2>
+<p>
+Available apps can be downloaded from the Google Play Store. Others will show “Coming Soon” until release.
+</p>
+</div>
+
+<div class="card">
+<h2>Why are some apps marked “Coming Soon”?</h2>
+<p>
+Some apps are still being built and tested to ensure they meet quality standards before release.
+</p>
+</div>
+
+<div class="card">
+<h2>Do I need an account?</h2>
+<p>
+No. Apps are designed to work without accounts in v1 for simplicity and speed.
+</p>
+</div>
+
+<div class="card">
+<h2>Do the apps work offline?</h2>
+<p>
+Yes. Core functionality is designed to work without an internet connection.
+</p>
+</div>
+
+<div class="card">
+<h2>Is BeastLabX available on iOS?</h2>
+<p>
+Currently Android only. iOS may be considered in future versions.
+</p>
+</div>
+
+<div class="card">
+<h2>How do I report a bug or get support?</h2>
+<p>
+Use the Contact page or reach out through the official BeastLabX channels.
+</p>
+</div>
+
+<div class="card">
+<h2>Will my data be saved long-term?</h2>
+<p>
+Yes. Apps like MechToolbox are designed to keep records available long-term on your device.
 </p>
 </div>
 
 </section>
 
-<div class="section-divider"></div>
-
-<section class="faq">
-
-<div class="faq-inner">
-
-<div class="faq-item">
-<h3>What is BeastLabX?</h3>
-<p>
-BeastLabX is a serious training log designed for lifters who want structured programs,
-clear tracking, and long-term progression without unnecessary features.
-</p>
-</div>
-
-<div class="faq-item">
-<h3>When will the BeastLabX app launch?</h3>
-<p>
-The app is currently in development and testing. Launch is planned soon.
-</p>
-</div>
-
-<div class="faq-item">
-<h3>Will BeastLabX support wearables?</h3>
-<p>
-Yes. BeastLabX integrates with Android Health Connect for supported wearable data.
-</p>
-</div>
-
-<div class="faq-item">
-<h3>Will more tools be added?</h3>
-<p>
-Yes. BeastLabX is being built as an ecosystem with additional tools like BeastBlueprint.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<div id="footer-placeholder"></div>
-
-<script>
-const menuToggle = document.getElementById('menuToggle');
-const siteNav = document.getElementById('siteNav');
-
-menuToggle.addEventListener('click', function () {
-    const isOpen = siteNav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
-
-window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) {
-        siteNav.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    }
-});
-
-fetch("footer.html")
-.then(response => response.text())
-.then(data => {
-document.getElementById("footer-placeholder").innerHTML = data;
-});
-</script>
+<footer>
+© BeastLabX (Pty) Ltd
+</footer>
 
 </body>
 </html>
