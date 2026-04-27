@@ -1,3 +1,6 @@
+FULL PAGE INDEX.HTML (TXT)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,61 +10,35 @@
 <meta name="description" content="BeastLabX builds practical, high-performance apps for real-world use.">
 
 <style>
-
-/* =============================================================
-RESET
-============================================================= */
-*{
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 background:
-linear-gradient(rgba(8,8,10,0.88), rgba(8,8,10,0.93)),
-url('bg.png') center center / cover fixed no-repeat;
+linear-gradient(rgba(8,8,10,.88),rgba(8,8,10,.93)),
+url('bg.png') center center/cover fixed no-repeat;
 color:#e5e5e5;
 }
 
-/* =============================================================
-HEADER
-============================================================= */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 30px;
-border-bottom:2px solid #1FA11F;
-background:rgba(12,12,14,0.94);
+border-bottom:2px solid #B32025;
+background:rgba(12,12,14,.94);
 backdrop-filter:blur(8px);
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 10px 30px rgba(0,0,0,0.25);
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:14px;
-font-size:20px;
-font-weight:bold;
-color:#ffffff;
-text-decoration:none;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
 .logo img{
-width:42px;
-height:42px;
-object-fit:cover;
-border-radius:6px;
+width:180px;
+height:auto;
 display:block;
-box-shadow:0 0 16px rgba(0,0,0,0.35);
 }
 
 nav{
@@ -73,17 +50,13 @@ align-items:center;
 nav a{
 position:relative;
 text-decoration:none;
-color:#ffffff;
+color:#fff;
 font-size:16px;
-transition:color 0.2s ease;
 }
 
-nav a:hover{
-color:#1FA11F;
-}
-
+nav a:hover,
 nav a.active{
-color:#1FA11F;
+color:#B32025;
 }
 
 nav a.active::after{
@@ -93,79 +66,53 @@ left:0;
 right:0;
 bottom:-12px;
 height:2px;
-background:#1FA11F;
-box-shadow:0 0 12px rgba(31,161,31,0.4);
+background:#B32025;
 }
 
-/* =============================================================
-HERO
-============================================================= */
 .hero{
-position:relative;
-padding:90px 40px 54px 40px;
-overflow:hidden;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-left:8%;
-top:50px;
-width:480px;
-height:480px;
-background:radial-gradient(circle, rgba(31,161,31,0.16) 0%, rgba(31,161,31,0.08) 34%, rgba(31,161,31,0.02) 60%, transparent 74%);
-filter:blur(38px);
-pointer-events:none;
+padding:70px 40px 54px;
 }
 
 .hero-inner{
-position:relative;
-z-index:1;
 max-width:1320px;
-margin:0 auto;
+margin:auto;
 display:grid;
-grid-template-columns:1.02fr 0.98fr;
+grid-template-columns:1.02fr .98fr;
 gap:34px;
 align-items:stretch;
 }
 
 .hero-copy{
-max-width:700px;
 display:flex;
 flex-direction:column;
+align-items:center;
+text-align:center;
 justify-content:flex-start;
 }
 
 .hero-kicker{
 display:inline-flex;
-align-items:center;
-gap:10px;
 padding:10px 16px;
-border:1px solid rgba(31,161,31,0.32);
+border:1px solid rgba(179,32,37,.35);
 border-radius:999px;
-background:rgba(20,20,24,0.78);
-color:#d2d2d2;
+background:rgba(20,20,24,.78);
 font-size:13px;
-text-transform:uppercase;
 letter-spacing:1px;
-margin-bottom:24px;
-width:fit-content;
+margin-bottom:28px;
+text-transform:uppercase;
 }
 
-.hero-kicker img{
-width:24px;
-height:24px;
-object-fit:cover;
-border-radius:4px;
-display:block;
+.hero-main-logo-wrap{
+width:100%;
+margin:0 0 26px;
+display:flex;
+justify-content:center;
 }
 
-.hero h1{
-margin:0 0 18px 0;
-font-size:70px;
-line-height:0.98;
-letter-spacing:-1.5px;
-color:#ffffff;
+.hero-main-logo-wrap img{
+width:min(720px,100%);
+height:auto;
+filter:drop-shadow(0 12px 32px rgba(0,0,0,.45));
 }
 
 .hero p{
@@ -181,41 +128,25 @@ display:flex;
 gap:16px;
 flex-wrap:wrap;
 margin-top:34px;
+justify-content:center;
 }
 
 .button{
-display:inline-flex;
-align-items:center;
-justify-content:center;
 padding:16px 28px;
 border-radius:14px;
 text-decoration:none;
 font-weight:bold;
-font-size:16px;
-transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .button.primary{
-background:#1FA11F;
-color:#ffffff;
-box-shadow:0 0 26px rgba(31,161,31,0.24);
-}
-
-.button.primary:hover{
-transform:translateY(-2px);
-box-shadow:0 0 34px rgba(31,161,31,0.34);
+background:#B32025;
+color:#fff;
 }
 
 .button.secondary{
-background:rgba(20,20,24,0.85);
-color:#ffffff;
+background:rgba(20,20,24,.85);
+color:#fff;
 border:1px solid #2a2a2a;
-}
-
-.button.secondary:hover{
-border-color:#1FA11F;
-color:#1FA11F;
-transform:translateY(-2px);
 }
 
 .hero-note{
@@ -226,50 +157,29 @@ color:#8f8f8f;
 
 .hero-ad{
 position:relative;
-display:block;
 min-height:560px;
 border-radius:30px;
 overflow:hidden;
-border:1px solid rgba(255,255,255,0.06);
-box-shadow:0 26px 70px rgba(0,0,0,0.42);
+box-shadow:0 26px 70px rgba(0,0,0,.42);
 text-decoration:none;
-background:#0f0f12;
 }
 
 .hero-ad img{
 width:100%;
 height:100%;
-display:block;
 object-fit:cover;
-object-position:center top;
-}
-
-.hero-ad::after{
-content:"";
-position:absolute;
-left:0;
-right:0;
-bottom:0;
-height:40%;
-background:linear-gradient(to top, rgba(8,8,10,0.88), rgba(8,8,10,0.18), transparent);
-pointer-events:none;
 }
 
 .hero-ad-badge{
 position:absolute;
 top:18px;
 left:18px;
-z-index:2;
-display:inline-flex;
-align-items:center;
 padding:10px 14px;
 border-radius:999px;
-background:rgba(31,161,31,0.12);
-border:1px solid rgba(31,161,31,0.28);
+background:rgba(179,32,37,.16);
+border:1px solid rgba(179,32,37,.4);
 font-size:13px;
 font-weight:bold;
-color:#d8ffd8;
-backdrop-filter:blur(8px);
 }
 
 .hero-ad-copy{
@@ -277,84 +187,66 @@ position:absolute;
 left:22px;
 right:22px;
 bottom:20px;
-z-index:2;
 }
 
 .hero-ad-copy h2{
-margin:0 0 8px 0;
+margin:0 0 8px;
 font-size:28px;
-color:#ffffff;
+color:#fff;
 }
 
 .hero-ad-copy p{
 margin:0;
 font-size:15px;
 line-height:1.6;
-color:#dfdfdf;
-max-width:520px;
 }
 
-/* =============================================================
-APPS
-============================================================= */
 .apps{
-padding:0 40px 70px 40px;
+padding:0 40px 70px;
 }
 
 .apps-head{
 max-width:1320px;
-margin:0 auto 22px auto;
+margin:0 auto 22px;
 }
 
 .apps-head h2{
-margin:0;
 font-size:34px;
-color:#ffffff;
+margin:0;
 }
 
 .apps-head p{
-margin:12px 0 0 0;
+margin-top:12px;
 color:#9a9a9a;
-font-size:17px;
-line-height:1.6;
 }
 
 .apps-grid{
 max-width:1320px;
-margin:0 auto;
+margin:auto;
 display:grid;
-grid-template-columns:repeat(5, minmax(0, 1fr));
+grid-template-columns:repeat(5,minmax(0,1fr));
 gap:22px;
 }
 
 .app-card{
 display:block;
 text-decoration:none;
-background:linear-gradient(180deg, rgba(22,22,26,0.95), rgba(13,13,16,0.95));
-border:1px solid rgba(255,255,255,0.05);
+background:linear-gradient(180deg,rgba(22,22,26,.95),rgba(13,13,16,.95));
+border:1px solid rgba(255,255,255,.05);
 border-radius:26px;
-padding:22px 18px 18px 18px;
-box-shadow:0 18px 46px rgba(0,0,0,0.34);
-transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+padding:22px 18px 18px;
 min-height:280px;
+box-shadow:0 18px 46px rgba(0,0,0,.34);
 }
 
-a.app-card:hover{
-transform:translateY(-4px);
-border-color:rgba(31,161,31,0.28);
-box-shadow:0 24px 56px rgba(0,0,0,0.46);
-}
-
-.app-card.static{
-opacity:0.96;
+.app-card:hover{
+border-color:rgba(179,32,37,.35);
 }
 
 .app-logo-wrap{
 width:72px;
 height:72px;
 border-radius:18px;
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,255,255,0.06);
 display:flex;
 align-items:center;
 justify-content:center;
@@ -366,173 +258,63 @@ overflow:hidden;
 width:100%;
 height:100%;
 object-fit:contain;
-display:block;
 padding:8px;
-background:#0f0f12;
 }
 
 .app-logo-wrap img.mt{
 object-fit:cover;
 padding:0;
-background:transparent;
 }
 
-.app-card h3{
-margin:0 0 10px 0;
-font-size:24px;
-font-weight:bold;
-color:#ffffff;
-}
-
-.app-card p{
-margin:0;
-color:#acacac;
-line-height:1.6;
-font-size:15px;
-}
+.app-card h3{margin:0 0 10px;font-size:24px;color:#fff;}
+.app-card p{margin:0;color:#acacac;line-height:1.6;}
 
 .app-status{
 display:inline-flex;
-align-items:center;
 margin-top:18px;
 padding:10px 14px;
 border-radius:999px;
 font-size:13px;
 font-weight:bold;
-letter-spacing:0.3px;
 }
 
-.app-status.live{
-background:rgba(31,161,31,0.12);
-border:1px solid rgba(31,161,31,0.28);
-color:#d8ffd8;
+.live{
+background:rgba(179,32,37,.16);
+border:1px solid rgba(179,32,37,.35);
 }
 
-.app-status.future{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-color:#d3d3d3;
+.future{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
 }
 
-/* =============================================================
-FOOTER
-============================================================= */
 footer{
 text-align:center;
 padding:26px 20px;
 color:#7e7e7e;
-border-top:1px solid rgba(255,255,255,0.05);
-background:rgba(10,10,12,0.76);
+border-top:1px solid rgba(255,255,255,.05);
 }
 
-/* =============================================================
-TABLET
-============================================================= */
-@media (max-width:1280px){
-.apps-grid{
-grid-template-columns:repeat(3, minmax(0, 1fr));
-}
+@media(max-width:1180px){
+.hero-inner{grid-template-columns:1fr;}
+.apps-grid{grid-template-columns:repeat(2,1fr);}
 }
 
-@media (max-width:1180px){
-.hero-inner{
-grid-template-columns:1fr;
-gap:42px;
+@media(max-width:768px){
+header{flex-direction:column;gap:14px;}
+.hero{padding:60px 20px 40px;}
+.apps{padding:0 20px 50px;}
+.apps-grid{grid-template-columns:1fr;}
+nav{flex-wrap:wrap;justify-content:center;}
+.logo img{width:150px;}
 }
-
-.hero-copy{
-max-width:100%;
-text-align:center;
-margin:0 auto;
-align-items:center;
-}
-
-.hero p{
-margin:0 auto;
-}
-
-.hero-buttons{
-justify-content:center;
-}
-
-.hero-ad{
-max-width:760px;
-margin:0 auto;
-min-height:520px;
-}
-
-.apps-grid{
-grid-template-columns:repeat(2, minmax(0, 1fr));
-}
-}
-
-/* =============================================================
-MOBILE
-============================================================= */
-@media (max-width:768px){
-header{
-padding:16px 18px;
-flex-direction:column;
-gap:14px;
-}
-
-nav{
-gap:18px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.hero{
-padding:70px 20px 40px 20px;
-}
-
-.hero h1{
-font-size:46px;
-}
-
-.hero p{
-font-size:17px;
-}
-
-.hero-buttons{
-gap:12px;
-}
-
-.button{
-width:100%;
-max-width:280px;
-}
-
-.hero-ad{
-min-height:440px;
-}
-
-.hero-ad-copy h2{
-font-size:22px;
-}
-
-.apps{
-padding:0 20px 54px 20px;
-}
-
-.apps-grid{
-grid-template-columns:1fr;
-}
-
-.apps-head h2{
-font-size:28px;
-}
-}
-
 </style>
 </head>
-
 <body>
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png" alt="BeastLabX logo">
-<span>BeastLabX</span>
+<img src="main_logo.jpeg" alt="BeastLabX">
 </a>
 
 <nav>
@@ -544,16 +326,17 @@ font-size:28px;
 </header>
 
 <section class="hero">
-
 <div class="hero-inner">
 
 <div class="hero-copy">
+
 <div class="hero-kicker">
-<img src="logo.png" alt="BeastLabX icon">
-<span>Built for real-world apps</span>
+Built For Real-World Apps
 </div>
 
-<h1>BeastLabX</h1>
+<div class="hero-main-logo-wrap">
+<img src="main_logo.jpeg" alt="BeastLabX Logo">
+</div>
 
 <p>
 We build practical, high-performance apps for real-world use.
@@ -562,101 +345,91 @@ our apps are designed to be focused, fast, and effective.
 </p>
 
 <div class="hero-buttons">
-<a class="button primary" href="apps.html">Explore our apps</a>
+<a class="button primary" href="apps.html">Explore Our Apps</a>
 <a class="button secondary" href="about.html">About BeastLabX</a>
 </div>
 
-<div class="hero-note">Practical software. Strong branding. Real-world use.</div>
+<div class="hero-note">
+Practical software. Strong branding. Real-world use.
+</div>
+
 </div>
 
 <a class="hero-ad" href="beastlabx.html">
-<div class="hero-ad-badge">Featured app</div>
+<div class="hero-ad-badge">Featured App</div>
 <img src="bl-ad.png" alt="BeastLabX promotional image">
 <div class="hero-ad-copy">
 <h2>BeastLabX live on Google Play</h2>
 <p>
-Serious training log for serious lifters. Built for structured training, progression, and focused gym use.
+Serious training log for serious lifters. Built for structured training,
+progression and focused gym use.
 </p>
 </div>
 </a>
 
 </div>
-
 </section>
 
 <section class="apps">
-
 <div class="apps-head">
 <h2>Apps by BeastLabX</h2>
-<p>
-Explore the current BeastLabX lineup below. Tap any live app card to open its page.
-</p>
+<p>Explore the current BeastLabX lineup below.</p>
 </div>
 
 <div class="apps-grid">
 
 <a class="app-card" href="beastlabx.html">
 <div class="app-logo-wrap">
-<img src="bl-logo.png" alt="BeastLabX logo">
+<img src="bl-logo.png">
 </div>
 <h3>BeastLabX</h3>
-<p>
-Structured training, workout tracking, and focused progression tools for lifters.
-</p>
+<p>Structured training and progression tools.</p>
 <div class="app-status live">Open app page</div>
 </a>
 
 <a class="app-card" href="mechtoolbox.html">
 <div class="app-logo-wrap">
-<img class="mt" src="mt-logo.png" alt="MechToolbox logo">
+<img class="mt" src="mt-logo.png">
 </div>
 <h3>MechToolbox</h3>
-<p>
-Fault diagnostics, workshop tools, manuals, job tracking, and mechanic utilities.
-</p>
+<p>Diagnostics, tools and workshop utilities.</p>
 <div class="app-status live">Open app page</div>
 </a>
 
 <a class="app-card" href="beastutility.html">
 <div class="app-logo-wrap">
-<img src="bu-logo.png" alt="BeastUtility logo">
+<img src="bu-logo.png">
 </div>
 <h3>BeastUtility</h3>
-<p>
-Simple gym utility tools built for speed, practicality, and daily use.
-</p>
+<p>Simple gym utility tools built for speed.</p>
 <div class="app-status live">Open app page</div>
 </a>
 
 <a class="app-card" href="beastblueprint.html">
 <div class="app-logo-wrap">
-<img src="bb-logo.png" alt="BeastBlueprint logo">
+<img src="bb-logo.png">
 </div>
 <h3>BeastBlueprint</h3>
-<p>
-Blueprint builds your program around you — not the other way around.
-</p>
+<p>Programs built around you.</p>
 <div class="app-status live">Open app page</div>
 </a>
 
-<div class="app-card static">
+<div class="app-card">
 <div class="app-logo-wrap">
-<img src="futuretools.png" alt="Future tools logo">
+<img src="futuretools.png">
 </div>
 <h3>Watch this space</h3>
-<p>
-More focused apps and practical tools are planned under the BeastLabX brand.
-</p>
-<div class="app-status future">Future apps</div>
+<p>More focused apps and practical tools planned.</p>
+<div class="app-status future">Future Apps</div>
 </div>
 
 </div>
-
 </section>
 
 <footer>
-BeastLabX Pty ltd
+BeastLabX Pty Ltd
 </footer>
 
 </body>
 </html>
+```
