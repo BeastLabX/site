@@ -37,40 +37,32 @@ justify-content:space-between;
 align-items:center;
 padding:18px 30px;
 border-bottom:2px solid #1FA11F;
-background:rgba(15,15,18,0.92);
-backdrop-filter:blur(6px);
+background:rgba(15,15,18,0.94);
+backdrop-filter:blur(8px);
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 8px 28px rgba(0,0,0,0.20);
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
-font-size:20px;
-font-weight:bold;
-color:#ffffff;
 text-decoration:none;
 min-width:0;
 }
 
 .logo img{
-height:40px;
-width:auto;
+width:180px;
+height:auto;
 display:block;
-}
-
-.logo span{
-white-space:nowrap;
-letter-spacing:0.2px;
+filter:drop-shadow(0 8px 18px rgba(0,0,0,0.28));
 }
 
 nav{
 display:flex;
 align-items:center;
-gap:24px;
+gap:26px;
 }
 
 nav a{
@@ -94,29 +86,11 @@ nav a.active::after{
 content:"";
 position:absolute;
 left:0;
-bottom:-8px;
-width:100%;
+right:0;
+bottom:-12px;
 height:2px;
 background:#1FA11F;
-box-shadow:0 0 10px rgba(31,161,31,0.45);
-}
-
-.menu-toggle{
-display:none;
-background:none;
-border:none;
-padding:6px;
-cursor:pointer;
-}
-
-.menu-toggle span{
-display:block;
-width:24px;
-height:2px;
-background:#ffffff;
-margin:5px 0;
-border-radius:2px;
-transition:0.2s ease;
+box-shadow:0 0 12px rgba(31,161,31,0.45);
 }
 
 /* =============================================================
@@ -125,9 +99,9 @@ HERO
 .hero{
 position:relative;
 overflow:hidden;
-padding:96px 24px 86px 24px;
+padding:100px 24px 90px 24px;
 background:
-linear-gradient(to bottom, rgba(10,10,12,0.80), rgba(10,10,12,0.56));
+linear-gradient(to bottom, rgba(10,10,12,0.82), rgba(10,10,12,0.56));
 }
 
 .hero::before{
@@ -135,7 +109,7 @@ content:"";
 position:absolute;
 inset:0;
 background:
-radial-gradient(circle at 50% 18%, rgba(31,161,31,0.18) 0%, rgba(31,161,31,0.08) 18%, rgba(31,161,31,0.02) 40%, transparent 60%);
+radial-gradient(circle at 50% 18%, rgba(31,161,31,0.22) 0%, rgba(31,161,31,0.10) 18%, rgba(31,161,31,0.025) 42%, transparent 64%);
 pointer-events:none;
 animation:heroGlow 6s ease-in-out infinite;
 }
@@ -145,6 +119,7 @@ content:"";
 position:absolute;
 inset:0;
 background:
+linear-gradient(135deg, rgba(255,255,255,0.025), transparent 35%, rgba(31,161,31,0.03)),
 repeating-linear-gradient(
 90deg,
 rgba(255,255,255,0.010) 0px,
@@ -152,7 +127,7 @@ rgba(255,255,255,0.010) 1px,
 rgba(0,0,0,0) 4px,
 rgba(0,0,0,0) 16px
 );
-opacity:0.18;
+opacity:0.20;
 pointer-events:none;
 }
 
@@ -162,13 +137,13 @@ z-index:1;
 max-width:1240px;
 margin:0 auto;
 display:grid;
-grid-template-columns:minmax(0, 620px) minmax(0, 470px);
-gap:54px;
+grid-template-columns:minmax(0, 630px) minmax(0, 480px);
+gap:58px;
 align-items:center;
 }
 
 .hero-copy{
-max-width:620px;
+max-width:630px;
 }
 
 .hero-brand{
@@ -179,35 +154,36 @@ margin-bottom:18px;
 }
 
 .hero-brand img{
-width:74px;
-height:74px;
+width:78px;
+height:78px;
 object-fit:contain;
 display:block;
-filter:drop-shadow(0 0 12px rgba(31,161,31,0.12));
+filter:drop-shadow(0 0 16px rgba(31,161,31,0.16));
 }
 
 .hero-label{
 display:inline-block;
 margin-bottom:20px;
-padding:9px 14px;
-border:1px solid rgba(31,161,31,0.34);
+padding:10px 15px;
+border:1px solid rgba(31,161,31,0.38);
 border-radius:999px;
-background:rgba(31,161,31,0.10);
+background:rgba(31,161,31,0.11);
 color:#D6F6D6;
 font-size:13px;
 font-weight:bold;
 letter-spacing:0.08em;
 text-transform:uppercase;
-box-shadow:0 0 18px rgba(31,161,31,0.10);
+box-shadow:0 0 20px rgba(31,161,31,0.10);
 }
 
 .hero h1{
-margin:0 0 18px 0;
+margin:0 0 20px 0;
 font-size:66px;
 line-height:0.96;
 color:#ffffff;
-text-shadow:0 0 20px rgba(0,0,0,0.20);
-max-width:600px;
+text-shadow:0 0 22px rgba(0,0,0,0.24);
+max-width:620px;
+letter-spacing:-1.2px;
 }
 
 .hero p{
@@ -215,79 +191,84 @@ margin:0;
 font-size:20px;
 line-height:1.78;
 color:#BDBDBD;
-max-width:560px;
+max-width:570px;
 }
 
 .hero-actions{
 display:flex;
 gap:14px;
 flex-wrap:wrap;
-margin-top:30px;
+margin-top:32px;
 }
 
 .hero-button{
-display:inline-block;
+display:inline-flex;
+align-items:center;
+justify-content:center;
 padding:15px 26px;
-border-radius:12px;
+border-radius:14px;
 font-size:16px;
 font-weight:bold;
 text-decoration:none;
 text-align:center;
-transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .hero-button:hover{
-transform:translateY(-1px);
+transform:translateY(-2px);
 }
 
 .hero-button.primary{
 background:#1FA11F;
 color:#ffffff;
-box-shadow:0 0 24px rgba(31,161,31,0.22);
+box-shadow:0 0 26px rgba(31,161,31,0.24);
 }
 
 .hero-button.primary:hover{
 background:#229f22;
-box-shadow:0 0 32px rgba(31,161,31,0.34);
+box-shadow:0 0 34px rgba(31,161,31,0.36);
 }
 
 .hero-button.secondary{
-background:rgba(0,0,0,0.24);
+background:rgba(0,0,0,0.26);
 border:1px solid #2A2A2A;
 color:#ffffff;
 }
 
 .hero-button.secondary:hover{
 background:rgba(255,255,255,0.04);
-border-color:#3A3A3A;
+border-color:rgba(31,161,31,0.42);
 }
 
 .hero-points{
-margin-top:30px;
+margin-top:32px;
 display:grid;
 grid-template-columns:repeat(2, minmax(0,1fr));
-gap:12px 18px;
-max-width:560px;
+gap:12px;
+max-width:580px;
 }
 
 .hero-point{
-padding-left:18px;
 position:relative;
+padding:15px 15px 15px 34px;
+border-radius:18px;
+background:rgba(255,255,255,0.035);
+border:1px solid rgba(255,255,255,0.075);
 font-size:15px;
-line-height:1.65;
+line-height:1.55;
 color:#C8C8C8;
 }
 
 .hero-point::before{
 content:"";
 position:absolute;
-left:0;
-top:9px;
+left:15px;
+top:22px;
 width:7px;
 height:7px;
 border-radius:50%;
 background:#1FA11F;
-box-shadow:0 0 12px rgba(31,161,31,0.45);
+box-shadow:0 0 12px rgba(31,161,31,0.48);
 }
 
 .hero-visual{
@@ -301,15 +282,18 @@ width:100%;
 max-width:500px;
 padding:16px;
 border-radius:34px;
-background:linear-gradient(to bottom, rgba(27,27,31,0.98), rgba(16,16,19,0.98));
-border:1px solid rgba(255,255,255,0.08);
-box-shadow:0 28px 80px rgba(0,0,0,0.44);
-transition:transform 0.3s ease, box-shadow 0.3s ease;
+background:
+radial-gradient(circle at top, rgba(31,161,31,0.14), transparent 48%),
+linear-gradient(to bottom, rgba(27,27,31,0.98), rgba(16,16,19,0.98));
+border:1px solid rgba(255,255,255,0.09);
+box-shadow:0 30px 84px rgba(0,0,0,0.48);
+transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .hero-device:hover{
-transform:translateY(-3px);
-box-shadow:0 32px 90px rgba(0,0,0,0.50), 0 0 28px rgba(31,161,31,0.12);
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.24);
+box-shadow:0 36px 96px rgba(0,0,0,0.54), 0 0 32px rgba(31,161,31,0.14);
 }
 
 .hero-device::before{
@@ -320,7 +304,7 @@ right:18px;
 top:0;
 height:3px;
 background:#1FA11F;
-box-shadow:0 0 16px rgba(31,161,31,0.45);
+box-shadow:0 0 18px rgba(31,161,31,0.48);
 border-radius:3px;
 }
 
@@ -329,7 +313,7 @@ display:block;
 width:100%;
 height:auto;
 border-radius:24px;
-box-shadow:0 18px 40px rgba(0,0,0,0.32);
+box-shadow:0 18px 42px rgba(0,0,0,0.36);
 }
 
 /* =============================================================
@@ -360,7 +344,7 @@ left:50%;
 transform:translateX(-50%);
 width:720px;
 height:220px;
-background:radial-gradient(circle, rgba(31,161,31,0.08) 0%, rgba(31,161,31,0.02) 42%, transparent 72%);
+background:radial-gradient(circle, rgba(31,161,31,0.09) 0%, rgba(31,161,31,0.025) 42%, transparent 72%);
 pointer-events:none;
 }
 
@@ -381,8 +365,8 @@ display:inline-block;
 margin-bottom:16px;
 padding:8px 13px;
 border-radius:999px;
-border:1px solid rgba(31,161,31,0.28);
-background:rgba(31,161,31,0.08);
+border:1px solid rgba(31,161,31,0.30);
+background:rgba(31,161,31,0.09);
 color:#D6F6D6;
 font-size:12px;
 font-weight:bold;
@@ -396,6 +380,7 @@ margin:0 0 14px 0;
 font-size:42px;
 line-height:1.14;
 color:#ffffff;
+letter-spacing:-0.5px;
 }
 
 .section-heading p{
@@ -406,7 +391,7 @@ color:#BDBDBD;
 }
 
 /* =============================================================
-STRENGTH STRIP
+CARDS
 ============================================================= */
 .strength-strip{
 display:grid;
@@ -414,24 +399,44 @@ grid-template-columns:repeat(4, minmax(0,1fr));
 gap:18px;
 }
 
-.strength-card{
-background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+.strength-card,
+.feature-card,
+.screenshot-card,
+.story-card,
+.cta-card{
+background:
+linear-gradient(135deg, rgba(255,255,255,0.035), transparent 42%),
+linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
 border:1px solid rgba(255,255,255,0.08);
-border-radius:22px;
-padding:24px 20px;
-box-shadow:0 18px 45px rgba(0,0,0,0.20);
+box-shadow:0 18px 45px rgba(0,0,0,0.22);
 position:relative;
 overflow:hidden;
 transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.strength-card:hover{
-transform:translateY(-4px);
-border-color:rgba(31,161,31,0.24);
-box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+.strength-card,
+.feature-card{
+border-radius:24px;
 }
 
-.strength-card::before{
+.strength-card{
+padding:25px 21px;
+}
+
+.strength-card:hover,
+.feature-card:hover,
+.screenshot-card:hover,
+.story-card:hover,
+.cta-card:hover{
+transform:translateY(-4px);
+border-color:rgba(31,161,31,0.26);
+box-shadow:0 24px 58px rgba(0,0,0,0.28), 0 0 26px rgba(31,161,31,0.09);
+}
+
+.strength-card::before,
+.feature-card::before,
+.story-card::before,
+.cta-card::before{
 content:"";
 position:absolute;
 left:0;
@@ -456,9 +461,6 @@ line-height:1.7;
 color:#C8C8C8;
 }
 
-/* =============================================================
-FEATURES
-============================================================= */
 .feature-grid{
 display:grid;
 grid-template-columns:repeat(2, minmax(0,1fr));
@@ -466,31 +468,7 @@ gap:24px;
 }
 
 .feature-card{
-background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
-border:1px solid rgba(255,255,255,0.08);
-border-radius:22px;
-padding:28px 24px;
-box-shadow:0 18px 45px rgba(0,0,0,0.20);
-position:relative;
-overflow:hidden;
-transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.feature-card:hover{
-transform:translateY(-4px);
-border-color:rgba(31,161,31,0.24);
-box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
-}
-
-.feature-card::before{
-content:"";
-position:absolute;
-left:0;
-right:0;
-top:0;
-height:3px;
-background:#1FA11F;
-box-shadow:0 0 18px rgba(31,161,31,0.45);
+padding:30px 26px;
 }
 
 .feature-card h3{
@@ -536,9 +514,6 @@ background:#1FA11F;
 box-shadow:0 0 12px rgba(31,161,31,0.45);
 }
 
-/* =============================================================
-SCREENSHOTS
-============================================================= */
 .screenshot-grid{
 display:grid;
 grid-template-columns:repeat(3, minmax(0,1fr));
@@ -546,18 +521,8 @@ gap:24px;
 }
 
 .screenshot-card{
-background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
-border:1px solid rgba(255,255,255,0.08);
-border-radius:24px;
+border-radius:26px;
 padding:18px;
-box-shadow:0 18px 45px rgba(0,0,0,0.20);
-transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.screenshot-card:hover{
-transform:translateY(-4px);
-border-color:rgba(31,161,31,0.22);
-box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
 }
 
 .screenshot-card img{
@@ -565,7 +530,7 @@ display:block;
 width:100%;
 height:auto;
 border-radius:18px;
-box-shadow:0 18px 40px rgba(0,0,0,0.36);
+box-shadow:0 18px 42px rgba(0,0,0,0.38);
 }
 
 .screenshot-card .caption{
@@ -576,40 +541,12 @@ color:#C8C8C8;
 text-align:center;
 }
 
-/* =============================================================
-ORIGIN / CTA
-============================================================= */
 .story-card,
 .cta-card{
 max-width:1080px;
 margin:0 auto;
-background:linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
-border:1px solid rgba(255,255,255,0.08);
-border-radius:24px;
-padding:36px 30px;
-box-shadow:0 18px 45px rgba(0,0,0,0.20);
-position:relative;
-overflow:hidden;
-transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.story-card:hover,
-.cta-card:hover{
-transform:translateY(-3px);
-border-color:rgba(31,161,31,0.22);
-box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
-}
-
-.story-card::before,
-.cta-card::before{
-content:"";
-position:absolute;
-left:0;
-right:0;
-top:0;
-height:3px;
-background:#1FA11F;
-box-shadow:0 0 18px rgba(31,161,31,0.45);
+border-radius:26px;
+padding:38px 32px;
 }
 
 .story-card p{
@@ -647,6 +584,17 @@ flex-wrap:wrap;
 }
 
 /* =============================================================
+FOOTER
+============================================================= */
+footer{
+text-align:center;
+padding:26px 20px;
+color:#7e7e7e;
+border-top:1px solid rgba(255,255,255,.05);
+background:rgba(10,10,12,.76);
+}
+
+/* =============================================================
 SCROLL REVEAL
 ============================================================= */
 .reveal{
@@ -667,9 +615,6 @@ transform:translateY(0);
 .reveal-delay-5{transition-delay:0.40s;}
 .reveal-delay-6{transition-delay:0.48s;}
 
-/* =============================================================
-ANIMATION KEYFRAMES
-============================================================= */
 @keyframes heroGlow{
 0%{opacity:0.75;}
 50%{opacity:1;}
@@ -680,7 +625,6 @@ ANIMATION KEYFRAMES
 TABLET
 ============================================================= */
 @media (max-width:1024px){
-
 header{
 padding:16px 24px;
 }
@@ -736,14 +680,12 @@ grid-template-columns:1fr;
 .screenshot-grid{
 grid-template-columns:repeat(2, minmax(0,1fr));
 }
-
 }
 
 /* =============================================================
 MOBILE
 ============================================================= */
 @media (max-width:768px){
-
 body{
 background:
 linear-gradient(rgba(15,15,18,0.78), rgba(15,15,18,0.82)),
@@ -752,41 +694,22 @@ url('bg.png') center center / cover no-repeat fixed;
 
 header{
 padding:16px 18px;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.logo{
-font-size:18px;
-gap:10px;
+flex-direction:column;
+gap:14px;
 }
 
 .logo img{
-height:34px;
-}
-
-.menu-toggle{
-display:block;
-margin-left:auto;
+width:150px;
 }
 
 nav{
-display:none;
-width:100%;
-flex-direction:column;
-align-items:center;
 gap:18px;
-padding:18px 0 8px 0;
-border-top:1px solid #2A2A2A;
-margin-top:10px;
-}
-
-nav.open{
-display:flex;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 nav a{
-font-size:18px;
+font-size:16px;
 }
 
 nav a.active::after{
@@ -848,7 +771,7 @@ grid-template-columns:1fr;
 
 .feature-card{
 padding:24px 18px;
-border-radius:18px;
+border-radius:20px;
 }
 
 .feature-card h3,
@@ -869,13 +792,13 @@ gap:20px;
 
 .screenshot-card{
 padding:14px;
-border-radius:18px;
+border-radius:20px;
 }
 
 .story-card,
 .cta-card{
 padding:26px 18px;
-border-radius:18px;
+border-radius:20px;
 }
 
 .story-card p{
@@ -890,14 +813,12 @@ font-size:30px;
 .cta-card p{
 font-size:16px;
 }
-
 }
 
 /* =============================================================
 SMALL PHONES
 ============================================================= */
 @media (max-width:420px){
-
 .hero{
 padding:62px 16px 54px 16px;
 }
@@ -913,11 +834,6 @@ font-size:16px;
 .hero-button{
 width:100%;
 }
-
-.logo span{
-font-size:18px;
-}
-
 }
 
 </style>
@@ -927,21 +843,13 @@ font-size:18px;
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png" alt="BeastLabX">
-<span>BeastLabX</span>
+<img src="main_logo.png" alt="BeastLabX logo">
 </a>
-
-<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
-<span></span>
-<span></span>
-<span></span>
-</button>
 
 <nav id="siteNav">
 <a href="index.html">Home</a>
 <a href="apps.html" class="active">Apps</a>
 <a href="about.html">About</a>
-<a href="faq.html">FAQ</a>
 <a href="contact.html">Contact</a>
 </nav>
 </header>
@@ -956,9 +864,8 @@ font-size:18px;
 <div class="hero-label">Now live on Google Play</div>
 <h1>Serious training log for serious lifters.</h1>
 <p>
-BeastLabX is built for lifters who want structured training, clean workout tracking,
-and real progression without unnecessary fluff. Track workouts, follow programs,
-run HIIT sessions, and review your training history in one focused app.
+BeastLabX is built for lifters who want structure, focus, and measurable progress.
+Log workouts, follow programs, run HIIT sessions, review training history, and keep your gym work moving without unnecessary clutter.
 </p>
 
 <div class="hero-actions">
@@ -992,30 +899,30 @@ run HIIT sessions, and review your training history in one focused app.
 <div class="section-label">Built for lifters</div>
 <h2>No fluff. No clutter. Just serious training flow.</h2>
 <p>
-BeastLabX is built around the way serious gym users actually train: log fast, stay focused,
-run the session properly, and come back stronger next time.
+BeastLabX is built around real gym use: start the session, log what matters, stay focused,
+and come back with a clear history of what you did last time.
 </p>
 </div>
 
 <div class="strength-strip">
 <div class="strength-card reveal reveal-delay-1">
 <h3>Log fast</h3>
-<p>Get through the workout screen quickly without breaking training momentum.</p>
+<p>Move through your session without fighting the app or breaking training momentum.</p>
 </div>
 
 <div class="strength-card reveal reveal-delay-2">
 <h3>Train with structure</h3>
-<p>Use programs and training flow instead of random note-taking or messy logs.</p>
+<p>Use planned programs and repeatable training flow instead of random note-taking.</p>
 </div>
 
 <div class="strength-card reveal reveal-delay-3">
 <h3>Review progress</h3>
-<p>Check history, stats, and past sessions without turning the app into a bloated mess.</p>
+<p>Check history, stats, and completed sessions without turning the app into a bloated platform.</p>
 </div>
 
 <div class="strength-card reveal reveal-delay-4">
 <h3>Stay focused</h3>
-<p>Everything is built to support serious bodybuilding and gym use, not distraction.</p>
+<p>Designed for lifters who want training tools, not distractions or social feed noise.</p>
 </div>
 </div>
 
@@ -1029,10 +936,9 @@ run the session properly, and come back stronger next time.
 
 <div class="section-heading reveal">
 <div class="section-label">Core features</div>
-<h2>Focused on training, not distractions</h2>
+<h2>Focused on training, not distractions.</h2>
 <p>
-BeastLabX keeps the experience clean, structured, and practical so your attention stays on
-training instead of clutter.
+BeastLabX keeps the experience clean, structured, and practical so your attention stays on the workout.
 </p>
 </div>
 
@@ -1041,8 +947,7 @@ training instead of clutter.
 <div class="feature-card reveal reveal-delay-1">
 <h3>Run your workouts properly</h3>
 <p>
-Follow your program, log sets and weights, and keep the training session moving with a clean,
-purpose-built workout screen.
+Follow your session, log sets and weights, and keep training moving with a clean workout screen built for the gym floor.
 </p>
 <ul class="feature-list">
 <li>Quick workout execution flow</li>
@@ -1054,7 +959,7 @@ purpose-built workout screen.
 <div class="feature-card reveal reveal-delay-2">
 <h3>Train with structure</h3>
 <p>
-Use programs built around weeks, days, and exercise flow instead of random note-taking or messy logs.
+Use programs built around weeks, days, and exercise flow instead of relying on messy notes or memory.
 </p>
 <ul class="feature-list">
 <li>Program-based training</li>
@@ -1066,19 +971,19 @@ Use programs built around weeks, days, and exercise flow instead of random note-
 <div class="feature-card reveal reveal-delay-3">
 <h3>HIIT when you need it</h3>
 <p>
-Switch from lifting to interval work without leaving the app. BeastLabX includes a dedicated HIIT mode built for focused sessions.
+Switch from lifting to interval work without leaving the app. BeastLabX includes a focused HIIT mode for conditioning sessions.
 </p>
 <ul class="feature-list">
 <li>Simple interval workflow</li>
 <li>Clean timer-based execution</li>
-<li>Matches the rest of the app style</li>
+<li>Fits the same dark app style</li>
 </ul>
 </div>
 
 <div class="feature-card reveal reveal-delay-4">
 <h3>Review what you’ve done</h3>
 <p>
-See your history, check stats, and use the exercise library without turning the app into a bloated all-in-one platform.
+Use your history, stats, and exercise library to stay consistent and understand your training over time.
 </p>
 <ul class="feature-list">
 <li>History and log review</li>
@@ -1098,9 +1003,9 @@ See your history, check stats, and use the exercise library without turning the 
 
 <div class="section-heading reveal">
 <div class="section-label">App preview</div>
-<h2>Built with a dark, focused bodybuilding style</h2>
+<h2>Dark, focused, and built for serious training.</h2>
 <p>
-Real BeastLabX screens presented in a cleaner product page layout.
+Real BeastLabX screens shown in a cleaner product page layout.
 </p>
 </div>
 
@@ -1147,12 +1052,14 @@ Real BeastLabX screens presented in a cleaner product page layout.
 
 <div class="section-heading reveal">
 <div class="section-label">Built for a reason</div>
-<h2>The tracker I wanted to use myself</h2>
+<h2>The tracker I wanted to use myself.</h2>
 </div>
 
 <div class="story-card reveal">
 <p>
-I built BeastLabX because I was tired of overcomplicated fitness apps. It’s the tracker I wanted to use myself. Inspired by my father to become the best version of me — because bodybuilding isn’t a race, it’s a marathon. That’s exactly what BeastLabX is built for.
+I built BeastLabX because I was tired of overcomplicated fitness apps. It is the tracker I wanted to use myself.
+Inspired by my father to become the best version of me — because bodybuilding is not a race, it is a marathon.
+That is exactly what BeastLabX is built for.
 </p>
 </div>
 
@@ -1164,7 +1071,7 @@ I built BeastLabX because I was tired of overcomplicated fitness apps. It’s th
 <section class="section alt">
 <div class="section-inner">
 <div class="cta-card reveal">
-<h2>Download BeastLabX and train with structure</h2>
+<h2>Download BeastLabX and train with structure.</h2>
 <p>
 If you want a serious training log built for lifters instead of another generic fitness app,
 BeastLabX is live now on Google Play.
@@ -1178,30 +1085,11 @@ BeastLabX is live now on Google Play.
 </div>
 </section>
 
-<div id="footer-placeholder"></div>
+<footer>
+BeastLabX Pty Ltd
+</footer>
 
 <script>
-const menuToggle = document.getElementById('menuToggle');
-const siteNav = document.getElementById('siteNav');
-
-menuToggle.addEventListener('click', function () {
-const isOpen = siteNav.classList.toggle('open');
-menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-});
-
-window.addEventListener('resize', function () {
-if (window.innerWidth > 768) {
-siteNav.classList.remove('open');
-menuToggle.setAttribute('aria-expanded', 'false');
-}
-});
-
-fetch("footer.html")
-.then(response => response.text())
-.then(data => {
-document.getElementById("footer-placeholder").innerHTML = data;
-});
-
 const revealItems = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
