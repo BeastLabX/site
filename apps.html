@@ -8,99 +8,155 @@
 
 <style>
 
-/* BASE */
-*{box-sizing:border-box;}
+/* =============================================================
+RESET
+============================================================= */
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 background:
-linear-gradient(rgba(15,15,18,0.75), rgba(15,15,18,0.82)),
-url('bg.png') center center / cover fixed no-repeat;
+linear-gradient(rgba(8,8,10,.88),rgba(8,8,10,.93)),
+url('bg.png') center center/cover fixed no-repeat;
 color:#e5e5e5;
 }
 
-/* HEADER */
+/* =============================================================
+HEADER
+============================================================= */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 30px;
-border-bottom:2px solid #1FA11F;
-background:rgba(15,15,18,0.92);
+border-bottom:2px solid #B32025;
+background:rgba(12,12,14,.94);
+backdrop-filter:blur(8px);
 position:sticky;
 top:0;
 z-index:1000;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:12px;
-font-size:20px;
-font-weight:bold;
-color:#fff;
 text-decoration:none;
 }
 
 .logo img{
-height:40px;
-width:auto;
+width:180px;
+height:auto;
 display:block;
 }
 
 nav{
 display:flex;
-gap:24px;
+gap:26px;
 align-items:center;
 }
 
 nav a{
-color:#fff;
+position:relative;
 text-decoration:none;
+color:#ffffff;
+font-size:16px;
+transition:color .2s ease;
 }
 
+nav a:hover,
 nav a.active{
-color:#1FA11F;
+color:#B32025;
 }
 
-/* SECTION */
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-12px;
+height:2px;
+background:#B32025;
+box-shadow:0 0 12px rgba(179,32,37,.45);
+}
+
+/* =============================================================
+SECTION
+============================================================= */
 .section{
-max-width:1280px;
+position:relative;
+max-width:1320px;
 margin:auto;
-padding:80px 20px;
+padding:80px 40px 88px;
 text-align:center;
+overflow:hidden;
+}
+
+.section::before{
+content:"";
+position:absolute;
+left:50%;
+top:20px;
+width:760px;
+height:360px;
+transform:translateX(-50%);
+background:radial-gradient(circle,rgba(179,32,37,.13) 0%,rgba(179,32,37,.06) 36%,rgba(179,32,37,.02) 60%,transparent 74%);
+filter:blur(42px);
+pointer-events:none;
+}
+
+.section > *{
+position:relative;
+z-index:1;
 }
 
 .section h1{
 font-size:42px;
-margin:0 0 10px 0;
+margin:0 0 12px;
+color:#ffffff;
+letter-spacing:-.4px;
 }
 
 .section p{
 color:#BDBDBD;
-margin:0 0 40px 0;
+margin:0 0 42px;
+font-size:17px;
+line-height:1.6;
 }
 
-/* APP CARDS */
+/* =============================================================
+APP CARDS
+============================================================= */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:26px;
 }
 
 .card{
-background:#1C1C1C;
-border:1px solid #2A2A2A;
-border-radius:18px;
+background:linear-gradient(180deg,rgba(22,22,26,.95),rgba(13,13,16,.95));
+border:1px solid rgba(255,255,255,.05);
+border-radius:26px;
 padding:24px;
 text-align:left;
-transition:border-color 0.2s ease, transform 0.2s ease;
-box-shadow:0 14px 32px rgba(0,0,0,0.22);
+transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+box-shadow:0 18px 46px rgba(0,0,0,.34);
+min-height:290px;
+display:flex;
+flex-direction:column;
 }
 
 .card:hover{
-border-color:#1FA11F;
-transform:translateY(-3px);
+border-color:rgba(179,32,37,.35);
+transform:translateY(-4px);
+box-shadow:0 24px 56px rgba(0,0,0,.46);
 }
 
 .card-icon{
@@ -109,39 +165,48 @@ height:72px;
 display:flex;
 align-items:center;
 justify-content:center;
-margin-bottom:18px;
-border-radius:16px;
-background:#121216;
-border:1px solid #2A2A2A;
+margin-bottom:20px;
+border-radius:18px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.06);
 overflow:hidden;
 }
 
 .card-icon img{
-max-width:100%;
-max-height:100%;
+width:100%;
+height:100%;
 display:block;
 object-fit:contain;
 padding:8px;
+background:#0f0f12;
+}
+
+.card-icon img.mt{
+object-fit:cover;
+padding:0;
+background:transparent;
 }
 
 .card h2{
-margin:0 0 10px 0;
+margin:0 0 10px;
 font-size:24px;
+font-weight:bold;
 color:#ffffff;
 }
 
 .card .desc{
-font-size:14px;
+font-size:15px;
 line-height:1.6;
-color:#BDBDBD;
-margin:0 0 20px 0;
-min-height:68px;
+color:#acacac;
+margin:0 0 22px;
+min-height:72px;
 }
 
 .card-actions{
 display:flex;
 gap:12px;
 flex-wrap:wrap;
+margin-top:auto;
 }
 
 .button{
@@ -151,41 +216,57 @@ justify-content:center;
 min-width:130px;
 padding:12px 18px;
 text-decoration:none;
-border-radius:10px;
+border-radius:12px;
 font-weight:bold;
 font-size:14px;
-transition:0.2s ease;
+transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease,background .2s ease;
 }
 
 .button.primary{
-background:#1FA11F;
-color:#fff;
+background:#B32025;
+color:#ffffff;
+box-shadow:0 0 24px rgba(179,32,37,.22);
 }
 
 .button.primary:hover{
-background:#229f22;
+transform:translateY(-2px);
+box-shadow:0 0 32px rgba(179,32,37,.32);
 }
 
 .button.secondary{
-background:transparent;
-color:#fff;
-border:1px solid #3A3A3A;
+background:rgba(20,20,24,.85);
+color:#ffffff;
+border:1px solid #2a2a2a;
 }
 
 .button.secondary:hover{
-border-color:#1FA11F;
-color:#1FA11F;
+border-color:#B32025;
+color:#ffffff;
+transform:translateY(-2px);
 }
 
 .button.inactive{
-background:#2A2A2A;
-color:#8F8F8F;
-border:1px solid #3A3A3A;
+background:rgba(255,255,255,.04);
+color:#d3d3d3;
+border:1px solid rgba(255,255,255,.08);
 cursor:default;
 pointer-events:none;
 }
 
-/* MOBILE */
+/* =============================================================
+FOOTER
+============================================================= */
+footer{
+text-align:center;
+padding:26px 20px;
+color:#7e7e7e;
+border-top:1px solid rgba(255,255,255,.05);
+background:rgba(10,10,12,.76);
+}
+
+/* =============================================================
+MOBILE
+============================================================= */
 @media(max-width:768px){
 header{
 padding:16px 18px;
@@ -193,21 +274,35 @@ flex-direction:column;
 gap:14px;
 }
 
+.logo img{
+width:150px;
+}
+
 nav{
+gap:18px;
 flex-wrap:wrap;
 justify-content:center;
 }
 
 .section{
-padding:60px 16px;
+padding:60px 20px 62px;
 }
 
 .section h1{
 font-size:32px;
 }
 
+.section p{
+font-size:16px;
+}
+
 .card .desc{
 min-height:auto;
+}
+
+.button{
+width:100%;
+max-width:280px;
 }
 }
 
@@ -218,14 +313,14 @@ min-height:auto;
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png" alt="BeastLabX logo">
-<span>BeastLabX</span>
+<img src="main_logo.png" alt="BeastLabX logo">
 </a>
 
 <nav>
 <a href="index.html">Home</a>
 <a href="apps.html" class="active">Apps</a>
 <a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 </nav>
 </header>
 
@@ -239,7 +334,7 @@ min-height:auto;
 <!-- BeastLabX -->
 <div class="card">
 <div class="card-icon">
-<img src="bl-logo.png">
+<img src="bl-logo.png" alt="BeastLabX app logo">
 </div>
 <h2>BeastLabX</h2>
 <p class="desc">Serious training log for lifters with structured workouts, programs, HIIT, and progression tracking.</p>
@@ -252,7 +347,7 @@ min-height:auto;
 <!-- MechToolbox -->
 <div class="card">
 <div class="card-icon">
-<img src="mt-logo.png">
+<img class="mt" src="mt-logo.png" alt="MechToolbox logo">
 </div>
 <h2>MechToolbox</h2>
 <p class="desc">Workshop-focused diagnostics, tools, manuals, and admin job flow built for real mechanic use.</p>
@@ -265,7 +360,7 @@ min-height:auto;
 <!-- BeastUtility -->
 <div class="card">
 <div class="card-icon">
-<img src="bu-logo.png">
+<img src="bu-logo.png" alt="BeastUtility logo">
 </div>
 <h2>BeastUtility</h2>
 <p class="desc">Fast gym utility tools for calculations, setup help, and practical everyday training support.</p>
@@ -278,7 +373,7 @@ min-height:auto;
 <!-- BeastBlueprint -->
 <div class="card">
 <div class="card-icon">
-<img src="bb-logo.png">
+<img src="bb-logo.png" alt="BeastBlueprint logo">
 </div>
 <h2>BeastBlueprint</h2>
 <p class="desc">Program generator built to create structured training plans around your goal, split, and training level.</p>
@@ -291,7 +386,7 @@ min-height:auto;
 <!-- Future -->
 <div class="card">
 <div class="card-icon">
-<img src="futuretools.png">
+<img src="futuretools.png" alt="Future tools logo">
 </div>
 <h2>Future Apps</h2>
 <p class="desc">More focused tools and apps are planned under the BeastLabX ecosystem.</p>
@@ -303,6 +398,10 @@ min-height:auto;
 </div>
 
 </section>
+
+<footer>
+BeastLabX Pty Ltd
+</footer>
 
 </body>
 </html>
