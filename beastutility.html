@@ -36,7 +36,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 30px;
-border-bottom:2px solid #1FA11F;
+border-bottom:2px solid #FF8A00;
 background:rgba(15,15,18,0.92);
 backdrop-filter:blur(6px);
 position:sticky;
@@ -57,9 +57,10 @@ min-width:0;
 }
 
 .logo img{
-height:40px;
+height:44px;
 width:auto;
 display:block;
+filter:drop-shadow(0 0 10px rgba(255,138,0,0.22));
 }
 
 .logo span{
@@ -83,11 +84,11 @@ transition:color 0.2s ease, opacity 0.2s ease;
 }
 
 nav a:hover{
-color:#1FA11F;
+color:#FF8A00;
 }
 
 nav a.active{
-color:#1FA11F;
+color:#FF8A00;
 }
 
 nav a.active::after{
@@ -97,8 +98,8 @@ left:0;
 bottom:-8px;
 width:100%;
 height:2px;
-background:#1FA11F;
-box-shadow:0 0 10px rgba(31,161,31,0.45);
+background:#FF8A00;
+box-shadow:0 0 10px rgba(255,138,0,0.55);
 }
 
 .menu-toggle{
@@ -135,7 +136,7 @@ content:"";
 position:absolute;
 inset:0;
 background:
-radial-gradient(circle at 50% 18%, rgba(31,161,31,0.18) 0%, rgba(31,161,31,0.08) 18%, rgba(31,161,31,0.02) 40%, transparent 60%);
+radial-gradient(circle at 50% 18%, rgba(255,138,0,0.18) 0%, rgba(255,138,0,0.08) 18%, rgba(255,138,0,0.02) 40%, transparent 60%);
 pointer-events:none;
 animation:heroGlow 6s ease-in-out infinite;
 }
@@ -179,26 +180,26 @@ margin-bottom:18px;
 }
 
 .hero-brand img{
-width:74px;
-height:74px;
+width:256px;
+height:256px;
 object-fit:contain;
 display:block;
-filter:drop-shadow(0 0 12px rgba(31,161,31,0.12));
+filter:drop-shadow(0 0 12px rgba(255,138,0,0.16));
 }
 
 .hero-label{
 display:inline-block;
 margin-bottom:20px;
 padding:9px 14px;
-border:1px solid rgba(31,161,31,0.34);
+border:1px solid rgba(255,138,0,0.38);
 border-radius:999px;
-background:rgba(31,161,31,0.10);
-color:#D6F6D6;
+background:rgba(255,138,0,0.10);
+color:#FFE2B8;
 font-size:13px;
 font-weight:bold;
 letter-spacing:0.08em;
 text-transform:uppercase;
-box-shadow:0 0 18px rgba(31,161,31,0.10);
+box-shadow:0 0 18px rgba(255,138,0,0.10);
 }
 
 .hero h1{
@@ -241,14 +242,14 @@ transform:translateY(-1px);
 }
 
 .hero-button.primary{
-background:#1FA11F;
+background:#FF8A00;
 color:#ffffff;
-box-shadow:0 0 24px rgba(31,161,31,0.22);
+box-shadow:0 0 24px rgba(255,138,0,0.26);
 }
 
 .hero-button.primary:hover{
-background:#229f22;
-box-shadow:0 0 32px rgba(31,161,31,0.34);
+background:#FF9F1C;
+box-shadow:0 0 32px rgba(255,138,0,0.38);
 }
 
 .hero-button.secondary{
@@ -286,8 +287,8 @@ top:9px;
 width:7px;
 height:7px;
 border-radius:50%;
-background:#1FA11F;
-box-shadow:0 0 12px rgba(31,161,31,0.45);
+background:#FF8A00;
+box-shadow:0 0 12px rgba(255,138,0,0.55);
 }
 
 .hero-visual{
@@ -309,7 +310,7 @@ transition:transform 0.3s ease, box-shadow 0.3s ease;
 
 .hero-device:hover{
 transform:translateY(-3px);
-box-shadow:0 32px 90px rgba(0,0,0,0.50), 0 0 28px rgba(31,161,31,0.12);
+box-shadow:0 32px 90px rgba(0,0,0,0.50), 0 0 28px rgba(255,138,0,0.16);
 }
 
 .hero-device::before{
@@ -319,8 +320,8 @@ left:18px;
 right:18px;
 top:0;
 height:3px;
-background:#1FA11F;
-box-shadow:0 0 16px rgba(31,161,31,0.45);
+background:linear-gradient(90deg, #FF8A00, #FF3D00);
+box-shadow:0 0 16px rgba(255,138,0,0.55);
 border-radius:3px;
 }
 
@@ -337,8 +338,8 @@ SHARED SECTIONS
 ============================================================= */
 .section-divider{
 height:2px;
-background:#1FA11F;
-box-shadow:0 0 18px rgba(31,161,31,0.45);
+background:linear-gradient(90deg, #FF8A00, #FF3D00);
+box-shadow:0 0 18px rgba(255,138,0,0.55);
 }
 
 .section{
@@ -360,7 +361,7 @@ left:50%;
 transform:translateX(-50%);
 width:720px;
 height:220px;
-background:radial-gradient(circle, rgba(31,161,31,0.08) 0%, rgba(31,161,31,0.02) 42%, transparent 72%);
+background:radial-gradient(circle, rgba(255,138,0,0.08) 0%, rgba(255,138,0,0.02) 42%, transparent 72%);
 pointer-events:none;
 }
 
@@ -381,14 +382,14 @@ display:inline-block;
 margin-bottom:16px;
 padding:8px 13px;
 border-radius:999px;
-border:1px solid rgba(31,161,31,0.28);
-background:rgba(31,161,31,0.08);
-color:#D6F6D6;
+border:1px solid rgba(255,138,0,0.30);
+background:rgba(255,138,0,0.08);
+color:#FFE2B8;
 font-size:12px;
 font-weight:bold;
 letter-spacing:0.08em;
 text-transform:uppercase;
-box-shadow:0 0 16px rgba(31,161,31,0.08);
+box-shadow:0 0 16px rgba(255,138,0,0.08);
 }
 
 .section-heading h2{
@@ -427,8 +428,8 @@ transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 
 .strength-card:hover{
 transform:translateY(-4px);
-border-color:rgba(31,161,31,0.24);
-box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+border-color:rgba(255,138,0,0.28);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(255,138,0,0.08);
 }
 
 .strength-card::before{
@@ -438,8 +439,8 @@ left:0;
 right:0;
 top:0;
 height:3px;
-background:#1FA11F;
-box-shadow:0 0 18px rgba(31,161,31,0.45);
+background:linear-gradient(90deg, #FF8A00, #FF3D00);
+box-shadow:0 0 18px rgba(255,138,0,0.55);
 }
 
 .strength-card h3{
@@ -478,8 +479,8 @@ transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 
 .feature-card:hover{
 transform:translateY(-4px);
-border-color:rgba(31,161,31,0.24);
-box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+border-color:rgba(255,138,0,0.28);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(255,138,0,0.08);
 }
 
 .feature-card::before{
@@ -489,8 +490,8 @@ left:0;
 right:0;
 top:0;
 height:3px;
-background:#1FA11F;
-box-shadow:0 0 18px rgba(31,161,31,0.45);
+background:linear-gradient(90deg, #FF8A00, #FF3D00);
+box-shadow:0 0 18px rgba(255,138,0,0.55);
 }
 
 .feature-card h3{
@@ -532,8 +533,8 @@ top:9px;
 width:7px;
 height:7px;
 border-radius:50%;
-background:#1FA11F;
-box-shadow:0 0 12px rgba(31,161,31,0.45);
+background:#FF8A00;
+box-shadow:0 0 12px rgba(255,138,0,0.55);
 }
 
 /* =============================================================
@@ -556,8 +557,8 @@ transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 
 .screenshot-card:hover{
 transform:translateY(-4px);
-border-color:rgba(31,161,31,0.22);
-box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+border-color:rgba(255,138,0,0.26);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(255,138,0,0.08);
 }
 
 .screenshot-card img{
@@ -596,8 +597,8 @@ transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 .story-card:hover,
 .cta-card:hover{
 transform:translateY(-3px);
-border-color:rgba(31,161,31,0.22);
-box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(31,161,31,0.08);
+border-color:rgba(255,138,0,0.26);
+box-shadow:0 24px 56px rgba(0,0,0,0.26), 0 0 24px rgba(255,138,0,0.08);
 }
 
 .story-card::before,
@@ -608,8 +609,8 @@ left:0;
 right:0;
 top:0;
 height:3px;
-background:#1FA11F;
-box-shadow:0 0 18px rgba(31,161,31,0.45);
+background:linear-gradient(90deg, #FF8A00, #FF3D00);
+box-shadow:0 0 18px rgba(255,138,0,0.55);
 }
 
 .story-card p{
@@ -762,7 +763,7 @@ gap:10px;
 }
 
 .logo img{
-height:34px;
+height:38px;
 }
 
 .menu-toggle{
@@ -798,8 +799,8 @@ padding:70px 20px 60px 20px;
 }
 
 .hero-brand img{
-width:64px;
-height:64px;
+width:200px;
+height:200px;
 }
 
 .hero-label{
@@ -927,8 +928,8 @@ font-size:18px;
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png" alt="BeastLabX">
-<span>BeastLabX</span>
+<img src="bu-logo.png" alt="BeastUtility">
+<span>BeastUtility</span>
 </a>
 
 <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNav">
@@ -941,7 +942,6 @@ font-size:18px;
 <a href="index.html">Home</a>
 <a href="apps.html" class="active">Apps</a>
 <a href="about.html">About</a>
-<a href="faq.html">FAQ</a>
 <a href="contact.html">Contact</a>
 </nav>
 </header>
@@ -1171,6 +1171,8 @@ BeastUtility is being built as a focused gym utility app for practical everyday 
 
 <div class="cta-actions">
 <a class="hero-button primary" href="#">Download Coming Soon</a>
+<a class="hero-button secondary" href="beastutility-privacy.html">Privacy</a>
+<a class="hero-button secondary" href="beastutility-terms.html">Terms</a>
 <a class="hero-button secondary" href="apps.html">Back to Apps</a>
 </div>
 </div>
