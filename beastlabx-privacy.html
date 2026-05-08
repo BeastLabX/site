@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BeastLabX Privacy Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy Policy for the BeastLabX app by BeastLabX Pty Ltd.">
+
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:
+linear-gradient(rgba(15,15,18,0.74), rgba(15,15,18,0.86)),
+url('bg.png') center center / cover fixed no-repeat;
+color:#e5e5e5;
+line-height:1.7;
+}
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 30px;
+border-bottom:2px solid #1FA11F;
+background:rgba(15,15,18,0.94);
+backdrop-filter:blur(8px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+.logo{display:flex;align-items:center;text-decoration:none;min-width:0;}
+.logo img{width:180px;height:auto;display:block;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.28));}
+nav{display:flex;align-items:center;gap:26px;}
+nav a{
+position:relative;
+text-decoration:none;
+color:#ffffff;
+font-size:16px;
+padding:6px 0;
+transition:color 0.2s ease, opacity 0.2s ease;
+}
+nav a:hover,nav a.active{color:#1FA11F;}
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-12px;
+height:2px;
+background:#1FA11F;
+box-shadow:0 0 12px rgba(31,161,31,0.45);
+}
+.hero{
+position:relative;
+overflow:hidden;
+padding:82px 24px 68px 24px;
+background:linear-gradient(to bottom, rgba(10,10,12,0.82), rgba(10,10,12,0.56));
+border-bottom:2px solid #1FA11F;
+box-shadow:0 0 22px rgba(31,161,31,0.18);
+}
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at 50% 18%, rgba(31,161,31,0.22) 0%, rgba(31,161,31,0.10) 18%, rgba(31,161,31,0.025) 42%, transparent 64%);
+pointer-events:none;
+animation:heroGlow 6s ease-in-out infinite;
+}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(135deg, rgba(255,255,255,0.025), transparent 35%, rgba(31,161,31,0.03)),
+repeating-linear-gradient(90deg, rgba(255,255,255,0.010) 0px, rgba(255,255,255,0.010) 1px, rgba(0,0,0,0) 4px, rgba(0,0,0,0) 16px);
+opacity:0.20;
+pointer-events:none;
+}
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:1050px;
+margin:0 auto;
+text-align:center;
+}
+.hero-logo{
+width:200px;
+height:200px;
+object-fit:contain;
+display:block;
+margin:0 auto 22px auto;
+filter:drop-shadow(0 0 22px rgba(31,161,31,0.18));
+}
+.hero-label{
+display:inline-block;
+margin-bottom:18px;
+padding:10px 15px;
+border:1px solid rgba(31,161,31,0.38);
+border-radius:999px;
+background:rgba(31,161,31,0.11);
+color:#D6F6D6;
+font-size:13px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+box-shadow:0 0 20px rgba(31,161,31,0.10);
+}
+.hero h1{
+margin:0 0 16px 0;
+font-size:52px;
+line-height:1.05;
+color:#ffffff;
+text-shadow:0 0 24px rgba(0,0,0,0.32);
+}
+.hero p{
+max-width:800px;
+margin:0 auto;
+font-size:18px;
+line-height:1.75;
+color:#C8C8C8;
+}
+.hero-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+.button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 24px;
+border-radius:14px;
+font-size:15px;
+font-weight:bold;
+text-decoration:none;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.button:hover{transform:translateY(-2px);}
+.button.primary{
+background:#1FA11F;
+color:#ffffff;
+box-shadow:0 0 26px rgba(31,161,31,0.24);
+}
+.button.primary:hover{
+background:#229f22;
+box-shadow:0 0 34px rgba(31,161,31,0.36);
+}
+.button.secondary{
+background:rgba(0,0,0,0.26);
+border:1px solid #2A2A2A;
+color:#ffffff;
+}
+.button.secondary:hover{
+background:rgba(255,255,255,0.04);
+border-color:rgba(31,161,31,0.42);
+}
+.section{
+padding:70px 24px;
+background:rgba(15,15,18,0.72);
+}
+.container{
+max-width:950px;
+margin:0 auto;
+}
+.legal-card{
+background:
+linear-gradient(135deg, rgba(255,255,255,0.035), transparent 42%),
+linear-gradient(to bottom, rgba(24,24,28,0.96), rgba(18,18,22,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:26px;
+padding:38px 34px;
+box-shadow:0 20px 52px rgba(0,0,0,0.28);
+position:relative;
+overflow:hidden;
+}
+.legal-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#1FA11F;
+box-shadow:0 0 18px rgba(31,161,31,0.45);
+}
+.legal-card h2{
+margin:34px 0 10px 0;
+font-size:25px;
+line-height:1.2;
+color:#ffffff;
+}
+.legal-card h2:first-child{margin-top:0;}
+.legal-card p{
+margin:0 0 14px 0;
+color:#C8C8C8;
+font-size:16px;
+}
+.legal-card a{
+color:#1FA11F;
+text-decoration:none;
+font-weight:bold;
+}
+.legal-card a:hover{text-decoration:underline;}
+.note-box{
+margin:26px 0 6px 0;
+padding:18px 18px;
+border-radius:18px;
+background:rgba(31,161,31,0.08);
+border:1px solid rgba(31,161,31,0.24);
+color:#E5E5E5;
+}
+.note-box strong{color:#D6F6D6;}
+.bottom-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:34px;
+}
+.footer{
+padding:26px 20px;
+border-top:1px solid rgba(255,255,255,0.06);
+text-align:center;
+color:#777;
+background:rgba(10,10,12,0.82);
+}
+@keyframes heroGlow{0%{opacity:0.75;}50%{opacity:1;}100%{opacity:0.75;}}
+@media (max-width:1024px){
+.hero h1{font-size:44px;}
+}
+@media (max-width:768px){
+body{
+background:
+linear-gradient(rgba(15,15,18,0.78), rgba(15,15,18,0.86)),
+url('bg.png') center center / cover no-repeat fixed;
+}
+header{
+padding:16px 18px;
+flex-direction:column;
+gap:14px;
+}
+.logo img{width:150px;}
+nav{
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
+}
+nav a{font-size:16px;}
+nav a.active::after{display:none;}
+.hero{padding:64px 20px 54px 20px;}
+.hero-logo{width:170px;height:170px;}
+.hero h1{font-size:36px;}
+.hero p{font-size:16px;}
+.section{padding:54px 20px;}
+.legal-card{padding:30px 20px;border-radius:22px;}
+.legal-card h2{font-size:22px;}
+.button{width:100%;}
+}
+@media (max-width:420px){
+.hero h1{font-size:31px;}
+.hero-logo{width:150px;height:150px;}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<a href="index.html" class="logo">
+<img src="main_logo.png" alt="BeastLabX logo">
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="apps.html" class="active">Apps</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+<img class="hero-logo" src="bl-logo.png" alt="BeastLabX app logo">
+<div class="hero-label">Privacy Policy</div>
+<h1>BeastLabX Privacy Policy</h1>
+<p>
+This page explains how the BeastLabX app handles workout data, programs, HIIT settings, progress information, exports, and user privacy.
+</p>
+
+<div class="hero-actions">
+<a class="button primary" href="beastlabx.html">Back to BeastLabX</a>
+<a class="button secondary" href="beastlabx-terms.html">Terms</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="legal-card">
+
+
+<h2>1. Information Collection</h2>
+<p>
+BeastLabX is built as a training log and workout support app. The app may store workout logs, exercise data, program details, HIIT settings, training history, stats, progress information, and app preferences that you create or use inside the app.
+</p>
+<p>
+BeastLabX does not require you to provide sensitive personal information directly to BeastLabX Pty Ltd to use the core app features.
+</p>
+
+<h2>2. Local App Data</h2>
+<p>
+Workout logs, programs, custom training information, HIIT settings, progress data, exercise preferences, and similar app content may be stored locally on your device for app functionality.
+</p>
+<p>
+If the app includes export, import, backup, or sharing features, the action is controlled by you through the app or your device sharing options.
+</p>
+
+<h2>3. BeastBlueprint Imports</h2>
+<p>
+BeastLabX may allow programs created in BeastBlueprint to be imported into BeastLabX for workout tracking and execution.
+</p>
+<p>
+Imported program data is used to support training structure inside BeastLabX. You are responsible for reviewing imported programs before using them for training.
+</p>
+
+<h2>4. Progress, Physique, and Training Data</h2>
+<p>
+BeastLabX may include progress tracking, training analytics, body or physique progress features, workout history, and related tools. This data is used to display your own training progress inside the app.
+</p>
+<p>
+You should not add information you do not want stored on your device or included in exports, backups, or shared content.
+</p>
+
+<h2>5. Third-Party Services</h2>
+<p>
+The app may use third-party services such as Google Play services, Google Play Billing, Google AdMob, crash reporting, analytics, or similar platform services. These services may process limited technical, diagnostics, purchase, advertising, or usage data according to their own privacy policies.
+</p>
+
+<h2>6. Advertising</h2>
+<p>
+BeastLabX may show ads in free or supported areas of the app. Advertising services may use device or advertising identifiers to provide, measure, and improve ads.
+</p>
+
+<h2>7. Purchases and Subscriptions</h2>
+<p>
+BeastLabX may offer paid features, subscriptions, unlocks, or other purchase options through Google Play. Purchase and subscription handling is managed by Google Play. BeastLabX does not store your payment card details.
+</p>
+
+<h2>8. Shared and Exported Content</h2>
+<p>
+If you share workout cards, program exports, progress information, screenshots, backups, or other files, that information may leave the app through your selected sharing method.
+</p>
+<p>
+You are responsible for checking what you export or share and for keeping shared files secure after they leave the app.
+</p>
+
+<h2>9. Data Security</h2>
+<p>
+BeastLabX is designed to keep app-created training data on your device unless you choose to export, share, back up, restore, or transfer it.
+</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>
+This policy may be updated in future versions. Updated versions will be posted on this website.
+</p>
+
+<h2>11. Contact</h2>
+<p>
+For questions about this Privacy Policy, contact BeastLabX Pty Ltd at <a href="mailto:info@beastlabx.com">info@beastlabx.com</a>.
+</p>
+
+
+<div class="note-box">
+<strong>Related page:</strong> You can also view the <a href="beastlabx-terms.html">BeastLabX Terms</a>.
+</div>
+
+<div class="bottom-actions">
+<a class="button primary" href="beastlabx.html">Back to BeastLabX</a>
+<a class="button secondary" href="beastlabx-terms.html">Terms</a>
+<a class="button secondary" href="apps.html">Back to Apps</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="footer">
+© BeastLabX Pty Ltd
+</div>
+
+</body>
+</html>
