@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BeastBlueprint Privacy Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy Policy for the BeastBlueprint app by BeastLabX Pty Ltd.">
+
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:
+linear-gradient(rgba(8,10,16,0.78), rgba(8,10,16,0.90)),
+url('bg.png') center center / cover fixed no-repeat;
+color:#e5e5e5;
+line-height:1.7;
+}
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 30px;
+border-bottom:2px solid #00AEEF;
+background:rgba(8,10,16,0.94);
+backdrop-filter:blur(8px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 10px 34px rgba(0,0,0,0.34), 0 0 24px rgba(0,174,239,0.08);
+}
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:20px;
+font-weight:bold;
+color:#ffffff;
+text-decoration:none;
+min-width:0;
+}
+.logo img{
+height:44px;
+width:auto;
+display:block;
+filter:drop-shadow(0 0 10px rgba(0,174,239,0.20));
+}
+.logo span{
+white-space:nowrap;
+letter-spacing:0.2px;
+}
+nav{
+display:flex;
+align-items:center;
+gap:24px;
+}
+nav a{
+position:relative;
+text-decoration:none;
+color:#ffffff;
+font-size:16px;
+padding:6px 0;
+transition:color 0.2s ease, opacity 0.2s ease;
+}
+nav a:hover,nav a.active{
+color:#00AEEF;
+}
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-8px;
+height:2px;
+background:#00AEEF;
+box-shadow:0 0 12px rgba(0,174,239,0.65);
+}
+.hero{
+position:relative;
+overflow:hidden;
+padding:82px 24px 68px 24px;
+background:
+linear-gradient(to bottom, rgba(8,10,16,0.84), rgba(8,10,16,0.60));
+border-bottom:2px solid #00AEEF;
+box-shadow:0 0 22px rgba(0,174,239,0.18);
+}
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 50% 18%, rgba(0,174,239,0.22) 0%, rgba(0,174,239,0.10) 18%, rgba(224,49,49,0.045) 38%, transparent 64%);
+pointer-events:none;
+animation:heroGlow 6s ease-in-out infinite;
+}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(135deg, rgba(255,255,255,0.025), transparent 35%, rgba(0,174,239,0.03)),
+repeating-linear-gradient(90deg, rgba(255,255,255,0.010) 0px, rgba(255,255,255,0.010) 1px, rgba(0,0,0,0) 4px, rgba(0,0,0,0) 16px);
+opacity:0.20;
+pointer-events:none;
+}
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:1050px;
+margin:0 auto;
+text-align:center;
+}
+.hero-logo{
+width:256px;
+height:256px;
+object-fit:contain;
+display:block;
+margin:0 auto 22px auto;
+filter:
+drop-shadow(0 0 18px rgba(0,174,239,0.26))
+drop-shadow(0 0 22px rgba(224,49,49,0.14));
+}
+.hero-label{
+display:inline-block;
+margin-bottom:18px;
+padding:10px 15px;
+border:1px solid rgba(0,174,239,0.38);
+border-radius:999px;
+background:linear-gradient(90deg, rgba(0,174,239,0.14), rgba(224,49,49,0.07));
+color:#D8F6FF;
+font-size:13px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+box-shadow:0 0 20px rgba(0,174,239,0.12);
+}
+.hero h1{
+margin:0 0 16px 0;
+font-size:52px;
+line-height:1.05;
+color:#ffffff;
+text-shadow:0 0 24px rgba(0,0,0,0.32);
+}
+.hero p{
+max-width:800px;
+margin:0 auto;
+font-size:18px;
+line-height:1.75;
+color:#C8C8C8;
+}
+.hero-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+.button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 24px;
+border-radius:14px;
+font-size:15px;
+font-weight:bold;
+text-decoration:none;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.button:hover{
+transform:translateY(-2px);
+}
+.button.primary{
+background:linear-gradient(135deg, #00AEEF, #0077C8);
+color:#ffffff;
+box-shadow:0 0 26px rgba(0,174,239,0.26);
+}
+.button.primary:hover{
+background:linear-gradient(135deg, #18C3FF, #0088DE);
+box-shadow:0 0 36px rgba(0,174,239,0.38);
+}
+.button.secondary{
+background:rgba(0,0,0,0.28);
+border:1px solid rgba(0,174,239,0.22);
+color:#ffffff;
+}
+.button.secondary:hover{
+background:rgba(255,255,255,0.04);
+border-color:rgba(0,174,239,0.44);
+}
+.section{
+padding:70px 24px;
+background:rgba(10,12,18,0.76);
+}
+.container{
+max-width:950px;
+margin:0 auto;
+}
+.legal-card{
+background:
+linear-gradient(135deg, rgba(255,255,255,0.035), transparent 42%),
+linear-gradient(to bottom, rgba(23,26,34,0.96), rgba(14,16,23,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:26px;
+padding:38px 34px;
+box-shadow:0 20px 52px rgba(0,0,0,0.30);
+position:relative;
+overflow:hidden;
+}
+.legal-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:linear-gradient(90deg, #00AEEF, #E03131);
+box-shadow:0 0 18px rgba(0,174,239,0.46);
+}
+.legal-card h2{
+margin:34px 0 10px 0;
+font-size:25px;
+line-height:1.2;
+color:#ffffff;
+}
+.legal-card h2:first-child{
+margin-top:0;
+}
+.legal-card p{
+margin:0 0 14px 0;
+color:#C8C8C8;
+font-size:16px;
+}
+.legal-card a{
+color:#00AEEF;
+text-decoration:none;
+font-weight:bold;
+}
+.legal-card a:hover{
+text-decoration:underline;
+}
+.note-box{
+margin:26px 0 6px 0;
+padding:18px 18px;
+border-radius:18px;
+background:linear-gradient(90deg, rgba(0,174,239,0.09), rgba(224,49,49,0.05));
+border:1px solid rgba(0,174,239,0.24);
+color:#E5E5E5;
+}
+.note-box strong{
+color:#D8F6FF;
+}
+.bottom-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:34px;
+}
+.footer{
+padding:26px 20px;
+border-top:1px solid rgba(255,255,255,0.06);
+text-align:center;
+color:#777;
+background:rgba(8,10,16,0.86);
+}
+@keyframes heroGlow{
+0%{opacity:0.75;}
+50%{opacity:1;}
+100%{opacity:0.75;}
+}
+@media (max-width:1024px){
+.hero h1{font-size:44px;}
+}
+@media (max-width:768px){
+body{
+background:
+linear-gradient(rgba(8,10,16,0.80), rgba(8,10,16,0.90)),
+url('bg.png') center center / cover no-repeat fixed;
+}
+header{
+padding:16px 18px;
+gap:12px;
+flex-wrap:wrap;
+}
+.logo{
+font-size:18px;
+gap:10px;
+}
+.logo img{
+height:38px;
+}
+nav{
+width:100%;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+padding-top:8px;
+border-top:1px solid #2A2A2A;
+}
+nav a{font-size:16px;}
+nav a.active::after{display:none;}
+.hero{padding:64px 20px 54px 20px;}
+.hero-logo{width:200px;height:200px;}
+.hero h1{font-size:36px;}
+.hero p{font-size:16px;}
+.section{padding:54px 20px;}
+.legal-card{padding:30px 20px;border-radius:22px;}
+.legal-card h2{font-size:22px;}
+.button{width:100%;}
+}
+@media (max-width:420px){
+.hero h1{font-size:31px;}
+.hero-logo{width:170px;height:170px;}
+.logo span{font-size:18px;}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<a href="index.html" class="logo">
+<img src="bb-logo.png" alt="BeastBlueprint">
+<span>BeastBlueprint</span>
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="apps.html" class="active">Apps</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+<img class="hero-logo" src="bb-logo.png" alt="BeastBlueprint app logo">
+<div class="hero-label">Privacy Policy</div>
+<h1>BeastBlueprint Privacy Policy</h1>
+<p>
+This page explains how BeastBlueprint handles program builder data, generated plans, training preferences, exports to BeastLabX, and user privacy.
+</p>
+
+<div class="hero-actions">
+<a class="button primary" href="beastblueprint.html">Back to BeastBlueprint</a>
+<a class="button secondary" href="beastblueprint-terms.html">Terms</a>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="legal-card">
+
+
+<h2>1. Information Collection</h2>
+<p>
+BeastBlueprint is built as a structured program builder for training plans. The app may store program choices, goals, split selections, training level, focus areas, generated programs, exercise selections, edits, and app preferences that you create or use inside the app.
+</p>
+<p>
+BeastBlueprint does not require you to provide sensitive personal information directly to BeastLabX Pty Ltd to use the core app features.
+</p>
+
+<h2>2. Local App Data</h2>
+<p>
+Program data, generated plans, selected exercises, training preferences, saved programs, edited workouts, and similar app content may be stored locally on your device for app functionality.
+</p>
+<p>
+If the app includes export, import, backup, sharing, or transfer features, those actions are controlled by you through the app or your device sharing options.
+</p>
+
+<h2>3. BeastLabX Export and Import Flow</h2>
+<p>
+BeastBlueprint may allow training programs to be exported or sent into BeastLabX for workout tracking and execution.
+</p>
+<p>
+Program data transferred from BeastBlueprint to BeastLabX is used to support training structure. You are responsible for reviewing programs before using them for training.
+</p>
+
+<h2>4. Training Preferences and Generated Programs</h2>
+<p>
+BeastBlueprint may use your selected goal, split, focus area, training level, block type, exercise choices, and program preferences to generate or adjust training plans.
+</p>
+<p>
+This information is used to create and display your own training programs inside the app.
+</p>
+
+<h2>5. Third-Party Services</h2>
+<p>
+The app may use third-party services such as Google Play services, Google Play Billing, Google AdMob, crash reporting, analytics, or similar platform services. These services may process limited technical, diagnostics, purchase, advertising, or usage data according to their own privacy policies.
+</p>
+
+<h2>6. Advertising</h2>
+<p>
+BeastBlueprint may show ads in free or supported areas of the app. Advertising services may use device or advertising identifiers to provide, measure, and improve ads.
+</p>
+
+<h2>7. Purchases and Subscriptions</h2>
+<p>
+BeastBlueprint may offer paid features, subscriptions, unlocks, or other purchase options through Google Play. Purchase and subscription handling is managed by Google Play. BeastBlueprint does not store your payment card details.
+</p>
+
+<h2>8. Shared and Exported Content</h2>
+<p>
+If you export programs, share program files, send plans to BeastLabX, create backups, or share screenshots, that information may leave the app through your selected sharing method.
+</p>
+<p>
+You are responsible for checking what you export or share and for keeping shared files secure after they leave the app.
+</p>
+
+<h2>9. Data Security</h2>
+<p>
+BeastBlueprint is designed to keep app-created program data on your device unless you choose to export, share, back up, restore, or transfer it.
+</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>
+This policy may be updated in future versions. Updated versions will be posted on this website.
+</p>
+
+<h2>11. Contact</h2>
+<p>
+For questions about this Privacy Policy, contact BeastLabX Pty Ltd at <a href="mailto:info@beastlabx.com">info@beastlabx.com</a>.
+</p>
+
+
+<div class="note-box">
+<strong>Related page:</strong> You can also view the <a href="beastblueprint-terms.html">BeastBlueprint Terms</a>.
+</div>
+
+<div class="bottom-actions">
+<a class="button primary" href="beastblueprint.html">Back to BeastBlueprint</a>
+<a class="button secondary" href="beastblueprint-terms.html">Terms</a>
+<a class="button secondary" href="apps.html">Back to Apps</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="footer">
+© BeastLabX Pty Ltd
+</div>
+
+</body>
+</html>
