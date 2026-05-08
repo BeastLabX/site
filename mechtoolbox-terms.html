@@ -4,14 +4,25 @@
 <meta charset="UTF-8">
 <title>MechToolbox Terms</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Terms and Conditions for MechToolbox by BeastLabX Pty Ltd.">
 
 <style>
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0f0f12;
+background:
+linear-gradient(rgba(12,12,14,0.86), rgba(12,12,14,0.94)),
+url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
-line-height:1.6;
+line-height:1.7;
 }
 
 /* HEADER */
@@ -19,75 +30,383 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 30px;
-background:#0b0b0e;
-border-bottom:2px solid #1FA11F;
+padding:18px 30px;
+background:rgba(10,10,12,0.94);
+border-bottom:2px solid #FFB300;
+backdrop-filter:blur(8px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 10px 34px rgba(0,0,0,0.34), 0 0 24px rgba(255,179,0,0.08);
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 color:#fff;
 text-decoration:none;
 font-weight:bold;
+font-size:20px;
+letter-spacing:0.2px;
 }
 
 .logo img{
-width:36px;
-height:36px;
+height:44px;
+width:auto;
+display:block;
+filter:drop-shadow(0 0 10px rgba(255,179,0,0.20));
 }
 
 nav{
 display:flex;
-gap:20px;
+align-items:center;
+gap:24px;
 }
 
 nav a{
-color:#ccc;
+position:relative;
+color:#ffffff;
 text-decoration:none;
+font-size:16px;
+padding:6px 0;
+transition:color 0.2s ease;
+}
+
+nav a:hover{
+color:#FFB300;
 }
 
 nav a.active{
-color:#1FA11F;
-border-bottom:2px solid #1FA11F;
-padding-bottom:4px;
+color:#FFB300;
 }
 
-/* SUB HEADER */
-.sub{
-padding:14px 30px;
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-8px;
+height:2px;
+background:#FFB300;
+box-shadow:0 0 12px rgba(255,179,0,0.55);
+}
+
+/* HERO */
+.hero{
+position:relative;
+overflow:hidden;
+padding:82px 24px 68px 24px;
+background:
+linear-gradient(to bottom, rgba(10,10,12,0.84), rgba(10,10,12,0.62));
+border-bottom:2px solid #FFB300;
+box-shadow:0 0 22px rgba(255,179,0,0.18);
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 50% 18%, rgba(255,179,0,0.20) 0%, rgba(255,179,0,0.08) 22%, rgba(255,179,0,0.02) 44%, transparent 66%);
+pointer-events:none;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.010) 0px,
+rgba(255,255,255,0.010) 1px,
+rgba(0,0,0,0) 4px,
+rgba(0,0,0,0) 16px
+);
+opacity:0.18;
+pointer-events:none;
+}
+
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:1050px;
+margin:0 auto;
+text-align:center;
+}
+
+.hero-logo{
+width:150px;
+height:150px;
+object-fit:contain;
+display:block;
+margin:0 auto 22px auto;
+filter:drop-shadow(0 0 22px rgba(255,179,0,0.20));
+}
+
+.hero-label{
+display:inline-block;
+margin-bottom:18px;
+padding:9px 14px;
+border:1px solid rgba(255,179,0,0.40);
+border-radius:999px;
+background:rgba(255,179,0,0.10);
+color:#FFE6A6;
+font-size:13px;
 font-weight:bold;
-color:#1FA11F;
+letter-spacing:0.08em;
+text-transform:uppercase;
+box-shadow:0 0 18px rgba(255,179,0,0.10);
+}
+
+.hero h1{
+margin:0 0 16px 0;
+font-size:52px;
+line-height:1.05;
+color:#ffffff;
+text-shadow:0 0 24px rgba(0,0,0,0.32);
+}
+
+.hero p{
+max-width:780px;
+margin:0 auto;
+font-size:18px;
+line-height:1.75;
+color:#C8C8C8;
+}
+
+.hero-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 24px;
+border-radius:12px;
+font-size:15px;
+font-weight:bold;
+text-decoration:none;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.button:hover{
+transform:translateY(-1px);
+}
+
+.button.primary{
+background:#FFB300;
+color:#111111;
+box-shadow:0 0 24px rgba(255,179,0,0.24);
+}
+
+.button.primary:hover{
+background:#FFC233;
+box-shadow:0 0 32px rgba(255,179,0,0.34);
+}
+
+.button.secondary{
+background:rgba(0,0,0,0.26);
+border:1px solid rgba(255,179,0,0.24);
+color:#ffffff;
+}
+
+.button.secondary:hover{
+background:rgba(255,255,255,0.04);
+border-color:rgba(255,179,0,0.44);
 }
 
 /* CONTENT */
+.section{
+padding:70px 24px;
+background:rgba(15,15,18,0.74);
+}
+
 .container{
-max-width:900px;
-margin:auto;
-padding:20px;
+max-width:950px;
+margin:0 auto;
 }
 
-h1{
-color:#fff;
+.terms-card{
+background:
+linear-gradient(135deg, rgba(255,255,255,0.035), transparent 42%),
+linear-gradient(to bottom, rgba(24,24,28,0.97), rgba(18,18,22,0.96));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:26px;
+padding:38px 34px;
+box-shadow:0 20px 52px rgba(0,0,0,0.28);
+position:relative;
+overflow:hidden;
 }
 
-h2{
-margin-top:30px;
+.terms-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#FFB300;
+box-shadow:0 0 18px rgba(255,179,0,0.48);
 }
 
-p{
-color:#ccc;
+.terms-card h2{
+margin:34px 0 10px 0;
+font-size:25px;
+line-height:1.2;
+color:#ffffff;
+}
+
+.terms-card h2:first-child{
+margin-top:0;
+}
+
+.terms-card p{
+margin:0 0 14px 0;
+color:#C8C8C8;
+font-size:16px;
+}
+
+.terms-card a{
+color:#FFB300;
+text-decoration:none;
+font-weight:bold;
+}
+
+.terms-card a:hover{
+text-decoration:underline;
+}
+
+.note-box{
+margin:26px 0 6px 0;
+padding:18px 18px;
+border-radius:18px;
+background:rgba(255,179,0,0.08);
+border:1px solid rgba(255,179,0,0.24);
+color:#E5E5E5;
+}
+
+.note-box strong{
+color:#FFE6A6;
+}
+
+.bottom-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:34px;
 }
 
 /* FOOTER */
 .footer{
-margin-top:40px;
-padding:20px;
-border-top:1px solid #222;
+padding:26px 20px;
+border-top:1px solid rgba(255,255,255,0.06);
 text-align:center;
 color:#777;
+background:rgba(10,10,12,0.82);
 }
+
+/* TABLET */
+@media (max-width:1024px){
+.hero h1{
+font-size:44px;
+}
+}
+
+/* MOBILE */
+@media (max-width:768px){
+body{
+background:
+linear-gradient(rgba(12,12,14,0.86), rgba(12,12,14,0.94)),
+url('bg.png') center center / cover no-repeat fixed;
+}
+
+header{
+padding:16px 18px;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:18px;
+gap:10px;
+}
+
+.logo img{
+height:38px;
+}
+
+nav{
+width:100%;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+padding-top:8px;
+border-top:1px solid #2A2A2A;
+}
+
+nav a{
+font-size:16px;
+}
+
+nav a.active::after{
+display:none;
+}
+
+.hero{
+padding:64px 20px 54px 20px;
+}
+
+.hero-logo{
+width:130px;
+height:130px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section{
+padding:54px 20px;
+}
+
+.terms-card{
+padding:30px 20px;
+border-radius:22px;
+}
+
+.terms-card h2{
+font-size:22px;
+}
+
+.button{
+width:100%;
+}
+}
+
+/* SMALL PHONES */
+@media (max-width:420px){
+.hero h1{
+font-size:31px;
+}
+
+.hero-logo{
+width:118px;
+height:118px;
+}
+}
+
 </style>
 </head>
 
@@ -95,8 +414,8 @@ color:#777;
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png">
-BeastLabX
+<img src="mt-logo.png" alt="MechToolbox">
+<span>MechToolbox</span>
 </a>
 
 <nav>
@@ -107,47 +426,112 @@ BeastLabX
 </nav>
 </header>
 
-<div class="sub">
-MECHTOOLBOX
+<section class="hero">
+<div class="hero-inner">
+<img class="hero-logo" src="mt-logo.png" alt="MechToolbox app logo">
+<div class="hero-label">Terms & Conditions</div>
+<h1>MechToolbox Terms</h1>
+<p>
+These terms explain the conditions for using MechToolbox as a workshop support, diagnostics, tools, reference, and job workflow app.
+</p>
+
+<div class="hero-actions">
+<a class="button primary" href="mechtoolbox.html">Back to MechToolbox</a>
+<a class="button secondary" href="mechtoolbox-privacy.html">Privacy</a>
 </div>
+</div>
+</section>
 
+<section class="section">
 <div class="container">
-
-<h1>Terms & Conditions – MechToolbox</h1>
-
-<p>By using MechToolbox, you agree to the following terms.</p>
+<div class="terms-card">
 
 <h2>1. Use of App</h2>
 <p>
-MechToolbox is provided as a practical tool for mechanics and technicians.
-Use of the app is at your own risk.
+MechToolbox is provided as a practical workshop support tool for mechanics, technicians, and users working with machines, tools, diagnostics, references, and job records.
 </p>
-
-<h2>2. Accuracy</h2>
 <p>
-All information, including torque values and fault references, is provided as guidance only.
-Always verify critical values with official manuals.
+Use of the app is at your own risk. You are responsible for how you apply any information, tools, calculations, references, notes, exports, or job records created in the app.
 </p>
 
-<h2>3. Liability</h2>
+<h2>2. Accuracy and Verification</h2>
 <p>
-BeastLabX is not responsible for any damage, loss, or injury resulting from use of the app.
+All information, including torque values, converter results, fault references, workshop notes, hydraulic symbols, rigging guidance, manuals, checklists, and diagnostic content, is provided as guidance only.
 </p>
-
-<h2>4. Modifications</h2>
 <p>
-We may update or change the app at any time without notice.
+Always verify critical values, safety procedures, repair methods, service limits, torque settings, and machine-specific information with official manufacturer manuals, qualified professionals, and applicable safety requirements.
 </p>
 
-<h2>5. Acceptance</h2>
+<h2>3. Workshop Safety</h2>
 <p>
-By using the app, you accept these terms.
+MechToolbox does not replace professional judgement, workplace safety procedures, legal compliance, manufacturer documentation, lockout or isolation procedures, lifting plans, risk assessments, or competent supervision.
+</p>
+<p>
+You are responsible for working safely and following the correct procedures for the job, machine, workplace, and country or region where the work is performed.
 </p>
 
+<h2>4. Local Data, Exports, and Shared Files</h2>
+<p>
+MechToolbox may allow you to create local job records, fault lists, repair notes, photos, manuals, PDFs, reports, backups, and other workshop-related files.
+</p>
+<p>
+You are responsible for the accuracy of the data you enter and for any files you export, share, store, restore, or send outside the app.
+</p>
+
+<h2>5. Purchases, Subscriptions, and Unlocks</h2>
+<p>
+MechToolbox may include free access limits, paid subscriptions, unlock options, advertisements, or other access levels. Purchases and subscriptions are handled through Google Play where applicable.
+</p>
+<p>
+Subscription availability, pricing, renewal, cancellation, and refund handling may be subject to Google Play policies and your account settings.
+</p>
+
+<h2>6. Advertising and Third-Party Services</h2>
+<p>
+MechToolbox may use third-party services such as Google Play Billing, Google Play services, and Google AdMob. These services operate under their own terms and policies.
+</p>
+
+<h2>7. No Warranty</h2>
+<p>
+MechToolbox is provided as-is, without guarantees that the app will be error-free, uninterrupted, complete, suitable for every machine, or correct for every repair situation.
+</p>
+
+<h2>8. Limitation of Liability</h2>
+<p>
+BeastLabX Pty Ltd is not responsible for any damage, loss, injury, downtime, incorrect repair, incorrect diagnosis, data loss, financial loss, equipment damage, workplace incident, or other consequence resulting from use of the app.
+</p>
+
+<h2>9. App Changes</h2>
+<p>
+We may update, improve, remove, limit, rename, or change app features, content, pricing, access rules, or services at any time.
+</p>
+
+<h2>10. Acceptance</h2>
+<p>
+By using MechToolbox, you accept these Terms and Conditions. If you do not agree with these terms, do not use the app.
+</p>
+
+<h2>11. Contact</h2>
+<p>
+For questions about these Terms, contact BeastLabX Pty Ltd at <a href="mailto:info@beastlabx.com">info@beastlabx.com</a>.
+</p>
+
+<div class="note-box">
+<strong>Related page:</strong> You can also view the <a href="mechtoolbox-privacy.html">MechToolbox Privacy Policy</a>.
 </div>
 
+<div class="bottom-actions">
+<a class="button primary" href="mechtoolbox.html">Back to MechToolbox</a>
+<a class="button secondary" href="mechtoolbox-privacy.html">Privacy</a>
+<a class="button secondary" href="apps.html">Back to Apps</a>
+</div>
+
+</div>
+</div>
+</section>
+
 <div class="footer">
-© BeastLabX
+© BeastLabX Pty Ltd
 </div>
 
 </body>
