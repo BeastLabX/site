@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WorkshopIdle Privacy Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="WorkshopIdle Privacy Policy by BeastLabX Pty Ltd.">
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:
+linear-gradient(rgba(12,10,8,0.82), rgba(12,10,8,0.92)),
+url('bg.png') center center / cover fixed no-repeat;
+color:#e5e5e5;
+line-height:1.7;
+}
+
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 30px;
+background:rgba(12,10,8,0.94);
+border-bottom:2px solid #D88722;
+backdrop-filter:blur(6px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 8px 28px rgba(0,0,0,0.25);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:#ffffff;
+font-weight:bold;
+font-size:20px;
+}
+
+.logo img{
+height:44px;
+width:auto;
+display:block;
+filter:drop-shadow(0 0 10px rgba(216,135,34,0.20));
+}
+
+nav{
+display:flex;
+gap:24px;
+align-items:center;
+}
+
+nav a{
+position:relative;
+text-decoration:none;
+color:#ffffff;
+font-size:16px;
+transition:color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active{
+color:#D88722;
+}
+
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-12px;
+height:2px;
+background:#D88722;
+box-shadow:0 0 12px rgba(216,135,34,0.45);
+}
+
+/* HERO */
+.hero{
+position:relative;
+overflow:hidden;
+padding:82px 24px 48px;
+text-align:center;
+background:linear-gradient(to bottom, rgba(10,9,8,0.82), rgba(10,9,8,0.58));
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at 50% 10%, rgba(216,135,34,0.20) 0%, rgba(216,135,34,0.08) 24%, transparent 62%);
+pointer-events:none;
+}
+
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:980px;
+margin:0 auto;
+}
+
+.hero img{
+width:150px;
+height:auto;
+display:block;
+margin:0 auto 22px;
+filter:drop-shadow(0 0 14px rgba(216,135,34,0.20));
+}
+
+.hero-label{
+display:inline-block;
+margin-bottom:16px;
+padding:8px 13px;
+border-radius:999px;
+border:1px solid rgba(216,135,34,0.38);
+background:rgba(216,135,34,0.10);
+color:#FFE3B8;
+font-size:12px;
+font-weight:bold;
+letter-spacing:0.08em;
+text-transform:uppercase;
+}
+
+.hero h1{
+margin:0 0 14px;
+font-size:46px;
+line-height:1.12;
+color:#ffffff;
+}
+
+.hero p{
+margin:0 auto;
+max-width:760px;
+font-size:18px;
+color:#C8C0B6;
+}
+
+/* CONTENT */
+.section-divider{
+height:2px;
+background:linear-gradient(90deg, #D88722, #B32025);
+box-shadow:0 0 18px rgba(216,135,34,0.55);
+}
+
+.content-section{
+padding:70px 24px 82px;
+background:rgba(15,13,11,0.76);
+}
+
+.content-wrap{
+max-width:980px;
+margin:0 auto;
+}
+
+.policy-card{
+background:linear-gradient(to bottom, rgba(28,25,22,0.96), rgba(18,16,14,0.94));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+padding:34px 30px;
+box-shadow:0 18px 45px rgba(0,0,0,0.26);
+position:relative;
+overflow:hidden;
+}
+
+.policy-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:linear-gradient(90deg, #D88722, #B32025);
+box-shadow:0 0 18px rgba(216,135,34,0.55);
+}
+
+.policy-card h2{
+margin:34px 0 12px;
+font-size:25px;
+line-height:1.25;
+color:#ffffff;
+}
+
+.policy-card h2:first-child{
+margin-top:0;
+}
+
+.policy-card p{
+margin:0 0 16px;
+font-size:16px;
+color:#D0C6BA;
+}
+
+.policy-card ul{
+margin:0 0 18px;
+padding:0;
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.policy-card li{
+position:relative;
+padding-left:20px;
+font-size:16px;
+color:#D0C6BA;
+}
+
+.policy-card li::before{
+content:"";
+position:absolute;
+left:0;
+top:11px;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#D88722;
+box-shadow:0 0 12px rgba(216,135,34,0.55);
+}
+
+.policy-card a{
+color:#FFE3B8;
+text-decoration:none;
+font-weight:bold;
+}
+
+.policy-card a:hover{
+text-decoration:underline;
+}
+
+.updated{
+display:inline-block;
+margin-bottom:26px;
+padding:8px 12px;
+border-radius:999px;
+background:rgba(216,135,34,0.10);
+border:1px solid rgba(216,135,34,0.28);
+color:#FFE3B8;
+font-size:13px;
+font-weight:bold;
+}
+
+/* CTA */
+.cta{
+margin-top:28px;
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:13px 20px;
+border-radius:12px;
+text-decoration:none;
+font-size:15px;
+font-weight:bold;
+transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.button:hover{
+transform:translateY(-1px);
+}
+
+.button.primary{
+background:#D88722;
+color:#ffffff;
+box-shadow:0 0 24px rgba(216,135,34,0.24);
+}
+
+.button.secondary{
+background:rgba(0,0,0,0.24);
+border:1px solid #2A2A2A;
+color:#ffffff;
+}
+
+.button.secondary:hover{
+border-color:#D88722;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:26px 20px;
+color:#7e7e7e;
+border-top:1px solid rgba(255,255,255,0.05);
+background:rgba(10,10,12,0.76);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+header{
+padding:16px 18px;
+flex-direction:column;
+gap:14px;
+}
+
+.logo{
+font-size:18px;
+}
+
+.logo img{
+height:38px;
+}
+
+nav{
+gap:18px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a.active::after{
+display:none;
+}
+
+.hero{
+padding:64px 20px 42px;
+}
+
+.hero img{
+width:122px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.content-section{
+padding:54px 18px 64px;
+}
+
+.policy-card{
+padding:26px 18px;
+border-radius:18px;
+}
+
+.policy-card h2{
+font-size:22px;
+}
+
+.policy-card p,
+.policy-card li{
+font-size:15px;
+}
+
+.button{
+width:100%;
+max-width:280px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html" class="logo">
+<img src="wi-logo.png" alt="WorkshopIdle logo">
+<span>WorkshopIdle</span>
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="apps.html" class="active">Apps</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-inner">
+<img src="wi-logo.png" alt="WorkshopIdle logo">
+<div class="hero-label">Privacy Policy</div>
+<h1>WorkshopIdle Privacy Policy</h1>
+<p>
+This Privacy Policy explains how WorkshopIdle handles information while the game is in development and after release.
+</p>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="content-section">
+<div class="content-wrap">
+
+<div class="policy-card">
+<div class="updated">Last updated: 8 May 2026</div>
+
+<h2>1. Overview</h2>
+<p>
+WorkshopIdle is a game developed by BeastLabX Pty Ltd. This Privacy Policy explains what information may be collected, how it may be used, and what choices you have when using WorkshopIdle.
+</p>
+<p>
+WorkshopIdle is currently in development. Features may change over time, and this policy may be updated as the game grows.
+</p>
+
+<h2>2. Information we do not directly collect</h2>
+<p>
+WorkshopIdle is planned as a simple game and does not currently require a user account. We do not directly ask for personal information such as your name, address, phone number, or identity document number to play the game.
+</p>
+
+<h2>3. Local game progress</h2>
+<p>
+WorkshopIdle may store game progress locally on your device. This may include information such as:
+</p>
+<ul>
+<li>Game progress</li>
+<li>Workshop upgrades</li>
+<li>Cash, rewards, or in-game values</li>
+<li>Settings or preferences</li>
+<li>Daily reward or boost status</li>
+</ul>
+<p>
+Local progress is used to keep your game state available on the same device. If you uninstall the game, clear app data, or change devices, local progress may be lost unless a backup or cloud feature is added later.
+</p>
+
+<h2>4. Advertising and rewarded ads</h2>
+<p>
+WorkshopIdle may include ads, including optional rewarded ads. Rewarded ads may allow players to receive in-game boosts or rewards after choosing to watch an ad.
+</p>
+<p>
+Ads may be provided by third-party advertising services such as Google AdMob or similar providers. These services may collect information such as device identifiers, advertising identifiers, app interaction data, approximate location, diagnostics, and ad performance data, depending on your device settings and the provider's own policies.
+</p>
+
+<h2>5. Analytics, diagnostics, and crash information</h2>
+<p>
+WorkshopIdle may use app store, platform, or third-party tools to understand app performance, crashes, errors, and general usage. This helps improve stability and gameplay.
+</p>
+<p>
+This information is generally technical and may include device type, operating system version, crash logs, session information, and similar diagnostic data.
+</p>
+
+<h2>6. Children</h2>
+<p>
+WorkshopIdle is not intended to knowingly collect personal information from children. If a parent or guardian believes that a child has provided personal information, they can contact us so we can review the request.
+</p>
+
+<h2>7. Third-party services</h2>
+<p>
+WorkshopIdle may use third-party services for advertising, app distribution, analytics, diagnostics, or platform features. These services operate under their own privacy policies and may process information according to their own terms.
+</p>
+
+<h2>8. How information is used</h2>
+<p>
+Information may be used to:
+</p>
+<ul>
+<li>Run and improve WorkshopIdle</li>
+<li>Save game progress on your device</li>
+<li>Provide optional rewarded ads</li>
+<li>Understand crashes and performance issues</li>
+<li>Improve balancing, usability, and player experience</li>
+<li>Comply with legal, platform, and app store requirements</li>
+</ul>
+
+<h2>9. Data sharing</h2>
+<p>
+We do not sell your personal information. Information may be processed by third-party services used to operate, distribute, advertise, or improve the game.
+</p>
+
+<h2>10. Your choices</h2>
+<p>
+You may be able to control certain privacy settings through your device settings, app permissions, advertising ID settings, or app store account settings. You can also uninstall the game at any time.
+</p>
+
+<h2>11. Changes to this policy</h2>
+<p>
+This Privacy Policy may be updated as WorkshopIdle changes, new features are added, or legal and platform requirements change. The latest version will be made available on the BeastLabX website.
+</p>
+
+<h2>12. Contact</h2>
+<p>
+If you have questions about this Privacy Policy or WorkshopIdle, contact BeastLabX Pty Ltd through the contact page on the BeastLabX website.
+</p>
+
+<div class="cta">
+<a class="button primary" href="workshopidle.html">Back to WorkshopIdle</a>
+<a class="button secondary" href="workshopidle-terms.html">Terms</a>
+<a class="button secondary" href="apps.html">Back to Apps</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+BeastLabX Pty Ltd
+</footer>
+
+</body>
+</html>
