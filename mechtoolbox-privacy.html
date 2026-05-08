@@ -4,14 +4,25 @@
 <meta charset="UTF-8">
 <title>MechToolbox Privacy Policy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy Policy for MechToolbox by BeastLabX Pty Ltd.">
 
 <style>
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0f0f12;
+background:
+linear-gradient(rgba(12,12,14,0.86), rgba(12,12,14,0.94)),
+url('bg.png') center center / cover fixed no-repeat;
 color:#e5e5e5;
-line-height:1.6;
+line-height:1.7;
 }
 
 /* HEADER */
@@ -19,75 +30,383 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 30px;
-background:#0b0b0e;
-border-bottom:2px solid #1FA11F;
+padding:18px 30px;
+background:rgba(10,10,12,0.94);
+border-bottom:2px solid #FFB300;
+backdrop-filter:blur(8px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 10px 34px rgba(0,0,0,0.34), 0 0 24px rgba(255,179,0,0.08);
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 color:#fff;
 text-decoration:none;
 font-weight:bold;
+font-size:20px;
+letter-spacing:0.2px;
 }
 
 .logo img{
-width:36px;
-height:36px;
+height:44px;
+width:auto;
+display:block;
+filter:drop-shadow(0 0 10px rgba(255,179,0,0.20));
 }
 
 nav{
 display:flex;
-gap:20px;
+align-items:center;
+gap:24px;
 }
 
 nav a{
-color:#ccc;
+position:relative;
+color:#ffffff;
 text-decoration:none;
+font-size:16px;
+padding:6px 0;
+transition:color 0.2s ease;
+}
+
+nav a:hover{
+color:#FFB300;
 }
 
 nav a.active{
-color:#1FA11F;
-border-bottom:2px solid #1FA11F;
-padding-bottom:4px;
+color:#FFB300;
 }
 
-/* SUB HEADER */
-.sub{
-padding:14px 30px;
+nav a.active::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-8px;
+height:2px;
+background:#FFB300;
+box-shadow:0 0 12px rgba(255,179,0,0.55);
+}
+
+/* HERO */
+.hero{
+position:relative;
+overflow:hidden;
+padding:82px 24px 68px 24px;
+background:
+linear-gradient(to bottom, rgba(10,10,12,0.84), rgba(10,10,12,0.62));
+border-bottom:2px solid #FFB300;
+box-shadow:0 0 22px rgba(255,179,0,0.18);
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 50% 18%, rgba(255,179,0,0.20) 0%, rgba(255,179,0,0.08) 22%, rgba(255,179,0,0.02) 44%, transparent 66%);
+pointer-events:none;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.010) 0px,
+rgba(255,255,255,0.010) 1px,
+rgba(0,0,0,0) 4px,
+rgba(0,0,0,0) 16px
+);
+opacity:0.18;
+pointer-events:none;
+}
+
+.hero-inner{
+position:relative;
+z-index:1;
+max-width:1050px;
+margin:0 auto;
+text-align:center;
+}
+
+.hero-logo{
+width:150px;
+height:150px;
+object-fit:contain;
+display:block;
+margin:0 auto 22px auto;
+filter:drop-shadow(0 0 22px rgba(255,179,0,0.20));
+}
+
+.hero-label{
+display:inline-block;
+margin-bottom:18px;
+padding:9px 14px;
+border:1px solid rgba(255,179,0,0.40);
+border-radius:999px;
+background:rgba(255,179,0,0.10);
+color:#FFE6A6;
+font-size:13px;
 font-weight:bold;
-color:#1FA11F;
+letter-spacing:0.08em;
+text-transform:uppercase;
+box-shadow:0 0 18px rgba(255,179,0,0.10);
+}
+
+.hero h1{
+margin:0 0 16px 0;
+font-size:52px;
+line-height:1.05;
+color:#ffffff;
+text-shadow:0 0 24px rgba(0,0,0,0.32);
+}
+
+.hero p{
+max-width:780px;
+margin:0 auto;
+font-size:18px;
+line-height:1.75;
+color:#C8C8C8;
+}
+
+.hero-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:28px;
+}
+
+.button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 24px;
+border-radius:12px;
+font-size:15px;
+font-weight:bold;
+text-decoration:none;
+transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.button:hover{
+transform:translateY(-1px);
+}
+
+.button.primary{
+background:#FFB300;
+color:#111111;
+box-shadow:0 0 24px rgba(255,179,0,0.24);
+}
+
+.button.primary:hover{
+background:#FFC233;
+box-shadow:0 0 32px rgba(255,179,0,0.34);
+}
+
+.button.secondary{
+background:rgba(0,0,0,0.26);
+border:1px solid rgba(255,179,0,0.24);
+color:#ffffff;
+}
+
+.button.secondary:hover{
+background:rgba(255,255,255,0.04);
+border-color:rgba(255,179,0,0.44);
 }
 
 /* CONTENT */
+.section{
+padding:70px 24px;
+background:rgba(15,15,18,0.74);
+}
+
 .container{
-max-width:900px;
-margin:auto;
-padding:20px;
+max-width:950px;
+margin:0 auto;
 }
 
-h1{
-color:#fff;
+.policy-card{
+background:
+linear-gradient(135deg, rgba(255,255,255,0.035), transparent 42%),
+linear-gradient(to bottom, rgba(24,24,28,0.97), rgba(18,18,22,0.96));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:26px;
+padding:38px 34px;
+box-shadow:0 20px 52px rgba(0,0,0,0.28);
+position:relative;
+overflow:hidden;
 }
 
-h2{
-margin-top:30px;
+.policy-card::before{
+content:"";
+position:absolute;
+left:0;
+right:0;
+top:0;
+height:3px;
+background:#FFB300;
+box-shadow:0 0 18px rgba(255,179,0,0.48);
 }
 
-p{
-color:#ccc;
+.policy-card h2{
+margin:34px 0 10px 0;
+font-size:25px;
+line-height:1.2;
+color:#ffffff;
+}
+
+.policy-card h2:first-child{
+margin-top:0;
+}
+
+.policy-card p{
+margin:0 0 14px 0;
+color:#C8C8C8;
+font-size:16px;
+}
+
+.policy-card a{
+color:#FFB300;
+text-decoration:none;
+font-weight:bold;
+}
+
+.policy-card a:hover{
+text-decoration:underline;
+}
+
+.note-box{
+margin:26px 0 6px 0;
+padding:18px 18px;
+border-radius:18px;
+background:rgba(255,179,0,0.08);
+border:1px solid rgba(255,179,0,0.24);
+color:#E5E5E5;
+}
+
+.note-box strong{
+color:#FFE6A6;
+}
+
+.bottom-actions{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-top:34px;
 }
 
 /* FOOTER */
 .footer{
-margin-top:40px;
-padding:20px;
-border-top:1px solid #222;
+padding:26px 20px;
+border-top:1px solid rgba(255,255,255,0.06);
 text-align:center;
 color:#777;
+background:rgba(10,10,12,0.82);
 }
+
+/* TABLET */
+@media (max-width:1024px){
+.hero h1{
+font-size:44px;
+}
+}
+
+/* MOBILE */
+@media (max-width:768px){
+body{
+background:
+linear-gradient(rgba(12,12,14,0.86), rgba(12,12,14,0.94)),
+url('bg.png') center center / cover no-repeat fixed;
+}
+
+header{
+padding:16px 18px;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.logo{
+font-size:18px;
+gap:10px;
+}
+
+.logo img{
+height:38px;
+}
+
+nav{
+width:100%;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+padding-top:8px;
+border-top:1px solid #2A2A2A;
+}
+
+nav a{
+font-size:16px;
+}
+
+nav a.active::after{
+display:none;
+}
+
+.hero{
+padding:64px 20px 54px 20px;
+}
+
+.hero-logo{
+width:130px;
+height:130px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section{
+padding:54px 20px;
+}
+
+.policy-card{
+padding:30px 20px;
+border-radius:22px;
+}
+
+.policy-card h2{
+font-size:22px;
+}
+
+.button{
+width:100%;
+}
+}
+
+/* SMALL PHONES */
+@media (max-width:420px){
+.hero h1{
+font-size:31px;
+}
+
+.hero-logo{
+width:118px;
+height:118px;
+}
+}
+
 </style>
 </head>
 
@@ -95,8 +414,8 @@ color:#777;
 
 <header>
 <a href="index.html" class="logo">
-<img src="logo.png">
-BeastLabX
+<img src="mt-logo.png" alt="MechToolbox">
+<span>MechToolbox</span>
 </a>
 
 <nav>
@@ -107,15 +426,25 @@ BeastLabX
 </nav>
 </header>
 
-<div class="sub">
-MECHTOOLBOX
+<section class="hero">
+<div class="hero-inner">
+<img class="hero-logo" src="mt-logo.png" alt="MechToolbox app logo">
+<div class="hero-label">Privacy Policy</div>
+<h1>MechToolbox Privacy Policy</h1>
+<p>
+This page explains how MechToolbox handles local app data, third-party services, exports, and user privacy.
+</p>
+
+<div class="hero-actions">
+<a class="button primary" href="mechtoolbox.html">Back to MechToolbox</a>
+<a class="button secondary" href="mechtoolbox-terms.html">Terms</a>
 </div>
+</div>
+</section>
 
+<section class="section">
 <div class="container">
-
-<h1>Privacy Policy – MechToolbox</h1>
-
-<p>MechToolbox is developed and operated by BeastLabX.</p>
+<div class="policy-card">
 
 <h2>1. Information Collection</h2>
 <p>
@@ -124,34 +453,68 @@ MechToolbox does not collect personal information such as your name, email addre
 
 <h2>2. Local Data Storage</h2>
 <p>
-All job data, fault entries, and notes are stored locally on your device.
+All job data, fault entries, notes, manuals, saved references, and related workshop records are stored locally on your device unless you choose to export or share them.
 </p>
 
-<h2>3. Third-Party Services</h2>
+<h2>3. User Files, Manuals, Photos, and Exports</h2>
 <p>
-The app may use third-party services such as Google AdMob for advertisements.
-These services may collect anonymous usage data.
+MechToolbox may allow you to add or store job photos, fault photos, PDF manuals, backup files, and exported reports. These files are used only for app functionality on your device.
 </p>
-
-<h2>4. Data Security</h2>
 <p>
-Your data remains on your device unless you choose to export it.
+When you choose to share or export a report, PDF, image, manual, or backup file, that action is controlled by you through your device sharing options.
 </p>
 
-<h2>5. Changes</h2>
+<h2>4. Third-Party Services</h2>
 <p>
-This policy may be updated in future versions.
+The app may use third-party services such as Google Play Billing, Google Play services, and Google AdMob. These services may process limited technical, purchase, advertising, diagnostics, or usage data according to their own privacy policies.
 </p>
 
-<h2>6. Contact</h2>
+<h2>5. Advertising</h2>
 <p>
-info@beastlabx.com
+MechToolbox may show ads in free or limited access areas of the app. Advertising services may use device or advertising identifiers to provide, measure, and improve ads.
 </p>
 
+<h2>6. Purchases and Subscriptions</h2>
+<p>
+MechToolbox may offer paid subscription options or unlock options through Google Play. Purchase and subscription handling is managed by Google Play. MechToolbox does not store your payment card details.
+</p>
+
+<h2>7. Data Security</h2>
+<p>
+Your app data remains on your device unless you choose to share it, export it, back it up, or restore it. You are responsible for keeping exported files and backup files secure after leaving the app.
+</p>
+
+<h2>8. No Professional Warranty</h2>
+<p>
+MechToolbox is designed as a workshop support tool. It does not replace professional judgement, manufacturer service information, legal compliance, or safety procedures.
+</p>
+
+<h2>9. Changes to This Policy</h2>
+<p>
+This policy may be updated in future versions. Updated versions will be posted on this website.
+</p>
+
+<h2>10. Contact</h2>
+<p>
+For questions about this Privacy Policy, contact BeastLabX Pty Ltd at <a href="mailto:info@beastlabx.com">info@beastlabx.com</a>.
+</p>
+
+<div class="note-box">
+<strong>Related page:</strong> You can also view the <a href="mechtoolbox-terms.html">MechToolbox Terms</a>.
 </div>
 
+<div class="bottom-actions">
+<a class="button primary" href="mechtoolbox.html">Back to MechToolbox</a>
+<a class="button secondary" href="mechtoolbox-terms.html">Terms</a>
+<a class="button secondary" href="apps.html">Back to Apps</a>
+</div>
+
+</div>
+</div>
+</section>
+
 <div class="footer">
-© BeastLabX
+© BeastLabX Pty Ltd
 </div>
 
 </body>
